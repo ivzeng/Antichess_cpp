@@ -14,4 +14,7 @@ int main(int argc, char *argv[]) {
         err_argvType();
         return -1;
     }
+    Game game{argv};
+    game.processGame();
+    return 0;
 }

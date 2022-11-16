@@ -35,7 +35,7 @@ private:
     void processRound();                        // handles a round
 
 public:
-    Game(int players[2]);                       // constructor, take an array of two integers in {1,2}:
+    Game(char* players[2]);                       // constructor, take an array of two integers in {1,2}:
                                                 //  1: human player, 2: computer player
     virtual ~Game();                            // destructor
     void processGame();                         // starts a game
