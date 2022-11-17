@@ -15,12 +15,12 @@ class Option{
     /* fields */
 protected:
     Piece * piece;              // piece to preform the option
-    std::pair<int> from;
-    std::pair<int> to;          // positions
+    std::pair<int,int> from;
+    std::pair<int,int> to;          // positions
     
     /* function */
 public:
-    Option(Piece* piece, std::pair<int> from, std::pair<int> to);  // constructor, take option on the piece
+    Option(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);  // constructor, take option on the piece
     virtual ~Option() = 0;
 };
 
@@ -29,7 +29,7 @@ class Move : public Option{
 
     /* function */
 public:
-    Move(Piece* piece, std::pair<int> from, std::pair<int> to);
+    Move(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);
 };
 
 class Capture : public Option{
@@ -37,7 +37,7 @@ class Capture : public Option{
     Piece * capturedPiece;
     /* function */
 public:
-    Capture(Piece* piece, std::pair<int> from, std::pair<int> to, Piece * capturedPiece);
+    Capture(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
 };
 
 class Promotion : public Option{
@@ -45,7 +45,7 @@ class Promotion : public Option{
     Piece * promotionResult;
     /* function */
 public:
-    Promotion(Piece* piece, std::pair<int> from, std::pair<int> to, Piece * capturedPiece);
+    Promotion(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
 };
 
 class Castling : public Option{
@@ -53,7 +53,7 @@ class Castling : public Option{
     
     /* function */
 public:
-    Castling(Piece* piece, std::pair<int> from, std::pair<int> to, Piece * capturedPiece);
+    Castling(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
 };
 
 

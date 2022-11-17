@@ -6,7 +6,7 @@
 #include <vector>
 
 class Option;
-class Capture : public Option;
+class Capture;
 
 /* Piece class */
 // A Piece can be a
