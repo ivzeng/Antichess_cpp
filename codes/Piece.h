@@ -20,12 +20,12 @@ private:
     std::pair<int,int> position;            //  position of the piece on the board
 
     /* functions */
-    virtual int* scan() = 0;                //  return an int array of size ??, where
+    virtual void scan(int iv[6]) = 0;       //  update an int array of size 6??, where
                                             //      the first element is the colour of the piece
                                             //      the remaining elements form an indicating vector (which are 0 or 1)
                                             //      each indices represent the scanning option:
                                             //          1 - king's move; 2 - horizontal/vertical; 3 - diagonal; 
-                                            //          3 - knight's move; 4 - pawn's move
+                                            //          4 - knight's move; 5 - pawn's move
 public:
     Piece(int colour);
     void move(std::pair<int,int> to);       //  move the piece (set position, lastMove)
@@ -43,7 +43,7 @@ class King : public Piece{
     /* functions */
 public:
     King(int colour);
-    int * scan() override;
+    void scan(int iv[6]) override;
 };
 
 class Queen : public Piece{
@@ -53,7 +53,7 @@ class Queen : public Piece{
     /* functions */
 public:
     Queen(int colour);
-    int * scan() override;
+    void scan(int iv[6]) override;
 };
 
 class Bishop : public Piece{
@@ -63,7 +63,7 @@ class Bishop : public Piece{
     /* functions */
 public:
     Bishop(int colour);
-    int * scan() override;
+    void scan(int iv[6]) override;
 };
 
 class Rook : public Piece{
@@ -73,7 +73,7 @@ class Rook : public Piece{
     /* functions */
 public:
     Rook(int colour);
-    int * scan() override;
+    void scan(int iv[6]) override;
 };
 
 class Knight : public Piece{
@@ -83,7 +83,7 @@ class Knight : public Piece{
     /* functions */
 public:
     Knight(int colour);
-    int * scan() override;
+    void scan(int iv[6]) override;
 };
 
 class Pawn : public Piece{
@@ -93,7 +93,7 @@ class Pawn : public Piece{
     /* functions */
 public:
     Pawn(int colour);
-    int * scan() override;
+    void scan(int iv[6]) override;
 };
 
 #endif
