@@ -14,7 +14,7 @@ class Piece;
 class Option{
     /* fields */
 protected:
-    Piece * piece;              // piece to preform the option
+    Piece * piece;                  // piece to preform the option
     std::pair<int,int> from;
     std::pair<int,int> to;          // positions
     

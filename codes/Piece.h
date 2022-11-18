@@ -16,19 +16,32 @@ class Piece{
 private:
     int colour;                             //  colour of the piece: 1 - black, 0 - white
     int value;                              //  value of the piece
-    int status;                             //  status of the piece: 2 - activate, 1 - forced (cannot move normally), 0 - inactivate (captured) 
     int lastMove;                           //  the most recent round when the player move this piece
     std::pair<int,int> position;            //  position of the piece on the board
-    std::vector<Option> peacefulMoves;     //  all valid Options other than Captures
-    std::vector<Capture> captureMoves;     //  all valid capture moves  
 
     /* functions */
-    virtual char* scan() = 0;               //  return a char array that tells the borad where to scan
-                                            //      "abc"   a: vertical and horizontal, b: ...
-    
+    virtual int* scan() = 0;                //  return an int array of size ??, where
+                                            //      the first element is the colour of the piece
+                                            //      the remaining elements form an indicating vector (which are 0 or 1)
+                                            //      each indices represent the scanning option:
+                                            //          1 - king's move; 2 - horizontal/vertical; 3 - diagonal; 
+                                            //          3 - knight's move; 4 - pawn's move
 public:
-    void move(std::pair<int,int> to);       //  move the piece
-    void addMove();                         //  
+    Piece(int colour);
+    void move(std::pair<int,int> to);       //  move the piece (set position, lastMove)
+    
+    // get fields
+    int getValue() const;
+    int getColour() const;
+    int getLastMove() const;
 };
 
+class King : public Piece{
+    /* fields */
+    // ...
+
+    /* functions */
+public:
+    int * scan() override;
+};
 #endif

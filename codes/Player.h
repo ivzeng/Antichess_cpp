@@ -16,19 +16,21 @@ class Option;
 class Player{
     /* fields */
 protected:
-    int status;                                     // status of the player: 1: normal, 2: checked, ...
-    Player * opponent;                              // reference to the opponent
     Board * board;                                  // reference to the board
-    std::vector<std::unique_ptr<Piece>> pieces;     // pieces owned by the player
+    std::vector<Piece> pieces;                      // pieces owned by the player
+    std::vector<Option> options[3];                 // option avaliable to the player
+                                                    //  index 0: valid capture moves
+                                                    //  index 1: valid peaceful moves
+                                                    //  index 2: moves that sell your king!
 
     /* functions */
 
 public:
     Player();                                                       // constructor
     ~Player();                                                      // destroctor that does nothing
-    void updateStatus();                                            // updates status (check if the player is checked, notify any unmovable peices)
+    void updateStatus();                                            // updates status (check if the player is checked and maybe more)
     void updateMoves();                                             // updates valid moves 
-    virtual void move(std::vector<Option> & hist); // makes a move and store it into hist
+    virtual void move(std::vector<Option> & hist);                  // makes a move and store it into hist
 };
 
 class Human: public Player{

@@ -24,8 +24,6 @@ class Game
     int round;                                      // round count
     int state;                                      // state
     std::unique_ptr<Board> board;                   // board
-    //std::unique_ptr<Score> score;                 // score
-    //std::string mode;                             // the modes of the game (game, setup, menu)
     std::unique_ptr<Player> players[2];             // players
     std::vector<Option> history;                    // game move history
 
