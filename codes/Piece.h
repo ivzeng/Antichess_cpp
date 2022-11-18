@@ -42,6 +42,58 @@ class King : public Piece{
 
     /* functions */
 public:
+    King(int colour);
     int * scan() override;
 };
+
+class Queen : public Piece{
+    /* fields */
+    // ...
+
+    /* functions */
+public:
+    Queen(int colour);
+    int * scan() override;
+};
+
+class Bishop : public Piece{
+    /* fields */
+    // ...
+
+    /* functions */
+public:
+    Bishop(int colour);
+    int * scan() override;
+};
+
+class Rook : public Piece{
+    /* fields */
+    // ...
+
+    /* functions */
+public:
+    Rook(int colour);
+    int * scan() override;
+};
+
+class Knight : public Piece{
+    /* fields */
+    // ...
+
+    /* functions */
+public:
+    Knight(int colour);
+    int * scan() override;
+};
+
+class Pawn : public Piece{
+    /* fields */
+    // ...
+
+    /* functions */
+public:
+    Pawn(int colour);
+    int * scan() override;
+};
+
 #endif
