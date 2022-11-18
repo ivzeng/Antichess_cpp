@@ -29,6 +29,7 @@ class Game
 
     /* functions */
 private:
+    void setPlayer(int i, char * type);         // set player[i]
     void processRound();                        // handles a round, update the state
     void undoRound();                           // undo a round
 

@@ -15,6 +15,7 @@ class Option;
 //  Computer | Human
 class Player{
     /* fields */
+    int colour;
 protected:
     Board * board;                                  // reference to the board
     std::vector<Piece> pieces;                      // pieces owned by the player
@@ -26,7 +27,7 @@ protected:
     /* functions */
 
 public:
-    Player();                                                       // constructor
+    Player(int colour);                                                       // constructor
     ~Player();                                                      // destroctor that does nothing
     void updateStatus();                                            // updates status (check if the player is checked and maybe more)
     void updateMoves();                                             // updates valid moves 
@@ -35,11 +36,13 @@ public:
 
 class Human: public Player{
 public:
+    Human(int colour);
     void move(std::vector<Option> & hist) override;
 };
 
 class Computer: public Player{
 public:
+    Computer(int colour);
     void move(std::vector<Option> & hist) override;
 };
 
