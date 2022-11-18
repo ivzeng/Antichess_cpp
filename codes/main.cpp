@@ -10,7 +10,8 @@ int main(int argc, char *argv[]) {
         err_argc();
         return -1;
     }
-    if ((argv[0] != "h" && argv[0] != "c") || (argv[1] != "h" && argv[1] != "c")){
+    if ((argv[0][0] != 'h' && argv[0][0] != 'H' && argv[0][0] != 'c' && argv[0][0] != 'C') 
+        || (argv[1][0] != 'h' && argv[1][0] != 'H' && argv[1][0] != 'c' && argv[1][0] != 'C') ){
         err_argvType();
         return -1;
     }

@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-class Option;
+class Move;
 class Capture;
 
 /* Piece class */
@@ -20,10 +20,11 @@ private:
     std::pair<int,int> position;            //  position of the piece on the board
 
     /* functions */
-    virtual void scan(int iv[6]) = 0;       //  update an int array of size 6??, where
+    virtual void scan(int iv[7]) = 0;       //  update an int array of size 7??, where
                                             //      the first element is the colour of the piece
+                                            //      the second element is the moveCount (only for Pawn)
                                             //      the remaining elements form an indicating vector (which are 0 or 1)
-                                            //      each indices represent the scanning option:
+                                            //      each indices represent the scanning Move:
                                             //          1 - king's move; 2 - horizontal/vertical; 3 - diagonal; 
                                             //          4 - knight's move; 5 - pawn's move
 public:
@@ -88,7 +89,7 @@ public:
 
 class Pawn : public Piece{
     /* fields */
-    // ...
+    int moveCount;          // number of Move taken
 
     /* functions */
 public:

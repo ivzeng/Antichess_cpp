@@ -18,7 +18,11 @@ std::ostream & operator<<(std::ostream & out, const Board & board);
 // prints error code about the argument
 void err_argc();                        // incorrect number of argv
 void err_argvType();                    // incorrect type of argv
-void argvInstruction();                 // instructions
+
+/* Instructions / Messages */
+void argvInstruction();                 // hints for valid arguments
+void msgStartGame();
+
 
 
 #endif

@@ -5,34 +5,34 @@
 
 class Piece;
 
-/* Option class */
-// A Option can be a
+/* Move class */
+// A Move can be a
 //  Move (normal move without capture)
 //  | Capture
 //  | Promotion (when a piece reach the end of the board)
 //  | Castling
-class Option{
+class Move{
     /* fields */
 protected:
-    Piece * piece;                  // piece to preform the option
+    Piece * piece;                  // piece to preform the Move
     std::pair<int,int> from;
     std::pair<int,int> to;          // positions
     
     /* function */
 public:
-    Option(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);  // constructor, take option on the piece
-    virtual ~Option() = 0;
+    Move(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);  // constructor, take Move on the piece
+    virtual ~Move() = 0;
 };
 
-class Move : public Option{
+class Basic : public Move{
     /* fields */
 
     /* function */
 public:
-    Move(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);
+    Basic(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);
 };
 
-class Capture : public Option{
+class Capture : public Move{
     /* fields */
     Piece * capturedPiece;
     /* function */
@@ -40,7 +40,7 @@ public:
     Capture(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
 };
 
-class Promotion : public Option{
+class Promotion : public Move{
     /* fields */
     Piece * promotionResult;
     /* function */
@@ -48,7 +48,7 @@ public:
     Promotion(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
 };
 
-class Castling : public Option{
+class Castling : public Move{
     /* fields */
     
     /* function */

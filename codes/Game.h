@@ -1,7 +1,7 @@
 #ifndef GAME_H_
 #define GAME_H_
 
-//#include <X11/Xlib.h>
+
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
@@ -13,7 +13,7 @@
 class twoPlayerBoard;
 class Board;
 class Player;
-class Option;
+class Move;
 
 
 /* chess interface */
@@ -25,7 +25,7 @@ class Game
     int state;                                      // state
     std::unique_ptr<Board> board;                   // board
     std::unique_ptr<Player> players[2];             // players
-    std::vector<Option> history;                    // game move history
+    std::vector<Move> history;                    // game move history
 
     /* functions */
 private:
@@ -39,6 +39,9 @@ public:
     ~Game();                                    // destructor
     void processGame();                         // starts a game
     void setup();                               // setups the game
+
+    // field getter functions
+    Board * getBoard() const;
 
     /* friend functions */
     friend std::ostream & operator<<(std::ostream & out, const Game & game);

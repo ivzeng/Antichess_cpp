@@ -8,7 +8,7 @@ using namespace std;
 
 /* std out */
 ostream & operator<<(ostream & out, const Game & game){
-    out << *game.board.get();       // print the board
+    out << *(game.getBoard()) << endl;       // prints the board
     // Todo: more info
     return out; 
 }
@@ -27,5 +27,6 @@ void err_argvType(){
     argvInstruction();
 }
 void argvInstruction(){
-    cerr << "please make sure there are exactly 2 arguments that are either character 'h' (human) or 'c' computer." << endl;
+    cerr << "please make sure there are exactly 2 arguments \
+    that either start with 'h' (human) or 'c' computer." << endl;
 } 
