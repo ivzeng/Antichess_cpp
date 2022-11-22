@@ -8,19 +8,22 @@
 class Move;
 class Capture;
 
+const int IV_LEN = 7;
+
 /* Piece class */
 // A Piece can be a
 //  King | Queen | Bishop | Rook | Knight | Pawn
 class Piece{
     /* fields */
-private:
+protected:
     int colour;                             //  colour of the piece: 1 - black, 0 - white
     int value;                              //  value of the piece
     //int lastMove;                           //  the most recent round when the player move this piece
     int status;                             //  status of the piece: 1 - alive, 0 - rip
     std::pair<int,int> position;            //  position of the piece on the board
     /* functions */
-    virtual void scan(int iv[7]) = 0;       //  update an int array of size 7??, where
+    virtual void movePiece(const std::pair<int,int> & to, int round); // move a piece
+    virtual void scan(int iv[IV_LEN]) = 0;       //  update an int array of size 7??, where
                                             //      the first element is the colour of the piece
                                             //      the second element is the moveCount (only for Pawn)
                                             //      the remaining elements form an indicating vector (which are 0 or 1)
@@ -30,7 +33,7 @@ private:
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
     Piece(const Piece & piece);                             // copy
-    void move(const std::pair<int,int> & to);                       //  move the piece (set position, lastMove)
+    void move(const std::pair<int,int> & to, int round);    //  move the piece (set position, update last move)
     
     // get fields
     int getValue() const;
@@ -46,7 +49,7 @@ class King : public Piece{
     /* functions */
 public:
     King(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[6]) override;
+    void scan(int iv[IV_LEN]) override;
 };
 
 class Queen : public Piece{
@@ -56,7 +59,7 @@ class Queen : public Piece{
     /* functions */
 public:
     Queen(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[6]) override;
+    void scan(int iv[IV_LEN]) override;
 };
 
 class Bishop : public Piece{
@@ -66,7 +69,7 @@ class Bishop : public Piece{
     /* functions */
 public:
     Bishop(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[6]) override;
+    void scan(int iv[IV_LEN]) override;
 };
 
 class Rook : public Piece{
@@ -76,7 +79,7 @@ class Rook : public Piece{
     /* functions */
 public:
     Rook(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[6]) override;
+    void scan(int iv[IV_LEN]) override;
 };
 
 class Knight : public Piece{
@@ -86,17 +89,18 @@ class Knight : public Piece{
     /* functions */
 public:
     Knight(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[6]) override;
+    void scan(int iv[IV_LEN]) override;
 };
 
 class Pawn : public Piece{
     /* fields */
-    int lastMove;          // number of Move taken
-
+    int movesCount;          // number of Move taken
+    int recentMove;          // recent round which move this piece
     /* functions */
 public:
     Pawn(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[6]) override;
+    void movePiece(const pair<int,int> & to, int round) override;
+    void scan(int iv[IV_LEN]) override;
 };
 
 #endif
