@@ -6,12 +6,14 @@
 
 using namespace std;
 
-Game::Game(char * player[2]): round{0}, state{1},\
-    board{make_unique<Board>()}, history{vector<Move>{}} {
+Game::Game(char * player[2]): round{0}, state{1}, players{vector<unique_ptr<Player>>(2, nullptr)}, history{vector<unique_ptr<Move>>{}} {
     // set players
     setPlayer(0, player[0]);
     setPlayer(1, player[1]);
 }
+
+Game::Game(const Game & game): round{game.round}, state{game.state}, \
+    players{vector<unique_ptr<Player>>(game.players)}, history{vector<unique_ptr<Move>>{}} {}
 
 void Game::setPlayer(int i, char * type){
     if (type[0] == 'c' || type[0] == 'C') {
@@ -22,22 +24,28 @@ void Game::setPlayer(int i, char * type){
     }
 }
 
-Board * Game::getBoard() const{
-    return board.get();
+unique_ptr<Board> & Game::getBoard() const{
+    unique_ptr<Board> board = make_unique<Board>();
+    players[1].get()->updateBoard(board.get());
+    players[2].get()->updateBoard(board.get());
+    return board;
 }
 
 void Game::processRound(){
-    Player * curPlayer = players[round%2].get(), \
-    * otherPlayer = players[(round+1)%2].get();
-    curPlayer->updateMoves();                       // updates the vaild moves of curPlayer 
-    curPlayer->move(history);                       // curPlayer makes a move
+    Player * curPlayer = players[round%2].get();
+    Player * otherPlayer = players[(round+1)%2].get();
+    curPlayer->move(history);                       // curPlayer makes a move, store the move into history
     state = otherPlayer->updateStatus();            // check if the king of the opponent is gone?!
 }
 
-// starts the game
 void Game::processGame(){
+    init();
     while (state != 0){
         processRound();
     }
+}
+
+void Game::init(){
+    players[0].get()->init();
 }
 

@@ -15,37 +15,43 @@ class Move;
 //  Computer | Human
 class Player{
     /* fields */
-    int colour;
 protected:
-    Board * board;                                  // reference to the board
-    std::vector<Piece> pieces;                      // pieces owned by the player
-    std::vector<Move> moves[3];                     // Moves avaliable to the player
-                                                    //  moves[0]: valid capture moves
-                                                    //  moves[1]: valid peaceful moves
-                                                    //  moves[2]: moves that sell your king!
+    int colour;                                         // 0 for white and 1 for black
+    std::vector<std::unique_ptr<Piece>> pieces;         // pieces owned by the player
+    // std::vector<std::vector<unique_ptr<Move>>> moves;                  
+    // Moves avaliable to the player
+    //  moves[0]: valid capture moves
+    //  moves[1]: valid peaceful moves
+    //  moves[2], move[3]: moves that sell your king! caputure or not
+    // edit: created a function that produce it instead
+
 
     /* functions */
 
 public:
     Player(int colour);                                             // constructor
-    ~Player();                                                      // destroctor that does nothing
+    Player(const Player & player);                                  // copy ctor
+    // ~Player();                                                   // destroctor 
+    //  edit: apparently there is nothing to delete
+
+    void init();                                                    // initialize pieces
     int updateStatus();                                             // check if the king is rip
-    void updateMoves();                                             // updates moves 
+    std::vector<std::vector<unique_ptr<Move>>> & searchMoves();     // search all possible moves
+    void updateBoard(Board * board) const;                          // update the board
 
-
-    virtual void move(std::vector<Move> & hist);                    // makes a move and store it into hist
+    virtual void move(std::vector<std::unique_ptr<Move>> & hist);   // makes a move and store it into hist
 };
 
 class Human: public Player{
 public:
     Human(int colour);
-    void move(std::vector<Move> & hist) override;
+    void move(std::vector<std::unique_ptr<Move>> & hist) override;
 };
 
 class Computer: public Player{
 public:
     Computer(int colour);
-    void move(std::vector<Move> & hist) override;
+    void move(std::vector<std::unique_ptr<Move>> & hist) override;
 };
 
 
