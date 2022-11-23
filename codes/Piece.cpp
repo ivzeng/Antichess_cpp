@@ -44,6 +44,8 @@ int Piece::getStatus() const {   return status;   }
 
 char Piece::getRepresentation() const { return representation();    }
 
+const pair<int,int> & Piece::getPosition() const{   return position;    }
+
 int King::value() const {
     return 100;
 }

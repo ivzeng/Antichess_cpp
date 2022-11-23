@@ -2,7 +2,6 @@
 #define GAME_H_
 
 
-#include <stdio.h>
 #include <iostream>
 #include <sstream>
 #include <string>

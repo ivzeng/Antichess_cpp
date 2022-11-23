@@ -8,7 +8,7 @@
 class Move;
 class Capture;
 
-const int IV_LEN = 7;
+const int IV_LEN = 9;
 
 /* Piece class */
 // A Piece can be a
@@ -29,16 +29,18 @@ public:
     // Piece(const Piece & piece);          // edit: we may not need that since there is no pointer field
     void move(const std::pair<int,int> & to, int round);    // move the piece (set position, update last move)
     void setScanningOptions(int iv[IV_LEN]);                // add scanning options
-    // iv is an imforming vector of size 7 (?)
-    //      iv[0]: the colour of the piece
-    //      iv[1]: the moveCount (only for Pawn, -1 otherwise)
+    // iv is an imforming vector of size 9 (?)
+    //      iv[0]: x
+    //      iv[1]: y
+    //      iv[2]: the colour of the piece
+    //      iv[3]: the movesCount (only for Pawn, -1 otherwise)
     //  the remaining elements form an indicating vector (which are 0 or 1)
     //   each indices represent the scanning options:
-    //      iv[2]: king's move
-    //      iv[3]: horizontal/vertical 
-    //      iv[4]: diagonal
-    //      iv[5]: knight's move
-    //      iv[6]: pawn's move
+    //      iv[4]: king's move
+    //      iv[5]: horizontal/vertical 
+    //      iv[6]: diagonal
+    //      iv[7]: knight's move
+    //      iv[8]: pawn's move
 
     // get fields
     int getValue() const;
@@ -46,6 +48,7 @@ public:
     //int getLastMove() const;
     int getStatus() const;
     char getRepresentation() const;
+    const std::pair<int,int> & getPosition() const;
 };
 
 class King : public Piece{
@@ -111,7 +114,7 @@ public:
 
 class Pawn : public Piece{
     /* fields */
-    int movesCount;          // number of Move taken
+    int movesCount;          // number of Moves taken
     int recentMove;          // recent round which move this piece
     /* functions */
     int value() const override;

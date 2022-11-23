@@ -14,6 +14,9 @@ std::ostream & operator<<(std::ostream & out, const Game & game);
 // prints the board
 std::ostream & operator<<(std::ostream & out, const Board & board);
 
+/* check inputs */
+int checkArgv(int argc, char * argv[]);
+
 /*std err*/
 // prints error code about the argument
 void err_argc();                        // incorrect number of argv

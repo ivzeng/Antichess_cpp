@@ -36,8 +36,9 @@ public:
 
     void init();                                                    // initialize pieces
     int updateStatus();                                             // check if the king is rip
-    std::vector<std::vector<unique_ptr<Move>>> & searchMoves();     // search all possible moves
-    void updateBoard(Board * board) const;                          // update the board
+    void updateBoard(Board * board);                // help put the pieces on the board
+    std::vector<std::vector<unique_ptr<Move>>>  searchMoves(const Board & board);     // search all possible moves
+
 
     virtual void move(std::vector<std::unique_ptr<Move>> & hist);   // makes a move and store it into hist
 };

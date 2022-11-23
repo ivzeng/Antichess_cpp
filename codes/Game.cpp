@@ -42,9 +42,12 @@ void Game::processRound(){
 
 void Game::processGame(){
     init();
+    cout << *this << endl;
+    /*
     while (state != 0){
         processRound();
     }
+    */
 }
 
 void Game::init(){
