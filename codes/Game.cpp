@@ -12,15 +12,17 @@ Game::Game(char * player[2]): round{0}, state{1}, players{vector<unique_ptr<Play
     setPlayer(1, player[1]);
 }
 
-Game::Game(const Game & game): round{game.round}, state{game.state}, \
-    players{vector<unique_ptr<Player>>(game.players)}, history{vector<unique_ptr<Move>>{}} {}
+Game::Game(const Game & game): round{game.round}, state{game.state}, players{vector<unique_ptr<Player>>(2, nullptr)}, history{vector<unique_ptr<Move>>{}} {
+    players[0] = make_unique<Player>(*(game.players[0]));
+    players[1] = make_unique<Player>(*(game.players[1]));
+}
 
 void Game::setPlayer(int i, char * type){
     if (type[0] == 'c' || type[0] == 'C') {
-        players[i] = make_unique<Computer>(i); 
+        players[i] = make_unique<AlphaWind>(i); 
     }
     else if (type[0] == 'h' || type[0] == 'H') {
-        players[i] = make_unique<Computer>(i); 
+        players[i] = make_unique<Human>(i); 
     }
 }
 

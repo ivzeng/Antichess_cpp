@@ -5,7 +5,20 @@ using namespace std;
 
 Player::Player(int colour): colour{colour}, pieces{vector<unique_ptr<Piece>>{}} {}
 
-Player::Player(const Player & player): colour{player.colour}, pieces(vector<unique_ptr<Piece>> (player.pieces)) {}
+Human::Human(int colour): Player{colour} {}
+
+AlphaWind::AlphaWind(int colour):  Player{colour} {}
+
+Player::Player(const Player & player): colour{player.colour} {
+    pieces.reserve(player.pieces.size());
+    for (const auto & piece : player.pieces){
+        pieces.push_back(make_unique<Piece>(*piece));
+    }
+}
+
+Human::Human(const Human & human): Player{human} {}
+
+AlphaWind::AlphaWind(const AlphaWind & alphaWind): Player{alphaWind} {}
 
 void Player::init(){
     int y = 0 + 7*colour;       // 0 for white and 7 for black

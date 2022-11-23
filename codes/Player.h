@@ -45,12 +45,14 @@ public:
 class Human: public Player{
 public:
     Human(int colour);
+    Human(const Human & human);
     void move(std::vector<std::unique_ptr<Move>> & hist) override;
 };
 
-class Computer: public Player{
+class AlphaWind: public Player{
 public:
-    Computer(int colour);
+    AlphaWind(int colour);
+    AlphaWind(const AlphaWind & alphaWind);
     void move(std::vector<std::unique_ptr<Move>> & hist) override;
 };
 

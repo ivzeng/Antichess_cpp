@@ -26,7 +26,7 @@ protected:
 
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
-    Piece(const Piece & piece);                             // copy
+    // Piece(const Piece & piece);          // edit: we may not need that since there is no pointer field
     void move(const std::pair<int,int> & to, int round);    // move the piece (set position, update last move)
     void setScanningOptions(int iv[IV_LEN]);                // add scanning options
     // iv is an imforming vector of size 7 (?)
