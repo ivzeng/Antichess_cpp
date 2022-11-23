@@ -17,24 +17,29 @@ class Piece{
     /* fields */
 protected:
     int colour;                             //  colour of the piece: 1 - black, 0 - white
-    int value;                              //  value of the piece
-    //int lastMove;                           //  the most recent round when the player move this piece
     int status;                             //  status of the piece: 1 - alive, 0 - rip
     std::pair<int,int> position;            //  position of the piece on the board
     /* functions */
+    virtual int value() const = 0;                  // value of the piece         
     virtual void movePiece(const std::pair<int,int> & to, int round); // move a piece
-    virtual void scan(int iv[IV_LEN]) = 0;       //  update an int array of size 7??, where
-                                            //      the first element is the colour of the piece
-                                            //      the second element is the moveCount (only for Pawn)
-                                            //      the remaining elements form an indicating vector (which are 0 or 1)
-                                            //      each indices represent the scanning Move:
-                                            //          1 - king's move; 2 - horizontal/vertical; 3 - diagonal; 
-                                            //          4 - knight's move; 5 - pawn's move
+    virtual void scan(int iv[IV_LEN]) const = 0;    // add scanning options 
+
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
     Piece(const Piece & piece);                             // copy
-    void move(const std::pair<int,int> & to, int round);    //  move the piece (set position, update last move)
-    
+    void move(const std::pair<int,int> & to, int round);    // move the piece (set position, update last move)
+    void setScanningOptions(int iv[IV_LEN]);                // add scanning options
+    // iv is an imforming vector of size 7 (?)
+    //      iv[0]: the colour of the piece
+    //      iv[1]: the moveCount (only for Pawn, -1 otherwise)
+    //  the remaining elements form an indicating vector (which are 0 or 1)
+    //   each indices represent the scanning options:
+    //      iv[2]: king's move
+    //      iv[3]: horizontal/vertical 
+    //      iv[4]: diagonal
+    //      iv[5]: knight's move
+    //      iv[6]: pawn's move
+
     // get fields
     int getValue() const;
     int getColour() const;
@@ -47,9 +52,10 @@ class King : public Piece{
     // ...
 
     /* functions */
+    int value() const override;
+    void scan(int iv[IV_LEN]) const override;
 public:
     King(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[IV_LEN]) override;
 };
 
 class Queen : public Piece{
@@ -57,9 +63,10 @@ class Queen : public Piece{
     // ...
 
     /* functions */
+    int value() const override;
+    void scan(int iv[IV_LEN]) const override;
 public:
     Queen(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[IV_LEN]) override;
 };
 
 class Bishop : public Piece{
@@ -67,9 +74,10 @@ class Bishop : public Piece{
     // ...
 
     /* functions */
+    int value() const override;
+    void scan(int iv[IV_LEN]) const override;
 public:
     Bishop(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[IV_LEN]) override;
 };
 
 class Rook : public Piece{
@@ -77,9 +85,10 @@ class Rook : public Piece{
     // ...
 
     /* functions */
+    int value() const override;
+    void scan(int iv[IV_LEN]) const override;
 public:
     Rook(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[IV_LEN]) override;
 };
 
 class Knight : public Piece{
@@ -87,9 +96,11 @@ class Knight : public Piece{
     // ...
 
     /* functions */
+    int value() const override;
+    void scan(int iv[IV_LEN]) const override;
 public:
     Knight(int colour, const std::pair<int, int> & pos);
-    void scan(int iv[IV_LEN]) override;
+    
 };
 
 class Pawn : public Piece{
@@ -97,10 +108,11 @@ class Pawn : public Piece{
     int movesCount;          // number of Move taken
     int recentMove;          // recent round which move this piece
     /* functions */
+    int value() const override;
+    void movePiece(const pair<int,int> & to, int round) override;
+    void scan(int iv[IV_LEN]) const override;
 public:
     Pawn(int colour, const std::pair<int, int> & pos);
-    void movePiece(const pair<int,int> & to, int round) override;
-    void scan(int iv[IV_LEN]) override;
 };
 
 #endif
