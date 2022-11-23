@@ -23,7 +23,7 @@ protected:
     virtual int value() const = 0;                  // value of the piece         
     virtual void movePiece(const std::pair<int,int> & to, int round); // move a piece
     virtual void scan(int iv[IV_LEN]) const = 0;    // add scanning options 
-
+    virtual char representation() const;
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
     // Piece(const Piece & piece);          // edit: we may not need that since there is no pointer field
@@ -45,6 +45,7 @@ public:
     int getColour() const;
     //int getLastMove() const;
     int getStatus() const;
+    char getRepresentation() const;
 };
 
 class King : public Piece{
@@ -54,6 +55,7 @@ class King : public Piece{
     /* functions */
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
+    char representation() const override;
 public:
     King(int colour, const std::pair<int, int> & pos);
 };
@@ -65,6 +67,7 @@ class Queen : public Piece{
     /* functions */
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
+    char representation() const override;
 public:
     Queen(int colour, const std::pair<int, int> & pos);
 };
@@ -76,6 +79,7 @@ class Bishop : public Piece{
     /* functions */
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
+    char representation() const override;
 public:
     Bishop(int colour, const std::pair<int, int> & pos);
 };
@@ -87,6 +91,7 @@ class Rook : public Piece{
     /* functions */
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
+    char representation() const override;
 public:
     Rook(int colour, const std::pair<int, int> & pos);
 };
@@ -98,6 +103,7 @@ class Knight : public Piece{
     /* functions */
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
+    char representation() const override;
 public:
     Knight(int colour, const std::pair<int, int> & pos);
     
@@ -111,6 +117,7 @@ class Pawn : public Piece{
     int value() const override;
     void movePiece(const pair<int,int> & to, int round) override;
     void scan(int iv[IV_LEN]) const override;
+    char representation() const override;
 public:
     Pawn(int colour, const std::pair<int, int> & pos);
 };

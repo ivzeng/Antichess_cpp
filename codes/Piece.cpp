@@ -42,6 +42,8 @@ int Piece::getColour() const {   return colour;   }
 
 int Piece::getStatus() const {   return status;   }
 
+char Piece::getRepresentation() const { return representation();    }
+
 int King::value() const {
     return 100;
 }
@@ -90,4 +92,24 @@ void Knight::scan(int iv[IV_LEN]) const {
 
 void Pawn::scan(int iv[IV_LEN]) const {
     iv[6] = 1;  // Pawn's move scan
+}
+
+char King::representation() const {
+    return (colour == 0) ? 'k' : 'K';
+}
+
+char Queen::representation() const {
+    return (colour == 0) ? 'q' : 'Q';
+}
+
+char Bishop::representation() const {
+    return (colour == 0) ? 'b' : 'B';
+}
+
+char Rook::representation() const {
+    return (colour == 0) ? 'r' : 'R';
+}
+
+char Pawn::representation() const {
+    return (colour == 0) ? 'p' : 'P';
 }

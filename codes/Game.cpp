@@ -49,5 +49,6 @@ void Game::processGame(){
 
 void Game::init(){
     players[0].get()->init();
+    players[1].get()->init();
 }
 
