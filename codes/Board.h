@@ -41,6 +41,9 @@ public:
 
     // scan based on the instructions on iv, return all possible position a piece can go (regardless validity)
     std::vector<std::vector<std::pair<int,int>>> scan(int iv[7]); 
+
+    // return the (x,y) position of the board
+    Piece * (& operator[](size_t y) const)[8];
     
 };
 #endif

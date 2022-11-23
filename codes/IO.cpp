@@ -14,8 +14,16 @@ ostream & operator<<(ostream & out, const Game & game){
 }
 
 ostream & operator<<(ostream & out, const Board & board){
-    // Todo
+    for (int y = 7; y >=0; y += 1){
+        out << y+1 << ' ';
+        for (int x = 0; x < 8; x += 1){
+            out << board[y][x] ? board[y][x]->getRepresentation : '-' << ' ';
+        }
+    }
+    return out;
 }
+
+
 
 /* std err */
 void err_argc(){
