@@ -1,6 +1,10 @@
 # include <iostream>
 # include "Game.h"
+# include "Player.h"
+# include "Move.h"
+# include "Piece.h"
 # include "IO.h"
+
 
 using namespace std;
 

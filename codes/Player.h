@@ -27,7 +27,8 @@ protected:
 
 
     /* functions */
-
+    virtual void makeMove(std::vector<std::unique_ptr<Move>> & hist) = 0;   // makes a move and store it into hist
+    virtual std::unique_ptr<Player> clone() = 0; 
 public:
     Player(int colour);                                             // constructor
     Player(const Player & player);                                  // copy ctor
@@ -37,24 +38,31 @@ public:
     void init();                                                    // initialize pieces
     int updateStatus();                                             // check if the king is rip
     void updateBoard(Board * board);                // help put the pieces on the board
-    std::vector<std::vector<unique_ptr<Move>>>  searchMoves(const Board & board);     // search all possible moves
+    std::vector<std::vector<std::unique_ptr<Move>>>  searchMoves(const Board & board);     // search all possible moves
+    // make a move
+    void move(std::vector<std::unique_ptr<Move>> & hist);
 
+    // make a copy of the player and return the unique_ptr
+    std::unique_ptr<Player> uniqueCpy();
 
-    virtual void move(std::vector<std::unique_ptr<Move>> & hist);   // makes a move and store it into hist
+    int getColour() const;
+    const std::vector<std::unique_ptr<Piece>> & getPieces() const;
 };
 
 class Human: public Player{
 public:
     Human(int colour);
     Human(const Human & human);
-    void move(std::vector<std::unique_ptr<Move>> & hist) override;
+    void makeMove(std::vector<std::unique_ptr<Move>> & hist) override;
+    std::unique_ptr<Player> clone() override;
 };
 
 class AlphaWind: public Player{
 public:
     AlphaWind(int colour);
     AlphaWind(const AlphaWind & alphaWind);
-    void move(std::vector<std::unique_ptr<Move>> & hist) override;
+    void makeMove(std::vector<std::unique_ptr<Move>> & hist) override;
+    std::unique_ptr<Player> clone() override;
 };
 
 

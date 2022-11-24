@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Piece.h"
 #include "Board.h"
+#include "Move.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ AlphaWind::AlphaWind(int colour):  Player{colour} {}
 Player::Player(const Player & player): colour{player.colour} {
     pieces.reserve(player.pieces.size());
     for (const auto & piece : player.pieces){
-        pieces.push_back(make_unique<Piece>(*piece));
+        pieces.push_back(unique_ptr<Piece>(piece.get()->uniqueCpy()));
     }
 }
 
@@ -56,10 +57,35 @@ vector<vector<unique_ptr<Move>>> Player::searchMoves(const Board & board) {
     return res;
 }
 
-void Human::move(vector<unique_ptr<Move>> & hist) {
+void Player::move(vector<unique_ptr<Move>> & hist) {
+    makeMove(hist);
+}
+
+void Human::makeMove(vector<unique_ptr<Move>> & hist) {
     // Todo
 }
 
-void AlphaWind::move(vector<unique_ptr<Move>> & hist) {
+void AlphaWind::makeMove(vector<unique_ptr<Move>> & hist) {
     // Todo
+}
+
+
+unique_ptr<Player> Player::uniqueCpy(){
+    return clone();
+}
+
+unique_ptr<Player> Human::clone(){
+    return make_unique<Human>(*this);
+}
+
+unique_ptr<Player> AlphaWind::clone(){
+    return make_unique<AlphaWind>(*this);
+}
+
+int Player::getColour() const {
+    return colour;
+}
+
+const vector<unique_ptr<Piece>> & Player::getPieces() const {
+    return pieces;
 }

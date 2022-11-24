@@ -7,9 +7,7 @@
 #include <string>
 #include <vector>
 #include <memory>
-//#include "../Pieces/Move/move.h"
 
-class twoPlayerBoard;
 class Board;
 class Player;
 class Move;
@@ -23,24 +21,25 @@ class Game
     int round;                                      // round count
     int state;                                      // state
     //  std::unique_ptr<Board> board;               // board     edit: I don't think we need this field, instead, we can get it with function getBoard (since we only need it for scaning (in processRound()))
-    std::vector<unique_ptr<Player>> players;        // players
-    std::vector<unique_ptr<Move>> history;          // game history
+    std::vector<std::unique_ptr<Player>> players;        // players
+    std::vector<std::unique_ptr<Move>> history;          // game history
 
     /* functions */
 private:
-    void setPlayer(int i, char * type);         // set player[i]
+    void addPlayer(int i, char * type);         // set player[i]
     void processRound();                        // handles a round, update the state
     void undoRound();                           // undo a round
 
 public:
-    Game(char* players[2]);                     // constructor, take an array of two char* in {"c","d"}:
+    Game(char * players[3]);                     // constructor, take an array of two char* in {"c","d"}:
                                                 //  "d": human player, "c": computer player
     Game(const Game & game);                    // copy constructor (without copying history)
-    ~Game();                                    // destructor
+    //~Game();                                    // destructor
     void processGame();                         // starts a game
     void init();                                // initial setup
 
-    std::unique_ptr<Board> & getBoard() const;  // let players update the board
+    std::unique_ptr<Board> getBoard() const;  // let players update the board
+    const std::vector<std::unique_ptr<Player>> & getPlayer()const;
 
     /* friend functions */
     friend std::ostream & operator<<(std::ostream & out, const Game & game);

@@ -20,7 +20,7 @@ protected:
     
     /* function */
 public:
-    Move(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);  // constructor, take Move on the piece
+    Move(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);  // constructor, take Move on the piece
     virtual ~Move() = 0;
 };
 
@@ -29,7 +29,7 @@ class Basic : public Move{
 
     /* function */
 public:
-    Basic(Piece* piece, std::pair<int,int> from, std::pair<int,int> to);
+    Basic(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
 class Capture : public Move{
@@ -37,23 +37,23 @@ class Capture : public Move{
     Piece * capturedPiece;
     /* function */
 public:
-    Capture(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
+    Capture(Piece* piece,Piece * capturedPiece, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
 class Promotion : public Move{
     /* fields */
-    Piece * promotionResult;
+    Piece * promotion;
     /* function */
 public:
-    Promotion(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
+    Promotion(Piece* piece,  Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
 class Castling : public Move{
     /* fields */
-    
+    Piece * rook;
     /* function */
 public:
-    Castling(Piece* piece, std::pair<int,int> from, std::pair<int,int> to, Piece * capturedPiece);
+    Castling(Piece* piece,  Piece * rook, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
 

@@ -4,6 +4,7 @@
 #include <utility>
 #include <string>
 #include <vector>
+#include <memory>
 
 class Move;
 class Capture;
@@ -23,7 +24,8 @@ protected:
     virtual int value() const = 0;                  // value of the piece         
     virtual void movePiece(const std::pair<int,int> & to, int round); // move a piece
     virtual void scan(int iv[IV_LEN]) const = 0;    // add scanning options 
-    virtual char representation() const;
+    virtual char representation() const = 0;
+    virtual std::unique_ptr<Piece> clone() = 0;
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
     // Piece(const Piece & piece);          // edit: we may not need that since there is no pointer field
@@ -49,6 +51,9 @@ public:
     int getStatus() const;
     char getRepresentation() const;
     const std::pair<int,int> & getPosition() const;
+
+    // return a unique pointer of a copy of the class
+    std::unique_ptr<Piece> uniqueCpy();
 };
 
 class King : public Piece{
@@ -59,6 +64,7 @@ class King : public Piece{
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
     char representation() const override;
+    std::unique_ptr<Piece> clone() override;
 public:
     King(int colour, const std::pair<int, int> & pos);
 };
@@ -71,6 +77,7 @@ class Queen : public Piece{
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
     char representation() const override;
+    std::unique_ptr<Piece> clone() override;
 public:
     Queen(int colour, const std::pair<int, int> & pos);
 };
@@ -83,6 +90,7 @@ class Bishop : public Piece{
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
     char representation() const override;
+    std::unique_ptr<Piece> clone() override;
 public:
     Bishop(int colour, const std::pair<int, int> & pos);
 };
@@ -95,6 +103,7 @@ class Rook : public Piece{
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
     char representation() const override;
+    std::unique_ptr<Piece> clone() override;
 public:
     Rook(int colour, const std::pair<int, int> & pos);
 };
@@ -107,6 +116,7 @@ class Knight : public Piece{
     int value() const override;
     void scan(int iv[IV_LEN]) const override;
     char representation() const override;
+    std::unique_ptr<Piece> clone() override;
 public:
     Knight(int colour, const std::pair<int, int> & pos);
     
@@ -118,9 +128,10 @@ class Pawn : public Piece{
     int recentMove;          // recent round which move this piece
     /* functions */
     int value() const override;
-    void movePiece(const pair<int,int> & to, int round) override;
+    void movePiece(const std::pair<int,int> & to, int round) override;
     void scan(int iv[IV_LEN]) const override;
     char representation() const override;
+    std::unique_ptr<Piece> clone() override;
 public:
     Pawn(int colour, const std::pair<int, int> & pos);
 };

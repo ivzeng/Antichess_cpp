@@ -1,6 +1,8 @@
 #include "IO.h"
 #include "Game.h"
 #include "Board.h"
+#include "Player.h"
+#include "Piece.h"
 
 using namespace std;
 
@@ -8,14 +10,21 @@ using namespace std;
 
 
 /* print objects */
+void printGame(const Game & game){
+    cerr << game << endl;
+}
+
 ostream & operator<<(ostream & out, const Game & game){
-    out << *(game.getBoard()) << endl;       // prints the board
+    // out << "getting the board" << endl;
+    out << *game.getPlayer()[0] << endl;
+    out << *game.getPlayer()[1] << endl;
+    out << *(game.getBoard());       // prints the board
     // Todo: more info
     return out; 
 }
 
 ostream & operator<<(ostream & out, const Board & board){
-    for (int y = 7; y >=0; y += 1){
+    for (int y = 7; y >=0; y -= 1){
         out << y+1 << ' ';
         for (int x = 0; x < 8; x += 1){
             out << board.getRepresentation(x,y) << ' ';
@@ -24,20 +33,34 @@ ostream & operator<<(ostream & out, const Board & board){
     }
     out << "  ";
     for (int x = 0; x < 8; x += 1){
-        out << 'A'+ x << ' ';
+        out << static_cast<char>('A'+ x) << ' ';
     }
     out << endl;
     return out;
 }
 
+ostream & operator<<(ostream & out, const Player & player){
+    out << "player" << player.getColour() << ":" << endl;
+    out << "pieces:" << endl;
+    for (const auto & p : player.getPieces()) {
+        out << *p << endl;
+    }
+    return out; 
+}
+
+ostream & operator<<(ostream & out, const Piece & piece){
+    out << piece.getRepresentation() << ": position at (" << piece.getPosition().first << ", " <<  piece.getPosition().second << "), with status " << piece.getStatus() << endl;
+    return out;
+}
+
 /* check input */
 int checkArgv(int argc, char * argv[]){
-    if (argc != 2){
+    if (argc != 3){
         err_argc();
         return 0;
     }
-    if ((argv[0][0] != 'h' && argv[0][0] != 'H' && argv[0][0] != 'c' && argv[0][0] != 'C') 
-        || (argv[1][0] != 'h' && argv[1][0] != 'H' && argv[1][0] != 'c' && argv[1][0] != 'C') ){
+    if ((argv[1][0] != 'h' && argv[1][0] != 'H' && argv[1][0] != 'c' && argv[1][0] != 'C') 
+        || (argv[2][0] != 'h' && argv[2][0] != 'H' && argv[2][0] != 'c' && argv[2][0] != 'C') ){
         err_argvType();
         return 0;
     }

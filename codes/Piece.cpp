@@ -4,8 +4,6 @@ using namespace std;
 
 Piece::Piece(int colour, const pair<int,int> & pos): colour{colour}, status{1}, position{pos} {}
 
-Piece::Piece(const Piece & piece) : colour{piece.colour}, status{piece.status}, position{piece.position} {}
-
 King::King(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
 Queen::Queen(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
@@ -16,7 +14,7 @@ Rook::Rook(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
 Knight::Knight(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
-Pawn::Pawn(int colour, const pair<int,int> & pos) : recentMove{-1}, movesCount{0}, Piece{colour, pos} {}
+Pawn::Pawn(int colour, const pair<int,int> & pos) :  Piece{colour, pos}, movesCount{0}, recentMove{-1} {}
 
 
 void Piece::movePiece(const pair<int,int> & to, int round){
@@ -45,6 +43,10 @@ int Piece::getStatus() const {   return status;   }
 char Piece::getRepresentation() const { return representation();    }
 
 const pair<int,int> & Piece::getPosition() const{   return position;    }
+
+unique_ptr<Piece> Piece::uniqueCpy(){
+    return clone();
+}
 
 int King::value() const {
     return 100;
@@ -108,10 +110,38 @@ char Bishop::representation() const {
     return (colour == 0) ? 'b' : 'B';
 }
 
+char Knight::representation() const {
+    return (colour == 0) ? 'n' : 'N';
+}
+
 char Rook::representation() const {
     return (colour == 0) ? 'r' : 'R';
 }
 
 char Pawn::representation() const {
     return (colour == 0) ? 'p' : 'P';
+}
+
+unique_ptr<Piece> King::clone() {
+    return make_unique<King>(*this);
+}
+
+unique_ptr<Piece> Queen::clone() {
+    return make_unique<Queen>(*this);
+} 
+
+unique_ptr<Piece> Bishop::clone() {
+    return make_unique<Bishop>(*this);
+}
+
+unique_ptr<Piece> Rook::clone() {
+    return make_unique<Rook>(*this);
+}
+
+unique_ptr<Piece> Knight::clone() {
+    return make_unique<Knight>(*this);
+}
+
+unique_ptr<Piece> Pawn::clone() {
+    return make_unique<Pawn>(*this);
 }
