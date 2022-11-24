@@ -15,8 +15,8 @@ class Board{
 
     /* function */
     // given a position, assume there is a rook,
-    // inserts the positions the rook can go before encountering a piece into basicOptions[0];
-    // inserts the positions of the pieces (if any) that block the route into basicOptions[1]. 
+    // inserts the positions the rook can go before encountering a piece into moves[0];
+    // inserts the positions of the pieces (if any) that block the route into moves[1]. 
     void hvScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
     // do hvScan except that rook becomes a bishop 
