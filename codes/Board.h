@@ -12,6 +12,7 @@ class Move;
 class Board{
     /* fields */
     Piece * board[8][8];
+    int boardSize = 8;
 
     /* function */
     // given a position, assume there is a rook,
@@ -37,6 +38,9 @@ class Board{
     //      d is the direction, in {-1,1})
     void pScan(int col, int movesCount, std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
+    //checks if king at pos is in check
+    bool isCheck(std::pair<int, int> pos);
+
     // get the direction bases on the colour.
     int getD(int colour);
 public:
@@ -48,6 +52,7 @@ public:
     // get the piece at (x,y) position
     Piece * get(int x, int y) const;
 
+    Piece * get(std::pair<int, int> pos) const;
     // return the (x,y) position of the board
     char getRepresentation(int x, int y) const;
 
