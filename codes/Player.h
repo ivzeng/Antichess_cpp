@@ -18,16 +18,10 @@ class Player{
 protected:
     int colour;                                         // 0 for white and 1 for black
     std::vector<std::unique_ptr<Piece>> pieces;         // pieces owned by the player
-    // std::vector<std::vector<unique_ptr<Move>>> moves;                  
-    // Moves avaliable to the player
-    //  moves[0]: valid capture moves
-    //  moves[1]: valid peaceful moves
-    //  moves[2], move[3]: moves that sell your king! caputure or not
-    // edit: created a function that produce it instead
 
 
     /* functions */
-    virtual void makeMove(std::vector<std::unique_ptr<Move>> & hist) = 0;   // makes a move and store it into hist
+    virtual std::string & decideMove(const std::vector<std::vector<Move>> & moves) = 0;                               // decide a move 
     virtual std::unique_ptr<Player> clone() = 0; 
 public:
     Player(int colour);                                             // constructor
@@ -38,9 +32,10 @@ public:
     void init();                                                    // initialize pieces
     int updateStatus();                                             // check if the king is rip
     void updateBoard(Board * board);                // help put the pieces on the board
-    std::vector<std::vector<std::unique_ptr<Move>>>  searchMoves(const Board & board);     // search all possible moves
-    // make a move
-    void move(std::vector<std::unique_ptr<Move>> & hist);
+    void searchMoves(const Board & board, std::vector<std::vector<Move>> & moves);     // searches all possible moves and puts them into moves
+    
+    // decides a move
+    std::string & move(const std::vector<std::vector<Move>> & moves);
 
     // make a copy of the player and return the unique_ptr
     std::unique_ptr<Player> uniqueCpy();
@@ -53,7 +48,10 @@ class Human: public Player{
 public:
     Human(int colour);
     Human(const Human & human);
-    void makeMove(std::vector<std::unique_ptr<Move>> & hist) override;
+
+    // read from stdin, return either a move 
+    std::string & decideMove(const std::vector<std::vector<Move>> & moves) override;
+
     std::unique_ptr<Player> clone() override;
 };
 
@@ -61,7 +59,7 @@ class AlphaWind: public Player{
 public:
     AlphaWind(int colour);
     AlphaWind(const AlphaWind & alphaWind);
-    void makeMove(std::vector<std::unique_ptr<Move>> & hist) override;
+    std::string & decideMove(const std::vector<std::vector<Move>> & moves) override;
     std::unique_ptr<Player> clone() override;
 };
 

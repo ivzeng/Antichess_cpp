@@ -39,7 +39,7 @@ public:
     void init();                                // initial setup
 
     std::unique_ptr<Board> getBoard() const;  // let players update the board
-    const std::vector<std::unique_ptr<Player>> & getPlayer()const;
+    const std::vector<std::unique_ptr<Player>> & getPlayer() const;
 
     /* friend functions */
     friend std::ostream & operator<<(std::ostream & out, const Game & game);

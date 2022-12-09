@@ -39,10 +39,18 @@ const std::vector<std::unique_ptr<Player>> & Game::getPlayer() const {
 }
 
 void Game::processRound(){
-    Player * curPlayer = players[round%2].get();
-    Player * otherPlayer = players[(round+1)%2].get();
-    curPlayer->move(history);                       // curPlayer makes a move, store the move into history
-    state = otherPlayer->updateStatus();            // check if the king of the opponent is gone?!
+    Player * pMove = players[round%2].get();
+    Player * pWait = players[(round+1)%2].get();
+    unique_ptr<Board> board{getBoard()};
+    vector<vector<Move>> possibleMoves{vector<vector<Move>>(4, vector<Move>{})};
+
+    // search for move
+    pMove->searchMoves(*board, possibleMoves);
+
+    // check game status (TODO)
+
+    // make the move
+    pMove->move(possibleMoves);
 }
 
 void Game::processGame(){

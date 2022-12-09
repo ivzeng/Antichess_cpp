@@ -24,8 +24,8 @@ AlphaWind::AlphaWind(const AlphaWind & alphaWind): Player{alphaWind} {}
 
 void Player::init(){
     int y = 0 + 7*colour;       // 0 for white and 7 for black
-    pieces.push_back(make_unique<King>(colour, pair<int,int>{3,y}));    // put king
-    pieces.push_back(make_unique<Queen>(colour, pair<int,int>{4,y}));   // put queen
+    pieces.push_back(make_unique<King>(colour, pair<int,int>{4,y}));    // put king
+    pieces.push_back(make_unique<Queen>(colour, pair<int,int>{3,y}));   // put queen
     pieces.push_back(make_unique<Bishop>(colour, pair<int,int>{2,y}));
     pieces.push_back(make_unique<Bishop>(colour, pair<int,int>{5,y}));  // put bishops
     pieces.push_back(make_unique<Knight>(colour, pair<int,int>{1,y}));
@@ -51,14 +51,12 @@ void Player::updateBoard(Board * board) {
     }
 }
 
-vector<vector<unique_ptr<Move>>> Player::searchMoves(const Board & board) {
-    vector<vector<unique_ptr<Move>>> res{};
+void Player::searchMoves(const Board & board, vector<vector<unique_ptr<Move>>> & moves) {
     // Todo
-    return res;
 }
 
-void Player::move(vector<unique_ptr<Move>> & hist) {
-    makeMove(hist);
+string & Player::move(const vector<vector<unique_ptr<Move>>> & moves) {
+    return decideMove(moves);
 }
 
 void Human::makeMove(vector<unique_ptr<Move>> & hist) {
