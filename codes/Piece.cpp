@@ -44,7 +44,7 @@ char Piece::getRepresentation() const { return representation();    }
 
 const pair<int,int> & Piece::getPosition() const{   return position;    }
 
-unique_ptr<Piece> Piece::uniqueCpy(){
+unique_ptr<Piece> Piece::copy(){
     return clone();
 }
 

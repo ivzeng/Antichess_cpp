@@ -14,7 +14,7 @@ AlphaWind::AlphaWind(int colour):  Player{colour} {}
 Player::Player(const Player & player): colour{player.colour} {
     pieces.reserve(player.pieces.size());
     for (const auto & piece : player.pieces){
-        pieces.push_back(unique_ptr<Piece>(piece.get()->uniqueCpy()));
+        pieces.push_back(unique_ptr<Piece>(piece.get()->copy()));
     }
 }
 
@@ -43,27 +43,31 @@ int Player::updateStatus(){
     return pieces[0].get()->getStatus();
 }
 
-void Player::updateBoard(Board * board) {
+void Player::updateBoard(Board & board) {
     for (auto & p : pieces){
         if ((*p).getStatus()) {
-            board->set((*p).getPosition(), p.get());
+            board.set((*p).getPosition(), p.get());
         }
     }
 }
 
-void Player::searchMoves(const Board & board, vector<vector<unique_ptr<Move>>> & moves) {
+void Player::searchMoves(Board & board, vector<vector<unique_ptr<Move>>> & moves) {
+    for (const auto & p : getPieces()){
+        int scanOpt[SO_LEN]{0};
+        (*p).setScanningOptions(scanOpt);
+        board.scan(scanOpt, moves);
+    }
+}
+
+string Player::move(const vector<vector<unique_ptr<Move>>> & moves) {
+    return decide(moves);
+}
+
+string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
     // Todo
 }
 
-string & Player::move(const vector<vector<unique_ptr<Move>>> & moves) {
-    return decideMove(moves);
-}
-
-void Human::makeMove(vector<unique_ptr<Move>> & hist) {
-    // Todo
-}
-
-void AlphaWind::makeMove(vector<unique_ptr<Move>> & hist) {
+string  AlphaWind::decide(const vector<vector<unique_ptr<Move>>> & moves) {
     // Todo
 }
 

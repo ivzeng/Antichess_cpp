@@ -46,8 +46,8 @@ class Board{
 public:
     Board();
 
-    // scan based on the instructions on iv, return all possible position a piece can go (regardless validity)
-    void scan(int iv[9], std::vector<std::vector<std::unique_ptr<Move>>> & moves); 
+    // scan based on the instructions on scanOpt, return all possible position a piece can go (regardless validity)
+    void scan(int * scanOpt, std::vector<std::vector<std::unique_ptr<Move>>> & moves); 
 
     // get the piece at (x,y) position
     Piece * get(int x, int y) const;

@@ -29,8 +29,8 @@ void Game::addPlayer(int i, char * type){
 
 unique_ptr<Board> Game::getBoard() const{
     unique_ptr<Board> board = make_unique<Board>();
-    players[0].get()->updateBoard(board.get());
-    players[1].get()->updateBoard(board.get());
+    players[0].get()->updateBoard(*board);
+    players[1].get()->updateBoard(*board);
     return board;
 }
 
@@ -42,7 +42,7 @@ void Game::processRound(){
     Player * pMove = players[round%2].get();
     Player * pWait = players[(round+1)%2].get();
     unique_ptr<Board> board{getBoard()};
-    vector<vector<Move>> possibleMoves{vector<vector<Move>>(4, vector<Move>{})};
+    vector<vector<unique_ptr<Move>>> possibleMoves{vector<vector<unique_ptr<Move>>>(4, vector<unique_ptr<Move>>{})};
 
     // search for move
     pMove->searchMoves(*board, possibleMoves);
