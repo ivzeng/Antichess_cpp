@@ -61,7 +61,7 @@ int Game::processRound(){
 
     }
     if (decision == "") {
-        
+        decision = smartMove(possibleMoves, );
     }
     else if (decision[0] >= '1' && decision[0] <= '9'){
 

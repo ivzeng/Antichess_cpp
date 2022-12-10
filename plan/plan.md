@@ -55,7 +55,6 @@ more scaning if required
 ```bool Piece::threat(std::pair<int,int> pos)```: return true if the piece can attack the piece at position ```pos```, do not consider validity of the move, the status of the piece or any blocking; (helper function for ```Board::safe```)
 
 
-
 #
 ### Move:
 ```void Move::do()```: does a move (change the position of  the moved pieces, set the status of the captured piece to 0, etc.)
