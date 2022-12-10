@@ -8,6 +8,8 @@ class Piece;
 class Player;
 
 /*std in*/
+bool readDecision(std::istream & in, std::string & decision);
+
 
 /* print objects */
 
@@ -29,13 +31,19 @@ std::ostream & operator<<(std::ostream & out, const Piece & Piece);
 /* check inputs */
 int checkArgv(int argc, char * argv[]);
 
+
+
 /*std err*/
 // prints error code about the argument
 void err_argc();                        // incorrect number of argv
 void err_argvType();                    // incorrect type of argv
 
+void err_decision();                    // incorrect decision input
+
 /* Instructions / Messages */
 void argvInstruction();                 // hints for valid arguments
+void requireDecision();
+void decisionInstruction();
 void msgStartGame();
 
 

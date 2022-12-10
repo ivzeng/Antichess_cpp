@@ -22,6 +22,7 @@ protected:
 public:
     Move(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);  // constructor, take Move on the piece
     virtual ~Move() = 0;
+    bool operator==(const std::string & can);
 };
 
 class Basic : public Move{
@@ -56,5 +57,15 @@ public:
     Castling(Piece* piece,  Piece * rook, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
+// converts the coordinate algebraic notation into the coordinate system used by the program
+int getX();
+int getY();
+
+// checks the coordinate algebraic notation
+bool validX(const char & x);
+bool validY(const char & y);
+
+// searches the move in coordinate algebraic notation from moves, put the indices into move
+void search(const std::string & move, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
 #endif

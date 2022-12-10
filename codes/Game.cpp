@@ -14,8 +14,8 @@ Game::Game(char * player[3]): round{0}, state{1}, players{}, history{} {
 }
 
 Game::Game(const Game & game): round{game.round}, state{game.state}, players{}, history{} {
-    players.push_back(game.players[0].get()->uniqueCpy());
-    players.push_back(game.players[1].get()->uniqueCpy());
+    players.push_back(game.players[0].get()->copy());
+    players.push_back(game.players[1].get()->copy());
 }
 
 void Game::addPlayer(int i, char * type){

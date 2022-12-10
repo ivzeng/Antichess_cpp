@@ -8,6 +8,18 @@ using namespace std;
 
 /* in */
 
+// reads decision and checks
+bool readDecision(istream & in, string & decision) {
+    getline(in, decision);
+    if (decision == "undo") return true;
+    if (decision.length() == 4){
+        return (validX(decision[0]) && validX(decision[1]) && validY(decision[1]) && validY(decision[3]));
+    }
+    if (decision.length() == 5) {
+        return validX(decision[0]) && validX(decision[1]) && validY(decision[1]) && validY(decision[3]) && (decision[4] == 'p'||decision[4] == 'P');
+    }
+    return false;
+}
 
 /* print objects */
 void printGame(const Game & game){
@@ -53,7 +65,7 @@ ostream & operator<<(ostream & out, const Piece & piece){
     return out;
 }
 
-/* check input */
+/* check inputs */
 int checkArgv(int argc, char * argv[]){
     if (argc != 3){
         err_argc();
@@ -66,7 +78,7 @@ int checkArgv(int argc, char * argv[]){
     }
     return 1;
 }
- 
+
 
 /* error messages */
 void err_argc(){
@@ -78,8 +90,24 @@ void err_argvType(){
     argvInstruction();
 }
 
-/* instructions */
+void err_decision(){
+    cerr << "invalid move" << endl;
+}
+
+/* instructions / messages */
 
 void argvInstruction(){
     cerr << "please make sure there are exactly 2 arguments that each either starts with 'h' (human) or 'c' computer." << endl;
+}
+
+void requireDecision() {
+    cerr << "please make a move" << endl;
+}
+
+void decisionInstruction(){
+    cerr << "please enter either:\n     a move in correct coordinate algebraic notation (e.g. e2e4), or\n     'undo' to undo a move" << endl;
+}
+
+void msgStartGame(){
+    cerr << 'game started' << endl;
 }

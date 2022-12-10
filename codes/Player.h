@@ -38,7 +38,7 @@ public:
     std::string move(const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
     // make a copy of the player and return the unique_ptr
-    std::unique_ptr<Player> uniqueCpy();
+    std::unique_ptr<Player> copy();
 
     int getColour() const;
     const std::vector<std::unique_ptr<Piece>> & getPieces() const;

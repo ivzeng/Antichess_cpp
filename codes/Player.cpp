@@ -2,6 +2,7 @@
 #include "Piece.h"
 #include "Board.h"
 #include "Move.h"
+#include "IO.h"
 
 using namespace std;
 
@@ -44,7 +45,7 @@ int Player::updateStatus(){
 }
 
 void Player::updateBoard(Board & board) {
-    for (auto & p : pieces){
+    for (const auto & p : pieces){
         if ((*p).getStatus()) {
             board.set((*p).getPosition(), p.get());
         }
@@ -52,7 +53,7 @@ void Player::updateBoard(Board & board) {
 }
 
 void Player::searchMoves(Board & board, vector<vector<unique_ptr<Move>>> & moves) {
-    for (const auto & p : getPieces()){
+    for (const auto & p : pieces){
         int scanOpt[SO_LEN]{0};
         (*p).setScanningOptions(scanOpt);
         board.scan(scanOpt, moves);
@@ -64,7 +65,16 @@ string Player::move(const vector<vector<unique_ptr<Move>>> & moves) {
 }
 
 string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
-    // Todo
+    string decision = "";
+    requireDecision();
+    while (true) {
+        while (!readDecision(cin, decision)) {
+            err_decision();
+        }
+        search(decision, moves);
+    }
+
+    
 }
 
 string  AlphaWind::decide(const vector<vector<unique_ptr<Move>>> & moves) {
@@ -72,7 +82,7 @@ string  AlphaWind::decide(const vector<vector<unique_ptr<Move>>> & moves) {
 }
 
 
-unique_ptr<Player> Player::uniqueCpy(){
+unique_ptr<Player> Player::copy(){
     return clone();
 }
 
