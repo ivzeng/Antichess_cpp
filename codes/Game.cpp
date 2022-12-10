@@ -7,13 +7,13 @@
 
 using namespace std;
 
-Game::Game(char * player[3]): round{0}, state{1}, players{}, history{} {
+Game::Game(char * player[3]): round{0}, players{}, history{} {
     // set players
     addPlayer(0, player[1]);
     addPlayer(1, player[2]);
 }
 
-Game::Game(const Game & game): round{game.round}, state{game.state}, players{}, history{} {
+Game::Game(const Game & game): round{game.round}, players{}, history{} {
     players.push_back(game.players[0].get()->copy());
     players.push_back(game.players[1].get()->copy());
 }
@@ -38,7 +38,7 @@ const std::vector<std::unique_ptr<Player>> & Game::getPlayer() const {
     return players;
 }
 
-void Game::processRound(){
+int Game::processRound(){
     Player * pMove = players[round%2].get();
     Player * pWait = players[(round+1)%2].get();
     unique_ptr<Board> board{getBoard()};
@@ -47,15 +47,42 @@ void Game::processRound(){
     // search for move
     pMove->searchMoves(*board, possibleMoves);
 
-    // check game status (TODO)
+    // check game status 
+    if (!hasValidMove(possibleMoves)) {
+        return 0;
+    }
 
     // make the move
-    pMove->move(possibleMoves);
+    string decision{pMove->move(possibleMoves)};
+    
+    if (decision == "undo") {
+        undoRound();
+        return 1;
+
+    }
+    if (decision == "") {
+        
+    }
+    else if (decision[0] >= '1' && decision[0] <= '9'){
+
+    }
+    else if (decision.length() == 3) {
+
+    }
+    else {
+        cout << "something is wrong at processRound" << endl;
+        return 0;
+    }
+
+
 }
 
 void Game::processGame(){
     init();
-    // cerr << "initialized game" << endl;
+
+    #ifdef DEBUG
+    cerr << "initialized game" << endl;
+    #endif
 
     printGame(*this);
     /*

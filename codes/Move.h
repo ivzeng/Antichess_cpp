@@ -70,4 +70,6 @@ bool validY(const char & y);
 // searches the move in coordinate algebraic notation from moves, puts the indices of the move in moves and the validity into move (for example, moves becomes "011": the move is at moves[0][1], and it is valid). If the move is not in moves, move will be unchanged 
 void search(std::string & move, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
+bool hasValidMove(const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
 #endif

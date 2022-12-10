@@ -25,8 +25,10 @@ class Game
     /* functions */
 private:
     void addPlayer(int i, char * type);         // set player[i]
-    void processRound();                        // handles a round, update the state
+    int processRound();                        // handles a round, update the state
     void undoRound();                           // undo a round
+
+    std::string smartMove();     // find an optimized move
 
 public:
     Game(char * players[3]);                     // constructor, take an array of two char* in {"c","d"}:

@@ -57,7 +57,7 @@ bool validY(const char & y){
 
 
 void search(string & move, const vector<vector<unique_ptr<Move>>> & moves){
-    for (int i = 0; i < 4; i += 1){
+    for (size_t i = 0; i < moves.size(); i += 1){
         for (size_t j = 0; j < moves[i].size(); j += 1){
             if ((*moves[i][j]) == move){
                 move = "  1";
@@ -74,4 +74,12 @@ void search(string & move, const vector<vector<unique_ptr<Move>>> & moves){
             }
         }
     }
+}
+
+bool hasValidMove(const vector<vector<unique_ptr<Move>>> & moves) {
+    #ifdef DEBUG
+    if (moves[3].size()!= 0 || moves[4].size()!= 0)
+        return true;
+    #endif
+    return moves[0].size()!= 0 || moves[1].size()!= 0;
 }
