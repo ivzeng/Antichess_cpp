@@ -28,7 +28,7 @@ private:
     int processRound();                        // handles a round, update the state
     void undoRound();                           // undo a round
 
-    std::string smartMove();     // find an optimized move
+    std::string smartMove(std::vector<std::vector<std::unique_ptr<Move>>> & moves, int it);     // find an optimized move
 
 public:
     Game(char * players[3]);                     // constructor, take an array of two char* in {"c","d"}:
