@@ -17,12 +17,13 @@ protected:
     Piece * piece;                  // piece to preform the Move
     std::pair<int,int> from;
     std::pair<int,int> to;          // positions
-    
+    virtual std::string getRepresentaion();
     /* function */
 public:
     Move(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);  // constructor, take Move on the piece
     virtual ~Move() = 0;
     bool operator==(const std::string & can);
+    std::string representation();       // return the coordinate algebraic notation of the move (e2e4, e7e8q (promotion))
 };
 
 class Basic : public Move{
@@ -44,6 +45,7 @@ public:
 class Promotion : public Move{
     /* fields */
     Piece * promotion;
+    std::string getRepresentaion() override;
     /* function */
 public:
     Promotion(Piece* piece,  Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);
@@ -65,7 +67,7 @@ int getY(const char & y);
 bool validX(const char & x);
 bool validY(const char & y);
 
-// searches the move in coordinate algebraic notation from moves, put the indices into move
+// searches the move in coordinate algebraic notation from moves, puts the indices of the move in moves and the validity into move (for example, moves becomes "011": the move is at moves[0][1], and it is valid). If the move is not in moves, move will be unchanged 
 void search(std::string & move, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
 #endif

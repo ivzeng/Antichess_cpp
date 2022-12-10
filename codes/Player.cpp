@@ -66,12 +66,36 @@ string Player::move(const vector<vector<unique_ptr<Move>>> & moves) {
 
 string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
     string decision = "";
-    requireDecision();
+    string prevDecision = "";
+    requireDecision();      // print instruction
     while (true) {
-        while (!readDecision(cin, decision)) {
-            err_decision();
+        getDecision(cin, decision); // read until a valid decision is made
+        if (decision == "") {
+            if (prevDecision == "") {
+                err_decision();
+                decisionInstruction();
+                continue;
+            }
+            return prevDecision;
         }
+        if (decision.length() == 1 && decision[0] >= '1' && decision[0] <= '9') {
+            return decision;
+        }   // require hint
+
+        if (decision == "undo") {
+            return decision;
+        }   // undo
+
+        // search the move
         search(decision, moves);
+        if (decision.length() == 3 && decision[2] == '0' || decision.length() != 3) {
+            warning_invalidMove();
+            prevDecision = decision;
+            continue;
+            // add the following code after debugging
+            // return decision;
+        } // invalid move
+        return decision;
     }
 
     

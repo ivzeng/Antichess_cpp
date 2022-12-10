@@ -19,8 +19,6 @@ class Game
 {
     /* fields */
     int round;                                      // round count
-    int state;                                      // state
-    //  std::unique_ptr<Board> board;               // board     edit: I don't think we need this field, instead, we can get it with function getBoard (since we only need it for scaning (in processRound()))
     std::vector<std::unique_ptr<Player>> players;        // players
     std::vector<std::unique_ptr<Move>> history;          // game history
 

@@ -3,6 +3,7 @@
 #include "Board.h"
 #include "Player.h"
 #include "Piece.h"
+#include "Move.h"
 
 using namespace std;
 
@@ -11,14 +12,23 @@ using namespace std;
 // reads decision and checks
 bool readDecision(istream & in, string & decision) {
     getline(in, decision);
-    if (decision == "undo") return true;
+    if (decision == "") return true;        // select the pervious decision
+    if (decision == "undo") return true;    // undo
+    if (decision.length() == 1 && decision[0] >= '1' && decision[0] <= '9') return true;    // require program's help (decision[0] is the number of iterations)
     if (decision.length() == 4){
         return (validX(decision[0]) && validX(decision[1]) && validY(decision[1]) && validY(decision[3]));
-    }
+    }   // move (not promotion)
     if (decision.length() == 5) {
         return validX(decision[0]) && validX(decision[1]) && validY(decision[1]) && validY(decision[3]) && (decision[4] == 'p'||decision[4] == 'P');
-    }
+    }   // promotion
     return false;
+}
+
+void getDecision(istream & in, string & decision){
+    while (!readDecision(cin, decision)) {
+        err_decision();
+        decisionInstruction();
+    }
 }
 
 /* print objects */
@@ -80,7 +90,7 @@ int checkArgv(int argc, char * argv[]){
 }
 
 
-/* error messages */
+/* error / warning messages */
 void err_argc(){
     cerr << "error: incorrect number of arguments;" << endl;
     argvInstruction();
@@ -91,7 +101,11 @@ void err_argvType(){
 }
 
 void err_decision(){
-    cerr << "invalid move" << endl;
+    cerr << "error: invalid move" << endl;
+}
+
+void warning_invalidMove(){
+    cerr << "warning: your move is not valid!" << endl;
 }
 
 /* instructions / messages */
@@ -105,7 +119,7 @@ void requireDecision() {
 }
 
 void decisionInstruction(){
-    cerr << "please enter either:\n     a move in correct coordinate algebraic notation (e.g. e2e4), or\n     'undo' to undo a move" << endl;
+    cerr << "please enter either:\n     a move in correct coordinate algebraic notation (e.g. e2e4), or\n     'undo' to undo a move, or \n [0-9] to get a hint, or \n enter to use the pervious decision (if there is)"  << endl;
 }
 
 void msgStartGame(){

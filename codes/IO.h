@@ -9,6 +9,7 @@ class Player;
 
 /*std in*/
 bool readDecision(std::istream & in, std::string & decision);
+void getDecision(std::istream & in, std::string & decision);
 
 
 /* print objects */
@@ -39,6 +40,8 @@ void err_argc();                        // incorrect number of argv
 void err_argvType();                    // incorrect type of argv
 
 void err_decision();                    // incorrect decision input
+
+void warning_invalidMove();
 
 /* Instructions / Messages */
 void argvInstruction();                 // hints for valid arguments
