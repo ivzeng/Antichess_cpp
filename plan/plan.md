@@ -56,6 +56,7 @@ more scaning if required
 
 
 #
+
 ### Move:
 ```void Move::do()```: does a move (change the position of  the moved pieces, set the status of the captured piece to 0, etc.)
 
