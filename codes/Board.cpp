@@ -345,6 +345,15 @@ void Board::castleScan(int col, int movesCountKing, int movesCountRook, std::pai
 // NEED TO REDO
 //Iterate over oposing players pieces
 bool Board::isCheck(std::pair<int, int> pos) {
+
+    //check down
+    /*
+    for (int r = pos.second + 1; r < boardSize; ++r){
+        if (board[pos.first][r]->getRepresentation() == 'Q' || board[pos.first][r]->getRepresentation() == 'R' || board[pos.first][r]->getRepresentation() == 'K')
+    }
+    */
+
+
     return false;
 }
 
