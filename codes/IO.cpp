@@ -125,3 +125,8 @@ void decisionInstruction(ostream & out){
 void msgStartGame(ostream & out){
     out << 'game started' << endl;
 }
+
+void beginRoundNote(ostream & out, const Board & board, const int & round){
+    out << board;
+    out << "Player " << (round%2==0 ? "white(" : "black(") << (round%2+1) << "): " << endl; 
+}

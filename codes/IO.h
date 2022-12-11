@@ -45,9 +45,11 @@ void warning_invalidMove(std::ostream & out);
 
 /* Instructions / Messages */
 void argvInstruction(std::ostream & out);                 // hints for valid arguments
-void requireDecision(std::ostream & out);
-void decisionInstruction(std::ostream & out);
-void msgStartGame(std::ostream & out);
+void requireDecision(std::ostream & out);               // asks for a decision
+void decisionInstruction(std::ostream & out);           // describes the way to enter a decision
+void msgStartGame(std::ostream & out);                 
+void beginRoundNote(std::ostream & out, const Board & board, int round);            // prints the board, player to move and round number
+
 
 
 

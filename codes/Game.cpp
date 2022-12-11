@@ -104,6 +104,7 @@ void Game::init(){
 }
 
 void Game::undoRound(){
-    // Todo
+    round -= 1;
+    history.back().get()->undo();
 }
 
