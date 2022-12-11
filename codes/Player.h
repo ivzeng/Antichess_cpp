@@ -21,7 +21,7 @@ protected:
 
 
     /* functions */
-    virtual std::string decide(const std::vector<std::vector<unique_ptr<Move>>> & moves) = 0;                               // decide a move 
+    virtual std::string decide(const std::vector<std::vector<std::unique_ptr<Move>>> & moves) = 0;                               // decide a move 
     virtual std::unique_ptr<Player> clone() = 0; 
 public:
     Player(int colour);                                             // constructor

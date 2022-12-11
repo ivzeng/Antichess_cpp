@@ -104,7 +104,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + 1, pos.second>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + 1, pos.second>)));
-            break;
         }
     }
 
@@ -114,7 +113,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - 1, pos.second>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - 1, pos.second>)));
-            break;
         }
     }
 
@@ -124,7 +122,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first, pos.second - 1>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first, pos.second - 1>)));
-            break;
         }
     }
 
@@ -134,7 +131,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first, pos.second + 1>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first, pos.second + 1>)));
-            break;
         }
     }
 
@@ -144,7 +140,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + 1, pos.second + 1>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + 1, pos.second + 1>)));
-            break;
         }
     }
 
@@ -154,7 +149,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + 1, pos.second - 1>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + 1, pos.second - 1>)));
-            break;
         }
     }
 
@@ -164,7 +158,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - 1, pos.second + 1>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - 1, pos.second + 1>)));
-            break;
         }
     }
 
@@ -174,7 +167,6 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
             moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - 1, pos.second - 1>)));
         }else {
             moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - 1, pos.second - 1>)));
-            break;
         }
     }
 
@@ -182,14 +174,119 @@ void Board::kScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
 
 void Board::nScan(pair<int,int> pos,vector<vector<unique_ptr<Move>>> & moves){
     // Todo
+    int coldiff = 2;
+    int rowdiff = 1;
+    
+    if (pos.first + coldiff < boardSize && pos.second + rowdiff < boardSize) {
+        if (board[pos.first + coldiff][pos.second + rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second + rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second + rowdiff>)));
+        }
+    }
+
+    if (pos.first + coldiff < boardSize && pos.second - rowdiff >= 0) {
+        if (board[pos.first + coldiff][pos.second - rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second - rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second - rowdiff>)));
+        }
+    }
+
+    if (pos.first - coldiff >= 0 && pos.second + rowdiff < boardSize) {
+        if (board[pos.first - coldiff][pos.second + rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second + rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second + rowdiff>)));
+        }
+    }
+
+    if (pos.first - coldiff >= 0 && pos.second - rowdiff >= 0) {
+        if (board[pos.first - coldiff][pos.second - rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second - rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second - rowdiff>)));
+        }
+    }
+    
+    int coldiff = 1;
+    int rowdiff = 2;
+
+    if (pos.first + coldiff < boardSize && pos.second + rowdiff < boardSize) {
+        if (board[pos.first + coldiff][pos.second + rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second + rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second + rowdiff>)));
+        }
+    }
+
+    if (pos.first + coldiff < boardSize && pos.second - rowdiff >= 0) {
+        if (board[pos.first + coldiff][pos.second - rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second - rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + coldiff, pos.second - rowdiff>)));
+        }
+    }
+
+    if (pos.first - coldiff >= 0 && pos.second + rowdiff < boardSize) {
+        if (board[pos.first - coldiff][pos.second + rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second + rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second + rowdiff>)));
+        }
+    }
+    
+    if (pos.first - coldiff >= 0 && pos.second - rowdiff >= 0) {
+        if (board[pos.first - coldiff][pos.second - rowdiff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second - rowdiff>)));
+        }else {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - coldiff, pos.second - rowdiff>)));
+        }
+    }
+
 }
 
 void Board::pScan(int col, int movesCount, pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
     // Todo
+
+    int diff = 0;
+    if (col == 0) {
+        //white 
+        diff = -1;
+    } else {
+        diff = 1;
+    }
+
+    if (movesCount == 0) {
+        if (pos.second + (2 * diff) < boardSize && pos.second + (2 * diff) >= 0) {
+            if (board[pos.first][pos.second + (2 * diff)] == nullptr) {
+                moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first, pos.second + (2 * diff)>)));
+            }
+        }
+    }
+
+    if (pos.second + diff < boardSize && pos.second + diff >= 0) {
+        if (board[pos.first][pos.second + diff] == nullptr) {
+            moves[0].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first, pos.second + diff>)));
+        }
+    }
+
+    //Captures
+    if (pos.first + 1 < boardSize && pos.second + diff < boardSize && pos.second + diff >= 0) {
+        if (board[pos.first + 1][pos.second + diff] != nullptr) {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first + 1, pos.second + diff>)));
+        }
+    }
+
+    if (pos.first - 1 >= 0 && pos.second + diff < boardSize && pos.second + diff >= 0) {
+        if (board[pos.first - 1][pos.second + diff] != nullptr) {
+            moves[1].emplace_back(make_unique<Basic>(get(pos), pos, std::pair<int, int>(pos.first - 1, pos.second + diff>)));
+        }
+    }
 }
 
 bool Board::isCheck(std::pair<int, int> pos) {
-    // Todo
+    
 }
 
 void Board::scan(int iv[9], vector<vector<unique_ptr<Move>>> & moves){
