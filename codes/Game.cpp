@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Game::Game(char * player[3]): round{0}, players{}, history{} {
+Game::Game(char * player[3]): round{1}, players{}, history{} {
     // set players
     addPlayer(0, player[1]);
     addPlayer(1, player[2]);
@@ -52,29 +52,33 @@ int Game::processRound(){
         return 0;
     }
 
-    // make the move
+    // select the move
     string decision{pMove->move(possibleMoves)};
     
     if (decision == "undo") {
         undoRound();
         return 1;
-
     }
-    if (decision == "") {
-        decision = smartMove(possibleMoves, 8);
-    }
-    else if (decision[0] >= '1' && decision[0] <= '9'){
-
-    }
-    else if (decision.length() == 3) {
-
+    else if (decision.length() >= 4) {
+        history.push_back(board.makeMove(decision));
     }
     else {
-        cout << "something is wrong at processRound" << endl;
-        return 0;
+        if (decision[0] >= '1' && decision[0] <= '9'){
+            decision = smartMove(possibleMoves, decision[0]-'0');
+        } // single digit case
+        else if (decision.length() == 3) {
+            
+        } // selected move case
+        else {
+            cout << "something is wrong at processRound" << endl;
+            return 0;
+        }
+        history.push_back(move(possibleMoves[decision[0]-'0'][decision[1]-'0']));
     }
 
-
+    // do the move
+    history.back().get()->do();
+    return 1;
 }
 
 void Game::processGame(){
@@ -85,11 +89,11 @@ void Game::processGame(){
     #endif
 
     printGame(*this);
-    /*
-    while (state != 0){
-        processRound();
+    
+    int state = 1;
+    while (state == 1){
+        state = processRound();
     }
-    */
 }
 
 void Game::init(){

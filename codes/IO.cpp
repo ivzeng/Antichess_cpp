@@ -26,8 +26,8 @@ bool readDecision(istream & in, string & decision) {
 
 void getDecision(istream & in, string & decision){
     while (!readDecision(cin, decision)) {
-        err_decision();
-        decisionInstruction();
+        err_decision(cerr);
+        decisionInstruction(cerr);
     }
 }
 
@@ -78,12 +78,12 @@ ostream & operator<<(ostream & out, const Piece & piece){
 /* check inputs */
 int checkArgv(int argc, char * argv[]){
     if (argc != 3){
-        err_argc();
+        err_argc(cerr);
         return 0;
     }
     if ((argv[1][0] != 'h' && argv[1][0] != 'H' && argv[1][0] != 'c' && argv[1][0] != 'C') 
         || (argv[2][0] != 'h' && argv[2][0] != 'H' && argv[2][0] != 'c' && argv[2][0] != 'C') ){
-        err_argvType();
+        err_argvType(cerr);
         return 0;
     }
     return 1;
@@ -91,37 +91,37 @@ int checkArgv(int argc, char * argv[]){
 
 
 /* error / warning messages */
-void err_argc(){
-    cerr << "error: incorrect number of arguments;" << endl;
-    argvInstruction();
+void err_argc(ostream & out){
+    out << "error: incorrect number of arguments;" << endl;
+    argvInstruction(cerr);
 }
-void err_argvType(){
-    cerr << "error: invalid type of arguments;" << endl;
-    argvInstruction();
-}
-
-void err_decision(){
-    cerr << "error: invalid move" << endl;
+void err_argvType(ostream & out){
+    out << "error: invalid type of arguments;" << endl;
+    argvInstruction(cerr);
 }
 
-void warning_invalidMove(){
-    cerr << "warning: your move is not valid!" << endl;
+void err_decision(ostream & out){
+    out << "error: invalid move" << endl;
+}
+
+void warning_invalidMove(ostream & out){
+    out << "warning: your move is not valid!" << endl;
 }
 
 /* instructions / messages */
 
-void argvInstruction(){
-    cerr << "please make sure there are exactly 2 arguments that each either starts with 'h' (human) or 'c' computer." << endl;
+void argvInstruction(ostream & out){
+    out << "please make sure there are exactly 2 arguments that each either starts with 'h' (human) or 'c' computer." << endl;
 }
 
-void requireDecision() {
-    cerr << "please make a move" << endl;
+void requireDecision(ostream & out) {
+    out << "please make a move" << endl;
 }
 
-void decisionInstruction(){
-    cerr << "please enter either:\n     a move in correct coordinate algebraic notation (e.g. e2e4), or\n     'undo' to undo a move, or \n [0-9] to get a hint, or \n enter to use the pervious decision (if there is)"  << endl;
+void decisionInstruction(ostream & out){
+    out  << "please enter either:\n     a move in correct coordinate algebraic notation (e.g. e2e4), or\n     'undo' to undo a move, or \n [0-9] to get a hint, or \n enter to use the pervious decision (if there is)"  << endl;
 }
 
-void msgStartGame(){
-    cerr << 'game started' << endl;
+void msgStartGame(ostream & out){
+    out << 'game started' << endl;
 }

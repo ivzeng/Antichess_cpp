@@ -36,18 +36,18 @@ int checkArgv(int argc, char * argv[]);
 
 /*std err*/
 // prints error code about the argument
-void err_argc();                        // incorrect number of argv
-void err_argvType();                    // incorrect type of argv
+void err_argc(std::ostream & out);                        // incorrect number of argv
+void err_argvType(std::ostream & out);                    // incorrect type of argv
 
-void err_decision();                    // incorrect decision input
+void err_decision(std::ostream & out);                    // incorrect decision input
 
-void warning_invalidMove();
+void warning_invalidMove(std::ostream & out);
 
 /* Instructions / Messages */
-void argvInstruction();                 // hints for valid arguments
-void requireDecision();
-void decisionInstruction();
-void msgStartGame();
+void argvInstruction(std::ostream & out);                 // hints for valid arguments
+void requireDecision(std::ostream & out);
+void decisionInstruction(std::ostream & out);
+void msgStartGame(std::ostream & out);
 
 
 
