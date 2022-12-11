@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Game::Game(char * player[3]): round{1}, players{}, history{} {
+Game::Game(char * player[3]): round{0}, players{}, history{} {
     // set players
     addPlayer(0, player[1]);
     addPlayer(1, player[2]);
@@ -41,6 +41,7 @@ const std::vector<std::unique_ptr<Player>> & Game::getPlayer() const {
 int Game::processRound(){
     Player * pMove = players[round%2].get();
     Player * pWait = players[(round+1)%2].get();
+    round += 1;
     unique_ptr<Board> board{getBoard()};
     vector<vector<unique_ptr<Move>>> possibleMoves{vector<vector<unique_ptr<Move>>>(4, vector<unique_ptr<Move>>{})};
 
@@ -77,7 +78,7 @@ int Game::processRound(){
     }
 
     // do the move
-    history.back().get()->do();
+    history.back().get()->do(round);
     return 1;
 }
 
