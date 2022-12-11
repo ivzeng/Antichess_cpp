@@ -56,7 +56,7 @@ class Castling : public Move{
     Piece * rook;
     /* function */
 public:
-    Castling(Piece* piece,  Piece * rook, const std::pair<int,int> & from, const std::pair<int,int> & to);
+    Castling(Piece* piece,  Piece * rook, const std::pair<int,int> & fromK, const std::pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR);
 };
 
 // converts the coordinate algebraic notation into the coordinate system used by the program

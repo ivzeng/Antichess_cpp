@@ -38,6 +38,8 @@ class Board{
     //      d is the direction, in {-1,1})
     void pScan(int col, int movesCount, std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
+    void castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    
     //checks if king at pos is in check
     bool isCheck(std::pair<int, int> pos);
 

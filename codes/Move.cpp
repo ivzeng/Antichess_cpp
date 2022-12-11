@@ -34,7 +34,7 @@ Capture::Capture(Piece * piece, Piece * capturedPiece, const pair<int,int> & fro
 
 Promotion::Promotion(Piece * piece, Piece * promotion, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, promotion{promotion} {}
 
-Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, rook{rook} {}
+Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & fromK, const pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR) : Move{piece, fromK, toK}, rook{rook} {}
 
 
 

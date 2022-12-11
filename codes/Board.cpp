@@ -285,8 +285,67 @@ void Board::pScan(int col, int movesCount, pair<int,int> pos, vector<vector<uniq
     }
 }
 
+void Board::castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves) {
+    //Neither the king nor the rook has previously moved.
+    //There are no pieces between the king and the rook.
+    //The king is not currently in check.
+    //The king does not pass through a square that is attacked by an opposing piece.
+
+    if (movesCountKing == 0 && movesCountRook == 0){
+        bool isPossible = true;
+
+        //Right side
+        for (int i = posK.first + 1; i < posR.first; ++i) {
+            if (board[i][posK.second] != nullptr) {
+                isPossible = false;
+            }
+        }
+
+        if (isCheck(posK)) {
+            isPossible = false;
+        }
+
+        std::pair newposK = std::pair<int, int>(posK.first + 2, posK.second>);
+        std::pair newposR = std::pair<int, int>(posR.first - 2, posR.second>);
+
+        if (isCheck(newposK)) {
+            isPossible = false;
+        }
+
+        if (isPossible) {
+            moves[0].emplace_back(make_unique<Basic>(new Castling{get(posK), get(posR), posK, newposK, posR, newposR}));
+        }
+
+        //Left Side
+        isPossible = true;
+
+        for (int i = posK.first - 1; i > posR.first; --i) {
+            if (board[i][posK.second] != nullptr) {
+                isPossible = false;
+            }
+        }
+
+        if (isCheck(posK)) {
+            isPossible = false;
+        }
+
+        std::pair newposK = std::pair<int, int>(posK.first - 2, posK.second>);
+        std::pair newposR = std::pair<int, int>(posR.first + 3, posR.second>);
+
+        if (isCheck(newposK)) {
+            isPossible = false;
+        }
+
+        if (isPossible) {
+            moves[0].emplace_back(make_unique<Basic>(new Castling{get(posK), get(posR), posK, newposK, posR, newposR}));
+        }
+    }
+}
+
+// NEED TO REDO
+//Iterate over oposing players pieces
 bool Board::isCheck(std::pair<int, int> pos) {
-    
+    return false;
 }
 
 void Board::scan(int iv[9], vector<vector<unique_ptr<Move>>> & moves){
