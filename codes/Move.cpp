@@ -4,11 +4,8 @@
 
 using namespace std;
 
-Move::Move() {}
-
 Move::Move(Piece * piece, const pair<int,int> & from, const pair<int,int> & to) : piece{piece}, from{from}, to{to} {}
 
-Move::~Move() {}
 
 bool Move::operator==(const string & can){
     return getX(can[0]) == from.first && getY(can[1]) == from.second && getX(can[2]) == to.first && getX(can[3]) == to.second;
@@ -70,24 +67,24 @@ void Capture::reverse(Player & player) {
 
 void Promotion::act(int round, Player & player) {
     piece->setStatus(0);
-    player.getPieces().emplace_back(move(promotion));
+    player.addPiece(promotion);
 }
 
 void Promotion::reverse(Player & player) {
     piece->setStatus(1);
-    player.getPieces().pop_back();
+    player.popPiece();
 }
 
 void CapturePromotion::act(int round, Player & player) {
     piece->setStatus(0);
     capturedPiece->setStatus(0);
-    player.getPieces().emplace_back(move(promotion));
+    player.addPiece(promotion);
 }
 
 void CapturePromotion::reverse(Player & player) {
     piece->setStatus(1);
     capturedPiece->setStatus(1);
-    player.getPieces().pop_back();
+    player.popPiece();
 }
 
 void Castling::act(int round, Player & player) {

@@ -201,3 +201,28 @@ unique_ptr<Piece> Knight::clone() {
 unique_ptr<Piece> Pawn::clone() {
     return make_unique<Pawn>(*this);
 }
+
+Piece * makePiece(int colour, const char & p, const std::pair<int,int> & pos){
+    switch (p)
+    {
+    case 'q':
+    case 'Q':
+        return new Queen(colour, pos);
+        break;
+    case 'r':
+    case 'R':
+        return new Rook(colour, pos);
+        break;
+    case 'b':
+    case 'B':
+        return new Bishop(colour, pos);
+        break;
+    case 'n':
+    case 'N':
+        return new Knight(colour, pos);
+        break;
+    default:
+        return nullptr;
+        break;
+    }
+}

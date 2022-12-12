@@ -123,7 +123,7 @@ void decisionInstruction(ostream & out){
 }
 
 void msgStartGame(ostream & out){
-    out << 'game started' << endl;
+    out << "game started" << endl;
 }
 
 void beginRoundNote(ostream & out, const Board & board, const int & round){

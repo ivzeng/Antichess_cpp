@@ -42,8 +42,10 @@ public:
 
     // gets field
     int getColour() const;
-    std::vector<std::unique_ptr<Piece>> & getPieces();
-    
+    const std::vector<std::unique_ptr<Piece>> & getPieces() const;
+
+    void addPiece(std::unique_ptr<Piece> & p);
+    void popPiece();
 };
 
 class Human: public Player{

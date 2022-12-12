@@ -86,7 +86,7 @@ string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
 
         // search the move
         search(decision, moves);
-        if (decision.length() == 3 && decision[2] == '0' || decision.length() != 3) {
+        if ((decision.length() == 3 && decision[2] == '0') || decision.length() != 3) {
             warning_invalidMove(cerr);
             prevDecision = decision;
             #ifdef DEBUG
@@ -122,6 +122,14 @@ int Player::getColour() const {
     return colour;
 }
 
-vector<unique_ptr<Piece>> & Player::getPieces() {
+const vector<unique_ptr<Piece>> & Player::getPieces() const {
     return pieces;
+}
+
+void Player::addPiece(unique_ptr<Piece> & p) {
+    pieces.emplace_back(std::move(p));
+}
+
+void Player::popPiece() {
+    pieces.pop_back();
 }

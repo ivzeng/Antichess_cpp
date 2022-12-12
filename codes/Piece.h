@@ -139,29 +139,6 @@ public:
     Pawn(int colour, const std::pair<int, int> & pos);
 };
 
-Piece * makePiece(int colour, const char & p, std::pair<int,int> pos){
-    switch (p)
-    {
-    case 'q':
-    case 'Q':
-        return new Queen(colour, pos);
-        break;
-    case 'r':
-    case 'R':
-        return new Rook(colour, pos);
-        break;
-    case 'b':
-    case 'B':
-        return new Bishop(colour, pos);
-        break;
-    case 'n':
-    case 'N':
-        return new Knight(colour, pos);
-        break;
-    default:
-        return nullptr;
-        break;
-    }
-}
+Piece * makePiece(int colour, const char & p, const std::pair<int,int> & pos);
 
 #endif

@@ -43,7 +43,7 @@ int Game::processRound(){
     Player * pWait = players[(round+1)%2].get();
     round += 1;
     unique_ptr<Board> board{getBoard()};
-    vector<vector<unique_ptr<Move>>> possibleMoves{vector<vector<unique_ptr<Move>>>(4, vector<unique_ptr<Move>>{})};
+    vector<vector<unique_ptr<Move>>> possibleMoves(2);
 
     // search for move
     pMove->searchMoves(round, *board, possibleMoves);
@@ -61,7 +61,7 @@ int Game::processRound(){
         return 1;
     }
     else if (decision.length() >= 4) {
-        history.push_back((*board).makeMove(decision));
+        history.push_back((*board).makeMove(round%2, decision));
     }
     else {
         if (decision[0] >= '1' && decision[0] <= '9'){

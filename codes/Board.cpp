@@ -76,7 +76,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
             moves[1].emplace_back(unique_ptr<Move> {new Promotion{get(from), new Knight{col, to}, from, to}});
         }
         else {
-            moves.emplace_back(unique_ptr<Move> {new Basic{get(from), from, to}});
+            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, to}});
         }
     }
     // capture move / promotion
@@ -126,8 +126,6 @@ bool Board::kSafeMove(const std::pair<int,int> & to) {
 
 //pos = (col, row)
 void Board::hvScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
-    Piece * cur = get(pos);
-
     //scan right
     for (int i = pos.first + 1;  i < BOARD_SIZE && insertMove(pos, pair<int, int>{i, pos.second}, moves); ++i);
 
@@ -177,7 +175,7 @@ void Board::kScan(vector<vector<unique_ptr<Move>>> & moves){
     }
 
     //up right
-    if (kingPos.first + 1 < BOARD_SIZE, kingPos.second + 1 < BOARD_SIZE) {
+    if (kingPos.first + 1 < BOARD_SIZE && kingPos.second + 1 < BOARD_SIZE) {
         kInsertMove(pair<int, int>{kingPos.first+1, kingPos.second+1}, moves);
     }
 
@@ -331,7 +329,7 @@ bool Board::isCheck(std::pair<int, int> pos) {
 
 unique_ptr<Move> Board::makeMove(int colour,  std::string can) {
     pair<int,int>from{getX(can[0]), getY(can[1])};
-    pair<int,int>to{getX(can[3]), getY(can[4])};
+    pair<int,int>to{getX(can[2]), getY(can[3])};
     if (can.length() == 4) {
         if (get(to)) {
             return unique_ptr<Move> {new Capture{get(from), get(to), from, to}};
@@ -342,7 +340,10 @@ unique_ptr<Move> Board::makeMove(int colour,  std::string can) {
     }
     else {
         if (get(to)) {
-            return unique_ptr<move> {new CapturePromotion{get(from), get(to), ... , from, to}}
+            return unique_ptr<Move> {new CapturePromotion{get(from), get(to), makePiece(colour, can[4], to) , from, to}};
+        }
+        else {
+            return unique_ptr<Move> {new Promotion{get(from), makePiece(colour, can[4], to) , from, to}};
         }
     }
 }
