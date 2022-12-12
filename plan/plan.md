@@ -44,7 +44,11 @@ each player will take a turn at each round. Specifically, the Game will classify
 
 ```bool Board::safeMove(std::pair<int,int> from, std::pair<int,int> to)```: determine if the curPlayer's king is safe if the piece at position ```from``` is moved to ```to```; (when 'moving' the piece, just do it on the board, not the pieces! remember to undo it in the end (be careful to the capture moves))
 
+```bool Board::kSafeMove(std::pair<int,int> to)```: determine if the curPlayer's king is safe if the king moves to ```to```; (when 'moving' the piece, just do it on the board, not the pieces! remember to undo it in the end (be careful to the capture moves))
+
 ```bool Board::safe()```: determine if the curPlayer's king is safe at the time (helper function for ```safeMove```)
+
+```bool Board::safe(std::pair<int,int> pos)```: determine if the pos is safe at the time (helper function for ```safeMove```)
 
 more scaning if required
 

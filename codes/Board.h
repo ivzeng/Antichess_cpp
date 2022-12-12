@@ -12,8 +12,7 @@ class Move;
 class Board{
     /* fields */
     Piece * board[8][8];
-    int boardSize = 8;
-
+    std::pair<int,int> kingPos{};
     /* function */
     // given a position, assume there is a rook,
     // inserts the positions the rook can go before encountering a piece into moves[0];
@@ -25,8 +24,8 @@ class Board{
     void dScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
     // do hvScan except that rook becomes a King 
-    //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 2 or |i| = 2, |j| = 1)
-    void kScan(std::pair<int,int> pos,  std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 1)
+    void kScan(std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
     // do hvScan except that rook becomes a knight 
     //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 2 or |i| = 2, |j| = 1)
@@ -43,8 +42,21 @@ class Board{
     //checks if king at pos is in check
     bool isCheck(std::pair<int, int> pos);
 
-    // get the direction bases on the colour.
-    int getD(int colour);
+    // inserts the move (from, to) (either basic or capture) (true iff the move is not capture)
+    bool insertMove(const std::pair<int,int> & from, const std::pair<int,int> & to, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    // inserts the move for king
+    void kInsertMove(const std::pair<int,int> & to, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    void pInsertMove(int diff, const std::pair<int,int> & from, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    // determine if a (not king's) move is safe/valid
+    bool safeMove(const std::pair<int,int> & from, const std::pair<int,int> & to);
+
+    // determine if a king's move is safe/valid
+    bool kSafeMove(const std::pair<int,int> & to);
+
+
 public:
     Board();
 
@@ -54,12 +66,18 @@ public:
     // get the piece at (x,y) position
     Piece * get(int x, int y) const;
 
-    Piece * get(std::pair<int, int> pos) const;
+    Piece * get(const std::pair<int, int> & pos) const;
     // return the (x,y) position of the board
     char getRepresentation(int x, int y) const;
 
     // set (x, y)
     void set(int x, int y, Piece * p);
     void set(const std::pair<int,int> & position, Piece * p);
+
+    // set kingPos
+    void setKP(const std::pair<int,int> & position);
 };
+
+const int BOARD_SIZE = 8;
+
 #endif

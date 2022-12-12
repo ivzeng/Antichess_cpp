@@ -49,7 +49,7 @@ int Game::processRound(){
     pMove->searchMoves(*board, possibleMoves);
 
     // check game status 
-    if (!hasValidMove(possibleMoves)) {
+    if (getValidMove(possibleMoves) == -1) {
         return 0;
     }
 

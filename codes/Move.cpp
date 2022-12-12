@@ -3,6 +3,8 @@
 
 using namespace std;
 
+Move::Move() {}
+
 Move::Move(Piece * piece, const pair<int,int> & from, const pair<int,int> & to) : piece{piece}, from{from}, to{to} {}
 
 Move::~Move() {}
@@ -28,22 +30,24 @@ string Promotion::getRepresentaion(){
     return Move::getRepresentaion() + char{promotion->getRepresentation() < 'a' ? promotion->getRepresentation() + 'A' : promotion->getRepresentation()};
 }
 
+
 Basic::Basic(Piece * piece, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to} {}
 
 Capture::Capture(Piece * piece, Piece * capturedPiece, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, capturedPiece{capturedPiece} {}
 
 Promotion::Promotion(Piece * piece, Piece * promotion, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, promotion{promotion} {}
 
+CapturePromotion::CapturePromotion(Piece * piece, Piece * promotion, Piece * captured, const pair<int,int> & from, const pair<int,int> & to) : Capture{piece, captured, from, to}, Promotion{piece, promotion, from, to} {}
+
 Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & fromK, const pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR) : Move{piece, fromK, toK}, rook{rook} {}
 
 
 
 int getX(const char & x){
-    if (x < 'a') return (x-'A');
-    return x-'a';
+    return (x < 'a') ? (x-'A') : (x-'a');
 }
 int getY(const char & y){
-    return y-'1';
+    return 8-(y-'0');
 }
 
 bool validX(const char & x){
@@ -76,10 +80,10 @@ void search(string & move, const vector<vector<unique_ptr<Move>>> & moves){
     }
 }
 
-bool hasValidMove(const vector<vector<unique_ptr<Move>>> & moves) {
-    #ifdef DEBUG
-    if (moves[3].size()!= 0 || moves[4].size()!= 0)
-        return true;
-    #endif
-    return moves[0].size()!= 0 || moves[1].size()!= 0;
+int getValidMove(const vector<vector<unique_ptr<Move>>> & moves) {
+    int i = 0;
+    while (i < 2 && moves[i].size() == 0){
+        i += 1;
+    }
+    return i;
 }

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Piece::Piece(int colour, const pair<int,int> & pos): colour{colour}, status{1}, position{pos} {}
+Piece::Piece(int colour, const pair<int,int> & pos): colour{colour}, status{1}, moveCount{0}, position{pos} {}
 
 King::King(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
@@ -14,18 +14,18 @@ Rook::Rook(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
 Knight::Knight(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
-Pawn::Pawn(int colour, const pair<int,int> & pos) :  Piece{colour, pos}, movesCount{0}, recentMove{-1} {}
+Pawn::Pawn(int colour, const pair<int,int> & pos) :  Piece{colour, pos}, recentMove{-1} {}
 
 
 void Piece::movePiece(const pair<int,int> & to, int round){
     position.first = to.first;
     position.second = to.second;
+    moveCount += 1;
 }
 
 void Pawn::movePiece(const pair<int,int> & to, int round) {
     Piece::movePiece(to, round);
-    recentMove = round;
-    movesCount += 1;
+    recentMove.emplace_back(round);
 }
 
 void Piece::move(const pair<int,int> & to, int round){
@@ -73,28 +73,28 @@ int Pawn::value() const {
 }
 
 
-void King::scan(int iv[IV_LEN]) const {
+void King::scan(int iv[SO_LEN]) const {
     iv[2] = 1;
 }
 
-void Queen::scan(int iv[IV_LEN]) const {
+void Queen::scan(int iv[SO_LEN]) const {
     iv[3] = 1;
     iv[4] = 1;  // horizontal, vertical and diagonal scan
 }
 
-void Bishop::scan(int iv[IV_LEN]) const {
+void Bishop::scan(int iv[SO_LEN]) const {
     iv[4] = 1;  // diagonal scan
 }
 
-void Rook::scan(int iv[IV_LEN]) const {
+void Rook::scan(int iv[SO_LEN]) const {
     iv[3] = 1;  // horizontal and vertical scan
 }
 
-void Knight::scan(int iv[IV_LEN]) const {
+void Knight::scan(int iv[SO_LEN]) const {
     iv[5] = 1;  // knight's moves scan
 }
 
-void Pawn::scan(int iv[IV_LEN]) const {
+void Pawn::scan(int iv[SO_LEN]) const {
     iv[6] = 1;  // Pawn's move scan
 }
 

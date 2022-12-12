@@ -2,6 +2,9 @@
 #define MOVE_H
 
 #include <utility>
+#include <string>
+#include <vector>
+#include <memory>
 
 class Piece;
 
@@ -19,9 +22,10 @@ protected:
     std::pair<int,int> to;          // positions
     virtual std::string getRepresentaion();
     /* function */
-public:
+    Move(); //  default constructor
     Move(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);  // constructor, take Move on the piece
     virtual ~Move() = 0;
+public:
     bool operator==(const std::string & can);
     std::string representation();       // return the coordinate algebraic notation of the move (e2e4, e7e8q (promotion))
 };
@@ -34,7 +38,7 @@ public:
     Basic(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
-class Capture : public Move{
+class Capture : virtual public Move{
     /* fields */
     Piece * capturedPiece;
     /* function */
@@ -42,13 +46,19 @@ public:
     Capture(Piece* piece,Piece * capturedPiece, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
-class Promotion : public Move{
+class Promotion : virtual public Move{
     /* fields */
-    Piece * promotion;
+    std::unique_ptr<Piece> promotion;
     std::string getRepresentaion() override;
     /* function */
 public:
     Promotion(Piece* piece,  Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);
+};
+
+class CapturePromotion : public Capture, public Promotion {
+    /* function */
+public:
+    CapturePromotion(Piece* piece,  Piece * promotion, Piece * capture, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
 class Castling : public Move{
@@ -70,6 +80,7 @@ bool validY(const char & y);
 // searches the move in coordinate algebraic notation from moves, puts the indices of the move in moves and the validity into move (for example, moves becomes "011": the move is at moves[0][1], and it is valid). If the move is not in moves, move will be unchanged 
 void search(std::string & move, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
-bool hasValidMove(const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+// get the index of the row of moves that is not empty, returns -1 if all rows are empty
+int getValidMove(const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
 #endif

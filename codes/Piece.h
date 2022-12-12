@@ -19,7 +19,9 @@ class Piece{
 protected:
     int colour;                             //  colour of the piece: 1 - black, 0 - white
     int status;                             //  status of the piece: 1 - alscanOpte, 0 - rip
+    int moveCount;
     std::pair<int,int> position;            //  position of the piece on the board
+
     /* functions */
     virtual int value() const = 0;                  // value of the piece         
     virtual void movePiece(const std::pair<int,int> & to, int round); // move a piece
@@ -124,8 +126,7 @@ public:
 
 class Pawn : public Piece{
     /* fields */
-    int movesCount;          // number of Moves taken
-    int recentMove;          // recent round which move this piece
+    std::vector<int> recentMove;          // all rounds which move this piece
     /* functions */
     int value() const override;
     void movePiece(const std::pair<int,int> & to, int round) override;
