@@ -80,35 +80,31 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
         }
     }
     // capture move / promotion
-    if (from.first+1 < BOARD_SIZE) {
-        if (board[from.second+dir][from.first+1]){
-            Piece * target = board[from.second+dir][from.first+1]; 
+    if (from.first+1 < BOARD_SIZE && board[from.second+dir][from.first+1]){
+        Piece * target = board[from.second+dir][from.first+1]; 
             pair<int,int> to{from.first + 1, from.second + dir}; 
-            if (prom) {
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target,new Queen{col, to}, from, to}});
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Rook{col, to}, from, to}});
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to}, from, to}});
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Knight{col, to}, from, to}});
-            }
-            else {
-                moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first+1, from.second + dir}}});
-            }
+        if (prom) {
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target,new Queen{col, to}, from, to}});
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Rook{col, to}, from, to}});
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to}, from, to}});
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Knight{col, to}, from, to}});
+        }
+        else {
+            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first+1, from.second + dir}}});
         }
     }
 
-    if (from.first-1 < BOARD_SIZE) {
-        if (board[from.second+dir][from.first-1]){
-            Piece * target = board[from.second+dir][from.first-1]; 
-            pair<int,int> to{from.first - 1, from.second + dir}; 
-            if (prom) {
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Queen{col, to}, from, to}});
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Rook{col, to}, from, to}});
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to},  from, to}});
-                moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target,new Knight{col, to}, from, to}});
-            }
-            else {
-                moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first-1, from.second + dir}}});
-            }
+    if (from.first-1 < BOARD_SIZE && board[from.second+dir][from.first-1]){
+        Piece * target = board[from.second+dir][from.first-1]; 
+        pair<int,int> to{from.first - 1, from.second + dir}; 
+        if (prom) {
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Queen{col, to}, from, to}});
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Rook{col, to}, from, to}});
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to},  from, to}});
+            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target,new Knight{col, to}, from, to}});
+        }
+        else {
+            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first-1, from.second + dir}}});
         }
     }
 }
