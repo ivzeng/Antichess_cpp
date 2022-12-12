@@ -31,6 +31,7 @@ unique_ptr<Board> Game::getBoard() const{
     unique_ptr<Board> board = make_unique<Board>();
     players[0].get()->updateBoard(*board);
     players[1].get()->updateBoard(*board);
+    board->setKP(players[round%2]->getPieces()[0]->getPosition());
     return board;
 }
 
