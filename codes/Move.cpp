@@ -6,9 +6,11 @@ using namespace std;
 
 Move::Move(Piece * piece, const pair<int,int> & from, const pair<int,int> & to) : piece{piece}, from{from}, to{to} {}
 
+Move::Move() {}
+
 
 bool Move::operator==(const string & can){
-    return getX(can[0]) == from.first && getY(can[1]) == from.second && getX(can[2]) == to.first && getX(can[3]) == to.second;
+    return getX(can[0]) == from.first && getY(can[1]) == from.second && getX(can[2]) == to.first && getY(can[3]) == to.second;
 }
 
 void Move::process(int round,Player & player) {
@@ -19,11 +21,11 @@ void Move::undo(Player & player) {
     reverse(player);
 }
 
-string Move::representation(){
+string Move::representation() const{
     return getRepresentaion();
 }
 
-string Move::getRepresentaion(){
+string Move::getRepresentaion() const{
     string res{"    "};
     res[0] = from.first+'a';
     res[1] = from.second+'1';
@@ -32,7 +34,7 @@ string Move::getRepresentaion(){
     return res;
 }
 
-string Promotion::getRepresentaion(){
+string Promotion::getRepresentaion() const{
     string rep = Move::getRepresentaion() + promotion->getRepresentation();
     if  (promotion->getRepresentation() < 'a') {
         rep[4] += 'a'-'A';
@@ -47,7 +49,7 @@ Capture::Capture(Piece * piece, Piece * capturedPiece, const pair<int,int> & fro
 
 Promotion::Promotion(Piece * piece, Piece * promotion, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, promotion{promotion} {}
 
-CapturePromotion::CapturePromotion(Piece * piece, Piece * captured, Piece * promotion, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, capturedPiece{captured}, promotion{promotion} {}
+CapturePromotion::CapturePromotion(Piece * piece, Piece * captured, Piece * promotion, const pair<int,int> & from, const pair<int,int> & to) : Promotion{piece, promotion, from, to}, capturedPiece{captured} {}
 
 Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & fromK, const pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR) : Move{piece, fromK, toK},rookMove{new Basic{rook, fromR, toR}} {}
 
@@ -123,11 +125,12 @@ void search(string & move, const vector<vector<unique_ptr<Move>>> & moves){
         for (size_t j = 0; j < moves[i].size(); j += 1){
             if ((*moves[i][j]) == move){
                 move = "  1";
-                move[0] = i;
-                move[1] = j;
+                move[0] = i + '0';
+                move[1] = j + '0';
                 while (i > 0) {
                     i -= 1;
-                    if (moves[i].size() > 0){
+                    if (moves[i]
+                    .size() > 0){
                         move[2] = '0';
                         break;
                     }

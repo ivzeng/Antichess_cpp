@@ -44,10 +44,11 @@ bool Board::insertMove(const std::pair<int,int> & from, const std::pair<int,int>
         moves[1].emplace_back(unique_ptr<Move>{new Basic{get(from), from, to}});
         return true;
     }
-    else {
+    else if (get(from)->getColour() != get(to)->getColour()) {
         moves[0].emplace_back(unique_ptr<Move>{new Capture{get(from), get(to), from, to}});
         return false;
     }
+    return false;
 }
 
 void Board::kInsertMove(const pair<int,int> & to, vector<vector<unique_ptr<Move>>> & moves) {
@@ -57,7 +58,7 @@ void Board::kInsertMove(const pair<int,int> & to, vector<vector<unique_ptr<Move>
     if (get(to) == nullptr) {
         moves[1].emplace_back(unique_ptr<Move>{new Basic{get(kingPos), kingPos, to}});
     }
-    else {
+    else if (get(to)->getColour() != get(kingPos)->getColour()) {
         moves[0].emplace_back(unique_ptr<Move>{new Capture{get(kingPos), get(to), kingPos, to}});
     }
 }
@@ -80,7 +81,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
         }
     }
     // capture move / promotion
-    if (from.first+1 < BOARD_SIZE && board[from.second+dir][from.first+1]){
+    if (from.first+1 < BOARD_SIZE && board[from.second+dir][from.first+1] && board[from.second+dir][from.first+1]->getColour() != col){
         Piece * target = board[from.second+dir][from.first+1]; 
             pair<int,int> to{from.first + 1, from.second + dir}; 
         if (prom) {
@@ -94,7 +95,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
         }
     }
 
-    if (from.first-1 < BOARD_SIZE && board[from.second+dir][from.first-1]){
+    if (from.first-1 < BOARD_SIZE && board[from.second+dir][from.first-1] && board[from.second+dir][from.first-1]->getColour() != col){
         Piece * target = board[from.second+dir][from.first-1]; 
         pair<int,int> to{from.first - 1, from.second + dir}; 
         if (prom) {
@@ -111,12 +112,12 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
 
 bool Board::safeMove(const std::pair<int,int> & from, const std::pair<int,int> & to) {
     // Todo
-    return false;
+    return true;
 }
 
 bool Board::kSafeMove(const std::pair<int,int> & to) {
     // Todo
-    return false;
+    return true;
 }
 
 
@@ -236,7 +237,7 @@ void Board::nScan(pair<int,int> pos,vector<vector<unique_ptr<Move>>> & moves){
 }
 
 void Board::pScan(int col, int movesCount, int round, pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
-    int dir = (col == 0) ? -1 : 1;
+    int dir = (col == 0) ? 1 : -1;
 
     // move (first time)
     if (movesCount == 0 && !board[pos.second+2*dir][pos.first]) {

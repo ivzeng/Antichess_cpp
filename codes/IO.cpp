@@ -44,7 +44,7 @@ ostream & operator<<(ostream & out, const Game & game){
     // out << "getting the board" << endl;
     out << *game.getPlayer()[0] << endl;
     out << *game.getPlayer()[1] << endl;
-    out << *(game.getBoard());       // prints the board
+    out << *(game.getBoard()) << endl;       // prints the board
     // Todo: more info
     return out; 
 }
@@ -61,7 +61,6 @@ ostream & operator<<(ostream & out, const Board & board){
     for (int x = 0; x < 8; x += 1){
         out << static_cast<char>('a'+ x) << ' ';
     }
-    out << endl;
     return out;
 }
 
@@ -75,7 +74,12 @@ ostream & operator<<(ostream & out, const Player & player){
 }
 
 ostream & operator<<(ostream & out, const Piece & piece){
-    out << piece.getRepresentation() << ": position at (" << piece.getPosition().first << ", " <<  piece.getPosition().second << "), with status " << piece.getStatus() << endl;
+    out << piece.getRepresentation() << ": position at (" << piece.getPosition().first << ", " <<  piece.getPosition().second << "), with status " << piece.getStatus();
+    return out;
+}
+
+ostream & operator<<(std::ostream & out, const Move & move) {
+    out << move.representation();
     return out;
 }
 

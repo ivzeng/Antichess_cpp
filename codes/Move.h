@@ -21,7 +21,7 @@ protected:
     Piece * piece;                  // piece to preform the Move
     std::pair<int,int> from;
     std::pair<int,int> to;          // positions
-    virtual std::string getRepresentaion();
+    virtual std::string getRepresentaion() const;
     /* function */
     Move(); //  default constructor
     Move(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);  // constructor, take Move on the piece
@@ -30,7 +30,7 @@ protected:
 
 public:
     bool operator==(const std::string & can);
-    std::string representation();       // return the coordinate algebraic notation of the move (e2e4, e7e8q (promotion))
+    std::string representation() const;       // return the coordinate algebraic notation of the move (e2e4, e7e8q (promotion))
     void process(int round,Player & player);
     void undo(Player & player);
 };
@@ -60,8 +60,9 @@ public:
 
 class Promotion : virtual public Move{
     /* fields */
+protected:
     std::unique_ptr<Piece> promotion;
-    std::string getRepresentaion() override;
+    std::string getRepresentaion() const override;
 
     /* function */
     void act(int round,Player & player) override;
@@ -71,10 +72,10 @@ public:
     Promotion(Piece* piece,  Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
-class CapturePromotion : public Move {
+class CapturePromotion : public Promotion {
     /* field */
     Piece * capturedPiece;
-    std::unique_ptr<Piece> promotion;
+
     /* function */
     void act(int round, Player & player) override;
     void reverse(Player & player) override;

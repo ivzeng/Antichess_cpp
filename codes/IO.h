@@ -32,6 +32,8 @@ std::ostream & operator<<(std::ostream & out, const Player & player);
 // print piece
 std::ostream & operator<<(std::ostream & out, const Piece & Piece);
 
+std::ostream & operator<<(std::ostream & out, const Move & move);
+
 
 // print the moves set
 void printMoves(std::ostream & out, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);

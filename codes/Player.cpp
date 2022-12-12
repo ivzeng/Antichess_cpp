@@ -69,7 +69,6 @@ string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
     requireDecision(cerr);      // print instruction
     while (true) {
         getDecision(cin, decision); // read until a valid decision is made
-        cout << decision;
         
         if (decision == "") {
             if (prevDecision == "") {

@@ -42,9 +42,9 @@ const std::vector<std::unique_ptr<Player>> & Game::getPlayer() const {
 int Game::processRound(){
     Player * pMove = players[round%2].get();
     Player * pWait = players[(round+1)%2].get();
-    round += 1;
     unique_ptr<Board> board{getBoard()};
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
+    round += 1;
     printGame(*this);
     // search for move
     pMove->searchMoves(round, *board, possibleMoves);
@@ -113,6 +113,8 @@ std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     string res = "  ";
     res[0] = getValidMove(moves) + '0';
     res[1] = '0';
+
+    cout << *moves[res[0]-'0'][res[1]-'0'] << endl;
     return res;
 }
 
