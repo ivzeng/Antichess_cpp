@@ -64,7 +64,7 @@ void Board::kInsertMove(const pair<int,int> & to, vector<vector<unique_ptr<Move>
 
 
 void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<unique_ptr<Move>>> & moves) {
-    int dir = (col == 0) ? -1 : 1;
+    int dir = (col == 0) ? 1 : -1;
     bool prom = from.second+dir == BOARD_SIZE-1 || from.second + dir == 0;
     // normal move / promotion
     if (!board[from.second+dir][from.first]) {
@@ -76,7 +76,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
             moves[1].emplace_back(unique_ptr<Move> {new Promotion{get(from), new Knight{col, to}, from, to}});
         }
         else {
-            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, to}});
+            moves[1].emplace_back(unique_ptr<Move> {new Basic{get(from), from, to}});
         }
     }
     // capture move / promotion
@@ -90,9 +90,9 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
                 moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to}, from, to}});
                 moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Knight{col, to}, from, to}});
             }
-        }
-        else {
-            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first+1, from.second + dir}}});
+            else {
+                moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first+1, from.second + dir}}});
+            }
         }
     }
 
@@ -106,9 +106,9 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
                 moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to},  from, to}});
                 moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target,new Knight{col, to}, from, to}});
             }
-        }
-        else {
-            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first-1, from.second + dir}}});
+            else {
+                moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first-1, from.second + dir}}});
+            }
         }
     }
 }

@@ -33,7 +33,11 @@ string Move::getRepresentaion(){
 }
 
 string Promotion::getRepresentaion(){
-    return Move::getRepresentaion() + char{promotion->getRepresentation() < 'a' ? promotion->getRepresentation() + 'A' : promotion->getRepresentation()};
+    string rep = Move::getRepresentaion() + promotion->getRepresentation();
+    if  (promotion->getRepresentation() < 'a') {
+        rep[4] += 'a'-'A';
+    }
+    return rep;
 }
 
 
@@ -101,7 +105,7 @@ int getX(const char & x){
     return (x < 'a') ? (x-'A') : (x-'a');
 }
 int getY(const char & y){
-    return 8-(y-'0');
+    return y-'1';
 }
 
 bool validX(const char & x){

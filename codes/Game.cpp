@@ -44,7 +44,7 @@ int Game::processRound(){
     round += 1;
     unique_ptr<Board> board{getBoard()};
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
-
+    printGame(*this);
     // search for move
     pMove->searchMoves(round, *board, possibleMoves);
 

@@ -149,7 +149,7 @@ bool Knight::canAttack(const std::pair<int, int> & at) {
 }
 
 bool Pawn::canAttack(const std::pair<int, int> & at) {
-    int dir = (colour == 0) ? -1 : 1;
+    int dir = (colour == 0) ? 1 : -1;
     return at.second == position.second+dir && (at.first == position.first-1 || at.first == position.first+1);
 }
 

@@ -64,8 +64,8 @@ class Promotion : virtual public Move{
     std::string getRepresentaion() override;
 
     /* function */
-    virtual void act(int round,Player & player) override;
-    virtual void reverse(Player & player) override;
+    void act(int round,Player & player) override;
+    void reverse(Player & player) override;
 
 public:
     Promotion(Piece* piece,  Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);

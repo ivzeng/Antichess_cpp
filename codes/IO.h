@@ -2,10 +2,13 @@
 #define IO_H
 
 #include <iostream>
+#include <vector>
+#include <memory>
 class Game;
 class Board;
 class Piece;
 class Player;
+class Move;
 
 /*std in*/
 bool readDecision(std::istream & in, std::string & decision);
@@ -28,6 +31,10 @@ std::ostream & operator<<(std::ostream & out, const Player & player);
 
 // print piece
 std::ostream & operator<<(std::ostream & out, const Piece & Piece);
+
+
+// print the moves set
+void printMoves(std::ostream & out, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
 /* check inputs */
 int checkArgv(int argc, char * argv[]);

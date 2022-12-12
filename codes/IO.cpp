@@ -11,12 +11,16 @@ using namespace std;
 
 // reads decision and checks
 bool readDecision(istream & in, string & decision) {
+    decision = "";
     getline(in, decision);
     if (decision == "") return true;        // select the pervious decision
     if (decision == "undo") return true;    // undo
     if (decision.length() == 1 && decision[0] >= '1' && decision[0] <= '9') return true;    // require program's help (decision[0] is the number of iterations)
     if (decision.length() == 4){
-        return (validX(decision[0]) && validX(decision[1]) && validY(decision[1]) && validY(decision[3]));
+        #ifdef DEBUG
+        cerr << "normal move" << endl;
+        #endif
+        return (validX(decision[0]) && validX(decision[2]) && validY(decision[1]) && validY(decision[3]));
     }   // move (not promotion)
     if (decision.length() == 5) {
         return validX(decision[0]) && validX(decision[1]) && validY(decision[1]) && validY(decision[3]) && (decision[4] == 'p'||decision[4] == 'P');
@@ -55,7 +59,7 @@ ostream & operator<<(ostream & out, const Board & board){
     }
     out << "  ";
     for (int x = 0; x < 8; x += 1){
-        out << static_cast<char>('A'+ x) << ' ';
+        out << static_cast<char>('a'+ x) << ' ';
     }
     out << endl;
     return out;
@@ -129,4 +133,16 @@ void msgStartGame(ostream & out){
 void beginRoundNote(ostream & out, const Board & board, const int & round){
     out << board;
     out << "Player " << (round%2==0 ? "white(" : "black(") << (round%2+1) << "): " << endl; 
+}
+
+void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
+    out << "capture moves: ";
+    for (const auto & m : moves[0]) {
+        out << (*m).representation() << ' ';
+    }
+    cout << endl << "placeful moves: ";
+    for (const auto & m : moves[1]) {
+        out << (*m).representation() << ' ';
+    }
+    cout << endl;
 }
