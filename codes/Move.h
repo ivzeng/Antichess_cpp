@@ -7,6 +7,7 @@
 #include <memory>
 
 class Piece;
+class Player;
 
 /* Move class */
 // A Move can be a
@@ -24,16 +25,23 @@ protected:
     /* function */
     Move(); //  default constructor
     Move(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);  // constructor, take Move on the piece
-    virtual ~Move() = 0;
+    virtual void act(int round, Player & player) = 0;
+    virtual void reverse(Player & player) = 0;
+
 public:
     bool operator==(const std::string & can);
     std::string representation();       // return the coordinate algebraic notation of the move (e2e4, e7e8q (promotion))
+    void process(int round,Player & player);
+    void undo(Player & player);
 };
 
 class Basic : public Move{
     /* fields */
 
     /* function */
+    void act(int round, Player & player) override;
+    void reverse(Player & player) override;
+
 public:
     Basic(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
@@ -41,7 +49,11 @@ public:
 class Capture : virtual public Move{
     /* fields */
     Piece * capturedPiece;
+
     /* function */
+    virtual void act(int round, Player & player) override;
+    virtual void reverse(Player & player) override;
+
 public:
     Capture(Piece* piece,Piece * capturedPiece, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
@@ -50,21 +62,35 @@ class Promotion : virtual public Move{
     /* fields */
     std::unique_ptr<Piece> promotion;
     std::string getRepresentaion() override;
+
     /* function */
+    virtual void act(int round,Player & player) override;
+    virtual void reverse(Player & player) override;
+
 public:
     Promotion(Piece* piece,  Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
-class CapturePromotion : public Capture, public Promotion {
+class CapturePromotion : public Move {
+    /* field */
+    Piece * capturedPiece;
+    std::unique_ptr<Piece> promotion;
     /* function */
+    void act(int round, Player & player) override;
+    void reverse(Player & player) override;
+
 public:
-    CapturePromotion(Piece* piece,  Piece * promotion, Piece * capture, const std::pair<int,int> & from, const std::pair<int,int> & to);
+    CapturePromotion(Piece* piece, Piece * captured, Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);
 };
 
 class Castling : public Move{
     /* fields */
-    Piece * rook;
+    std::unique_ptr<Basic> rookMove;
+
     /* function */
+    void act(int round, Player & player) override;
+    void reverse(Player & player) override;
+
 public:
     Castling(Piece* piece,  Piece * rook, const std::pair<int,int> & fromK, const std::pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR);
 };

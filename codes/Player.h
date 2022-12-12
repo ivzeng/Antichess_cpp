@@ -32,7 +32,7 @@ public:
     void init();                                                    // initialize pieces
     int updateStatus();                                             // check if the king is rip
     void updateBoard(Board & board);                // help put the pieces on the board
-    void searchMoves(Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves);     // searches all possible moves and puts them into moves
+    void searchMoves(int round, Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves);     // searches all possible moves and puts them into moves
     
     // decides a move
     std::string move(const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
@@ -40,8 +40,10 @@ public:
     // make a copy of the player and return the unique_ptr
     std::unique_ptr<Player> copy();
 
+    // gets field
     int getColour() const;
-    const std::vector<std::unique_ptr<Piece>> & getPieces() const;
+    std::vector<std::unique_ptr<Piece>> & getPieces();
+    
 };
 
 class Human: public Player{

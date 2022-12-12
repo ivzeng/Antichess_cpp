@@ -1,8 +1,9 @@
 #include "Piece.h"
+#include "Board.h"
 
 using namespace std;
 
-Piece::Piece(int colour, const pair<int,int> & pos): colour{colour}, status{1}, moveCount{0}, position{pos} {}
+Piece::Piece(int colour, const pair<int,int> & pos): colour{colour}, status{1}, movesCount{0}, position{pos} {}
 
 King::King(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
@@ -17,19 +18,20 @@ Knight::Knight(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 Pawn::Pawn(int colour, const pair<int,int> & pos) :  Piece{colour, pos}, recentMove{-1} {}
 
 
-void Piece::movePiece(const pair<int,int> & to, int round){
-    position.first = to.first;
-    position.second = to.second;
-    moveCount += 1;
-}
-
-void Pawn::movePiece(const pair<int,int> & to, int round) {
-    Piece::movePiece(to, round);
-    recentMove.emplace_back(round);
-}
-
 void Piece::move(const pair<int,int> & to, int round){
     movePiece(to,  round);
+}
+
+void Piece::back(const pair<int,int> & from) {
+    goBack(from);
+}
+
+void Piece::searchMoves(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) {
+    scan(round, board, moves);
+}
+
+bool Piece::threats(const pair<int,int> & at) {
+    return canAttack(at);
 }
 
 int Piece::getValue() const {   return value();   }
@@ -40,9 +42,16 @@ int Piece::getColour() const {   return colour;   }
 
 int Piece::getStatus() const {   return status;   }
 
+int Piece::getMovesCount() const {   return movesCount; }
+
 char Piece::getRepresentation() const { return representation();    }
 
 const pair<int,int> & Piece::getPosition() const{   return position;    }
+
+
+void Piece::setStatus(int stat) {
+    status = stat;
+}
 
 unique_ptr<Piece> Piece::copy(){
     return clone();
@@ -73,30 +82,77 @@ int Pawn::value() const {
 }
 
 
-void King::scan(int iv[SO_LEN]) const {
-    iv[2] = 1;
+// virtual functions
+void Piece::movePiece(const pair<int,int> & to, int round){
+    position = to;
+    movesCount += 1;
 }
 
-void Queen::scan(int iv[SO_LEN]) const {
-    iv[3] = 1;
-    iv[4] = 1;  // horizontal, vertical and diagonal scan
+void Pawn::movePiece(const pair<int,int> & to, int round) {
+    Piece::movePiece(to, round);
+    recentMove.emplace_back(round);
 }
 
-void Bishop::scan(int iv[SO_LEN]) const {
-    iv[4] = 1;  // diagonal scan
+void Piece::goBack(const pair<int,int> & from){
+    position = from;
+    movesCount -= 1;
 }
 
-void Rook::scan(int iv[SO_LEN]) const {
-    iv[3] = 1;  // horizontal and vertical scan
+void Pawn::goBack(const pair<int,int> & from){
+    Piece::goBack(from);
+    recentMove.pop_back();
 }
 
-void Knight::scan(int iv[SO_LEN]) const {
-    iv[5] = 1;  // knight's moves scan
+void King::scan(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) const {
+    board.kScan(moves);
 }
 
-void Pawn::scan(int iv[SO_LEN]) const {
-    iv[6] = 1;  // Pawn's move scan
+void Queen::scan(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) const {
+    board.hvScan(position, moves);
+    board.dScan(position, moves);
 }
+
+void Bishop::scan(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) const {
+    board.dScan(position, moves);
+}
+
+void Rook::scan(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) const {
+    board.hvScan(position, moves);
+}
+
+void Knight::scan(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) const {
+    board.nScan(position, moves);
+}
+
+void Pawn::scan(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) const {
+    board.pScan(colour, movesCount, round, position, moves);
+}
+
+bool King::canAttack(const std::pair<int, int> & at){
+    return position.first - at.first >= -1 && position.first - at.first <= 1 && position.second - at.second >= -1 && position.second - at.second <= 1;
+}
+
+bool Queen::canAttack(const std::pair<int, int> & at) {
+    return position.first == at.first || position.second == at.second ||  position.first - at.first == position.second - at.second || position.first - at.first == - position.second + at.second;
+}
+
+bool Bishop::canAttack(const std::pair<int, int> & at) {
+    return position.first - at.first == position.second - at.second || position.first - at.first == - position.second + at.second;
+}
+
+bool Rook::canAttack(const std::pair<int, int> & at) {
+    return position.first == at.first || position.second == at.second;
+}
+
+bool Knight::canAttack(const std::pair<int, int> & at) {
+    return (position.first-at.first == 2 && (position.second - at.second == 1 || position.second - at.second == -1)) || (position.first-at.first == -2 && (position.second - at.second == 1 || position.second - at.second == -1)) || (position.first-at.first == 1 && (position.second - at.second == 2 || position.second - at.second == -2)) || (position.first-at.first == -1 && (position.second - at.second == 1 || position.second - at.second == -2));
+}
+
+bool Pawn::canAttack(const std::pair<int, int> & at) {
+    int dir = (colour == 0) ? -1 : 1;
+    return at.second == position.second+dir && (at.first == position.first-1 || at.first == position.first+1);
+}
+
 
 char King::representation() const {
     return (colour == 0) ? 'k' : 'K';

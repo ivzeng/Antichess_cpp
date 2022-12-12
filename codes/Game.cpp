@@ -46,7 +46,7 @@ int Game::processRound(){
     vector<vector<unique_ptr<Move>>> possibleMoves{vector<vector<unique_ptr<Move>>>(4, vector<unique_ptr<Move>>{})};
 
     // search for move
-    pMove->searchMoves(*board, possibleMoves);
+    pMove->searchMoves(round, *board, possibleMoves);
 
     // check game status 
     if (getValidMove(possibleMoves) == -1) {
@@ -57,11 +57,11 @@ int Game::processRound(){
     string decision{pMove->move(possibleMoves)};
     
     if (decision == "undo") {
-        undoRound();
+        undoRound(*pWait);
         return 1;
     }
     else if (decision.length() >= 4) {
-        history.push_back(board.makeMove(decision));
+        history.push_back((*board).makeMove(decision));
     }
     else {
         if (decision[0] >= '1' && decision[0] <= '9'){
@@ -78,7 +78,7 @@ int Game::processRound(){
     }
 
     // do the move
-    history.back().get()->do(round);
+    history.back().get()->process(round, *pMove);
     return 1;
 }
 
@@ -103,8 +103,15 @@ void Game::init(){
     players[1].get()->init();
 }
 
-void Game::undoRound(){
+void Game::undoRound(Player & other){
     round -= 1;
-    history.back().get()->undo();
+    history.back().get()->undo(other);
+}
+
+std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
+    string res = "  ";
+    res[0] = getValidMove(moves) + '0';
+    res[1] = '0';
+    return res;
 }
 

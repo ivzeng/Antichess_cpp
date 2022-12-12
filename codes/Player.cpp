@@ -52,11 +52,9 @@ void Player::updateBoard(Board & board) {
     }
 }
 
-void Player::searchMoves(Board & board, vector<vector<unique_ptr<Move>>> & moves) {
+void Player::searchMoves(int round,Board & board, vector<vector<unique_ptr<Move>>> & moves) {
     for (const auto & p : pieces){
-        int scanOpt[SO_LEN]{0};
-        (*p).setScanningOptions(scanOpt);
-        board.scan(scanOpt, moves);
+        (*p).searchMoves(round, board, moves);
     }
 }
 
@@ -124,6 +122,6 @@ int Player::getColour() const {
     return colour;
 }
 
-const vector<unique_ptr<Piece>> & Player::getPieces() const {
+vector<unique_ptr<Piece>> & Player::getPieces() {
     return pieces;
 }

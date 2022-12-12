@@ -1,5 +1,6 @@
 #include "Move.h"
 #include "Piece.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -11,6 +12,14 @@ Move::~Move() {}
 
 bool Move::operator==(const string & can){
     return getX(can[0]) == from.first && getY(can[1]) == from.second && getX(can[2]) == to.first && getX(can[3]) == to.second;
+}
+
+void Move::process(int round,Player & player) {
+    act(round, player);
+}
+
+void Move::undo(Player & player) {
+    reverse(player);
 }
 
 string Move::representation(){
@@ -37,11 +46,59 @@ Capture::Capture(Piece * piece, Piece * capturedPiece, const pair<int,int> & fro
 
 Promotion::Promotion(Piece * piece, Piece * promotion, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, promotion{promotion} {}
 
-CapturePromotion::CapturePromotion(Piece * piece, Piece * promotion, Piece * captured, const pair<int,int> & from, const pair<int,int> & to) : Capture{piece, captured, from, to}, Promotion{piece, promotion, from, to} {}
+CapturePromotion::CapturePromotion(Piece * piece, Piece * captured, Piece * promotion, const pair<int,int> & from, const pair<int,int> & to) : Move{piece, from, to}, capturedPiece{captured}, promotion{promotion} {}
 
-Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & fromK, const pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR) : Move{piece, fromK, toK}, rook{rook} {}
+Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & fromK, const pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR) : Move{piece, fromK, toK},rookMove{new Basic{rook, fromR, toR}} {}
 
+void Basic::act(int round, Player & player) {
+    piece->move(to, round);
+}
 
+void Basic::reverse(Player & player) {
+    piece->back(from);
+}
+
+void Capture::act(int round, Player & player) {
+    piece->move(to, round);
+    capturedPiece->setStatus(0);
+}
+
+void Capture::reverse(Player & player) {
+    piece->back(from);
+    capturedPiece->setStatus(1);
+}
+
+void Promotion::act(int round, Player & player) {
+    piece->setStatus(0);
+    player.getPieces().emplace_back(move(promotion));
+}
+
+void Promotion::reverse(Player & player) {
+    piece->setStatus(1);
+    player.getPieces().pop_back();
+}
+
+void CapturePromotion::act(int round, Player & player) {
+    piece->setStatus(0);
+    capturedPiece->setStatus(0);
+    player.getPieces().emplace_back(move(promotion));
+}
+
+void CapturePromotion::reverse(Player & player) {
+    piece->setStatus(1);
+    capturedPiece->setStatus(1);
+    player.getPieces().pop_back();
+}
+
+void Castling::act(int round, Player & player) {
+    (*rookMove).process(round, player);
+    piece->move(to, round);
+}
+
+void Castling::reverse(Player & player) {
+    (*rookMove).undo(player);
+    piece->back(from);
+}
 
 int getX(const char & x){
     return (x < 'a') ? (x-'A') : (x-'a');
@@ -87,3 +144,5 @@ int getValidMove(const vector<vector<unique_ptr<Move>>> & moves) {
     }
     return i;
 }
+
+

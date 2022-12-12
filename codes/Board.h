@@ -13,31 +13,9 @@ class Board{
     /* fields */
     Piece * board[8][8];
     std::pair<int,int> kingPos{};
+
     /* function */
-    // given a position, assume there is a rook,
-    // inserts the positions the rook can go before encountering a piece into moves[0];
-    // inserts the positions of the pieces (if any) that block the route into moves[1]. 
-    void hvScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
-
-    // do hvScan except that rook becomes a bishop 
-    //  (i.e. scan diagnal directions)
-    void dScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
-
-    // do hvScan except that rook becomes a King 
-    //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 1)
-    void kScan(std::vector<std::vector<std::unique_ptr<Move>>> & moves);
-
-    // do hvScan except that rook becomes a knight 
-    //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 2 or |i| = 2, |j| = 1)
-    void nScan(std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
-
-    // do hvScan except that rook becomes a pawn 
-    //  (i.e. scan positions at (x,y+d), (x, y+2d) (if pawn have not moved) - moves
-    //          (x+1, y+d), (x-1, y-d)                                      - capture / en passant
-    //      d is the direction, in {-1,1})
-    void pScan(int col, int movesCount, std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
-
-    void castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    //void castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
     
     //checks if king at pos is in check
     bool isCheck(std::pair<int, int> pos);
@@ -60,9 +38,6 @@ class Board{
 public:
     Board();
 
-    // scan based on the instructions on scanOpt, return all possible position a piece can go (regardless validity)
-    void scan(int * scanOpt, std::vector<std::vector<std::unique_ptr<Move>>> & moves); 
-
     // get the piece at (x,y) position
     Piece * get(int x, int y) const;
 
@@ -76,6 +51,36 @@ public:
 
     // set kingPos
     void setKP(const std::pair<int,int> & position);
+
+    // scanning
+
+    // given a position, assume there is a rook,
+    // inserts the positions the rook can go before encountering a piece into moves[0];
+    // inserts the positions of the pieces (if any) that block the route into moves[1]. 
+    void hvScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    // do hvScan except that rook becomes a bishop 
+    //  (i.e. scan diagnal directions)
+    void dScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    // do hvScan except that rook becomes a King 
+    //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 1)
+    void kScan(std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    // do hvScan except that rook becomes a knight 
+    //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 2 or |i| = 2, |j| = 1)
+    void nScan(std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    // do hvScan except that rook becomes a pawn 
+    //  (i.e. scan positions at (x,y+d), (x, y+2d) (if pawn have not moved) - moves
+    //          (x+1, y+d), (x-1, y-d)                                      - capture / en passant
+    //      d is the direction, in {-1,1})
+    void pScan(int col, int movesCount, int round, std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+
+    // makes a move based on the coordinate representation
+    std::unique_ptr<Move> makeMove(int colour, std::string can);
+
 };
 
 const int BOARD_SIZE = 8;
