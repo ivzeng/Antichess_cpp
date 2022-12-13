@@ -1,6 +1,7 @@
 #include "Move.h"
 #include "Piece.h"
 #include "Player.h"
+#include "IO.h"
 
 using namespace std;
 

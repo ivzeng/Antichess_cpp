@@ -4,7 +4,7 @@
 # include "Move.h"
 # include "Piece.h"
 # include "IO.h"
-
+# define DEBUG 
 
 using namespace std;
 

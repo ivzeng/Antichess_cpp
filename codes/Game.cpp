@@ -5,6 +5,7 @@
 #include "Move.h"
 #include "IO.h"
 
+
 using namespace std;
 
 Game::Game(char * player[3]): round{0}, players{}, history{} {
@@ -44,8 +45,9 @@ int Game::processRound(){
     Player * pWait = players[(round+1)%2].get();
     unique_ptr<Board> board{getBoard()};
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
+    beginRoundNote(cerr, *board, round);
     round += 1;
-    printGame(*this);
+    
     // search for move
     pMove->searchMoves(round, *board, possibleMoves);
 
@@ -75,11 +77,20 @@ int Game::processRound(){
             cout << "something is wrong at processRound" << endl;
             return 0;
         }
+        #ifdef DEBUG
+        cerr << "pushing the move into history" << endl;
+        #endif
         history.push_back(move(possibleMoves[decision[0]-'0'][decision[1]-'0']));
+        #ifdef DEBUG
+        cerr << "finished pushing the move into history" << endl;
+        #endif
     }
 
     // do the move
     history.back().get()->process(round, *pMove);
+    #ifdef DEBUG
+    cerr << "Capture::act() is called" << endl;
+    #endif
     return 1;
 }
 

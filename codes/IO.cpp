@@ -97,6 +97,11 @@ int checkArgv(int argc, char * argv[]){
     return 1;
 }
 
+void beginRoundNote(ostream & out, const Board & board, int round) {
+    out << "round" << round/2 << ':' << endl;
+    out << board << endl;
+    out << "player(" << round%2 +1 << ") move:" << endl; 
+}
 
 /* error / warning messages */
 void err_argc(ostream & out){
@@ -132,11 +137,6 @@ void decisionInstruction(ostream & out){
 
 void msgStartGame(ostream & out){
     out << "game started" << endl;
-}
-
-void beginRoundNote(ostream & out, const Board & board, const int & round){
-    out << board;
-    out << "Player " << (round%2==0 ? "white(" : "black(") << (round%2+1) << "): " << endl; 
 }
 
 void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
