@@ -11,6 +11,8 @@ class Board;
 
 const int SO_LEN = 9;
 
+enum PeiceTypes = {King, Queen, Bishop, Rook, Knight, Pawn};
+
 /* Piece class */
 // A Piece can be a
 //  King | Queen | Bishop | Rook | Knight | Pawn

@@ -15,10 +15,13 @@ class Board{
     std::pair<int,int> kingPos{};
 
     /* function */
-    //void castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    void castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
     
+    //checks if peice at pos is in typelist
+    bool checkIfThreat(std::pair<int, int> pos, int col, std::vector<PeiceTypes> typeList);
+
     //checks if king at pos is in check
-    bool isCheck(std::pair<int, int> pos);
+    bool isCheck(std::pair<int, int> pos, int col);
 
     // inserts the move (from, to) (either basic or capture) (true iff the move is not capture)
     bool insertMove(const std::pair<int,int> & from, const std::pair<int,int> & to, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
