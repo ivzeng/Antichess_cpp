@@ -110,19 +110,32 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
     }
 }
 
+bool Board::validPos(const pair<int,int> & pos) {
+    return pos.first >= 0 && pos.second >=0 && pos.first < BOARD_SIZE && pos.second < BOARD_SIZE; 
+}
+
 bool Board::safeMove(const std::pair<int,int> & from, const std::pair<int,int> & to) {
-    // Todo
-    return true;
+    Piece * pf = get(from);
+    Piece * pt = get(to);
+    set(from, nullptr);
+    set(to, pf);
+    bool res = !isCheck();
+    set(to, pt);
+    set(from, pf);
+    return res;
 }
 
 bool Board::kSafeMove(const std::pair<int,int> & to) {
-    // Todo
-    return true;
+    Piece * k = get(kingPos);
+    set(kingPos, nullptr);
+    bool res = !unsafe(to, k->getColour());
+    set(kingPos, k);
+    return res;
 }
 
 
 //pos = (col, row)
-void Board::hvScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
+void Board::hvScan(const pair<int,int> & pos, vector<vector<unique_ptr<Move>>> & moves){
     //scan right
     for (int i = pos.first + 1;  i < BOARD_SIZE && insertMove(pos, pair<int, int>{i, pos.second}, moves); ++i);
 
@@ -136,7 +149,7 @@ void Board::hvScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
     for (int i = pos.second - 1;  i >= 0 && insertMove(pos, pair<int, int>{pos.first, i}, moves); --i);
 }
 
-void Board::dScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
+void Board::dScan(const pair<int,int> & pos, vector<vector<unique_ptr<Move>>> & moves){
     //Scan up and right
     for (int i = 1;  pos.first+i < BOARD_SIZE && pos.second+i < BOARD_SIZE && insertMove(pos, pair<int, int>{pos.first+i, pos.second+i}, moves); ++i);
 
@@ -194,7 +207,7 @@ void Board::kScan(vector<vector<unique_ptr<Move>>> & moves){
     // Todo: check castling
 }
 
-void Board::nScan(pair<int,int> pos,vector<vector<unique_ptr<Move>>> & moves){
+void Board::nScan(const pair<int,int> & pos,vector<vector<unique_ptr<Move>>> & moves){
     // Todo
     int coldiff = 2;
     int rowdiff = 1;
@@ -236,7 +249,7 @@ void Board::nScan(pair<int,int> pos,vector<vector<unique_ptr<Move>>> & moves){
 
 }
 
-void Board::pScan(int col, int movesCount, int round, pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
+void Board::pScan(int col, int movesCount, int round, const pair<int,int> & pos, vector<vector<unique_ptr<Move>>> & moves){
     int dir = (col == 0) ? 1 : -1;
 
     // move (first time)
@@ -246,68 +259,47 @@ void Board::pScan(int col, int movesCount, int round, pair<int,int> pos, vector<
 
     // other move / promotion
     pInsertMove(col, pos, moves);
+
+    // en passant
     
 }
 
 
-void Board::castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves) {
+void Board::castleScan(std::vector<std::vector<std::unique_ptr<Move>>> & moves) {
     //Neither the king nor the rook has previously moved.
     //There are no pieces between the king and the rook.
     //The king is not currently in check.
-    //The king does not pass through a square that is attacked by an opposing piece.
+    //The king does not pass through a square that is attacked by an opposing piece
 
-    if (movesCountKing == 0 && movesCountRook == 0){
-        bool isPossible = true;
+    if (get(kingPos)->getMovesCount() == 0 && !isCheck()){
 
         //Right side
-        for (int i = posK.first + 1; i < posR.first; ++i) {
-            if (board[i][posK.second] != nullptr) {
-                isPossible = false;
-            }
+        // goes to the first piece encouted by scaning right, or stop if passes a position that is unsafe.
+        pair<int,int> otherPos{kingPos.first + 1, kingPos.second};
+        while (otherPos.first < BOARD_SIZE && !get(otherPos) && !unsafe(otherPos, get(kingPos)->getColour())) {
+            ++otherPos.first;
+        }
+        // check if the peice at the right edge has zero moveCount (i.e. can castle)
+        if (otherPos.first == BOARD_SIZE-1 && get(otherPos)->getMovesCount() == 0){
+            
+            moves[1].emplace_back(make_unique<Castling>(get(kingPos), get(otherPos), kingPos, pair<int,int>{kingPos.first+2, otherPos.second}, otherPos, pair<int,int>{otherPos.first-2, otherPos.second}));
         }
 
-        if (isCheck(posK)) {
-            isPossible = false;
+        // Left Side
+        //Right side
+        // goes to the first piece encouted by scaning right, or stop if passes a position that is unsafe.
+        otherPos.first = kingPos.first-1;
+        while (otherPos.first >= 0  && !get(otherPos) && (otherPos.first == 1 || !unsafe(otherPos, get(kingPos)->getColour()))) {
+            --otherPos.first;
         }
-
-        std::pair newposK = std::pair<int, int>(posK.first + 2, posK.second>);
-        std::pair newposR = std::pair<int, int>(posR.first - 2, posR.second>);
-
-        if (isCheck(newposK)) {
-            isPossible = false;
-        }
-
-        if (isPossible) {
-            moves[0].emplace_back(make_unique<Basic>(new Castling{get(posK), get(posR), posK, newposK, posR, newposR}));
-        }
-
-        //Left Side
-        isPossible = true;
-
-        for (int i = posK.first - 1; i > posR.first; --i) {
-            if (board[i][posK.second] != nullptr) {
-                isPossible = false;
-            }
-        }
-
-        if (isCheck(posK)) {
-            isPossible = false;
-        }
-
-        std::pair newposK = std::pair<int, int>(posK.first - 2, posK.second>);
-        std::pair newposR = std::pair<int, int>(posR.first + 3, posR.second>);
-
-        if (isCheck(newposK)) {
-            isPossible = false;
-        }
-
-        if (isPossible) {
-            moves[0].emplace_back(make_unique<Basic>(new Castling{get(posK), get(posR), posK, newposK, posR, newposR}));
+        // check if the peice at the left edge has zero moveCount (i.e. can castle)
+        if (otherPos.first == 0 && get(otherPos)->getMovesCount() == 0){
+            moves[1].emplace_back(make_unique<Castling>(get(kingPos), get(otherPos), kingPos, pair<int,int>{kingPos.first-2, otherPos.second}, otherPos, pair<int,int>{otherPos.first+3, otherPos.second}));
         }
     }
 }
 
-
+/*
 bool Board::checkIfThreat(std::pair<int, int> pos, int col, std::vector<PeiceTypes> typeList) {
     if (get(pos) != nullptr){
         for (PeiceTypes type : typeList) {
@@ -321,10 +313,40 @@ bool Board::checkIfThreat(std::pair<int, int> pos, int col, std::vector<PeiceTyp
 
     return false;
 }
+*/
 
-// NEED TO REDO
-//Iterate over oposing players pieces
-bool Board::isCheck(std::pair<int, int> pos, int col) {
+bool Board::isCheck() {
+    return unsafe(kingPos, get(kingPos)->getColour());
+}
+
+bool Board::unsafe(pair<int, int> pos, int col) {
+
+    // h, v, d scan
+    for (const pair<int,int> & p : vector<pair<int,int>>{{1,0},{-1,0},{0,1},{0,-1},{1,1},{1,-1},{-1,1},{-1,-1}}) {
+        pair<int, int> itPos{pos.first+p.first, pos.second + p.second};
+        while (validPos(itPos)){
+            if (get(itPos)){
+                if (get(itPos)->getColour() != col && get(itPos)->threats(pos)) {
+                    return true;
+                }
+                break;
+            }
+            itPos.first += p.first;
+            itPos.second += p.second;
+        }
+    }
+    
+    // n scan
+    for (const pair<int,int> & p : vector<pair<int,int>>{{1,2},{1,-2},{-1,2},{-1,-2},{2,1},{2,-1},{-2,1},{-2,-1}}) {
+        pair<int, int> itPos{pos.first+p.first, pos.second + p.second};
+        if (validPos(itPos) && get(itPos) && get(itPos)->getColour() != col && get(itPos)->threats(pos)) {
+            return true;
+        }
+    }
+    
+    return false;
+
+    /*
     std::vector<PeiceTypes> vertThreats = std::vector<PeiceTypes>(Queen, Rook, King);
 
     //check up
@@ -431,6 +453,7 @@ bool Board::isCheck(std::pair<int, int> pos, int col) {
     }
 
     return false;
+    */
 }
 
 

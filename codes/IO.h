@@ -40,8 +40,9 @@ void printMoves(std::ostream & out, const std::vector<std::vector<std::unique_pt
 
 /* check inputs */
 int checkArgv(int argc, char * argv[]);
+bool checkArgvPT(char * argv); // convert argv[0] to lower case and checks if argv start with 'p' or 'c'
 
-
+bool checkArgvC(char * argv); // checks if the argv is a valid colour (starts with either 'w' or 'b' (to lower case))
 
 /*std err*/
 // prints error code about the argument

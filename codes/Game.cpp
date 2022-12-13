@@ -8,10 +8,20 @@
 
 using namespace std;
 
-Game::Game(char * player[3]): round{0}, players{}, history{} {
+Game::Game(char * player[]): round{0}, players{}, history{} {
     // set players
-    addPlayer(0, player[1]);
-    addPlayer(1, player[2]);
+    if (player[1][0] == 'w') {
+        addPlayer(0, 'c');
+        addPlayer(1, 'h');
+    }
+    else if (player[1][0] == 'b') {
+        addPlayer(0, 'h');
+        addPlayer(1, 'c');
+    }
+    else {
+        addPlayer(0, player[1][0]);
+        addPlayer(1, player[2][0]);
+    }
 }
 
 Game::Game(const Game & game): round{game.round}, players{}, history{} {
@@ -19,12 +29,15 @@ Game::Game(const Game & game): round{game.round}, players{}, history{} {
     players.push_back(game.players[1].get()->copy());
 }
 
-void Game::addPlayer(int i, char * type){
-    if (type[0] == 'c' || type[0] == 'C') {
+void Game::addPlayer(int i, char type){
+    if (type == 'c') {
         players.push_back( make_unique<AlphaWind>(i));
     }
-    else if (type[0] == 'h' || type[0] == 'H') {
+    else if (type == 'h') {
         players.push_back(make_unique<Human>(i));
+    }
+    else {
+        cerr << "game::addPlayer(): some thing is wrong" << endl;
     }
 }
 

@@ -15,13 +15,15 @@ class Board{
     std::pair<int,int> kingPos{};
 
     /* function */
-    void castleScan(int col, int movesCountKing, int movesCountRook, std::pair<int,int> posK, std::pair<int,int> posR, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
     
     //checks if peice at pos is in typelist
-    bool checkIfThreat(std::pair<int, int> pos, int col, std::vector<PeiceTypes> typeList);
+    // bool checkIfThreat(std::pair<int, int> pos, int col, std::vector<PeiceTypes> typeList);
 
-    //checks if king at pos is in check
-    bool isCheck(std::pair<int, int> pos, int col);
+    //checks if the piece at pos can be attacked
+    bool unsafe(std::pair<int, int> pos, int col);
+
+    // checks if the king is in checked
+    bool isCheck();
 
     // inserts the move (from, to) (either basic or capture) (true iff the move is not capture)
     bool insertMove(const std::pair<int,int> & from, const std::pair<int,int> & to, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
@@ -37,6 +39,9 @@ class Board{
     // determine if a king's move is safe/valid
     bool kSafeMove(const std::pair<int,int> & to);
 
+    void castleScan(std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+
+    bool validPos(const std::pair<int,int> & pos);
 
 public:
     Board();
@@ -60,11 +65,11 @@ public:
     // given a position, assume there is a rook,
     // inserts the positions the rook can go before encountering a piece into moves[0];
     // inserts the positions of the pieces (if any) that block the route into moves[1]. 
-    void hvScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    void hvScan(const std::pair<int,int> & pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
     // do hvScan except that rook becomes a bishop 
     //  (i.e. scan diagnal directions)
-    void dScan(std::pair<int,int> pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    void dScan(const std::pair<int,int> & pos,std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
     // do hvScan except that rook becomes a King 
     //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 1)
@@ -72,13 +77,13 @@ public:
 
     // do hvScan except that rook becomes a knight 
     //  (i.e. scan positions at (x+i, y+j) where |i| = 1, |j| = 2 or |i| = 2, |j| = 1)
-    void nScan(std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    void nScan(const std::pair<int,int> & pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
     // do hvScan except that rook becomes a pawn 
     //  (i.e. scan positions at (x,y+d), (x, y+2d) (if pawn have not moved) - moves
     //          (x+1, y+d), (x-1, y-d)                                      - capture / en passant
     //      d is the direction, in {-1,1})
-    void pScan(int col, int movesCount, int round, std::pair<int,int> pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
+    void pScan(int col, int movesCount, int round, const std::pair<int,int> & pos, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
 
     // makes a move based on the coordinate representation

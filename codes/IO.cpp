@@ -85,16 +85,50 @@ ostream & operator<<(std::ostream & out, const Move & move) {
 
 /* check inputs */
 int checkArgv(int argc, char * argv[]){
-    if (argc != 3){
+    if (argc == 3){
+        if (!checkArgvPT(argv[1]) || !checkArgvPT(argv[2])) {
+            err_argvType(cerr);
+            return 0;
+        }
+    }
+    else if (argc == 2) {
+        if (!checkArgvC(argv[1])) {
+            err_argvType(cerr);
+            return 0;
+        }
+    }
+    else {
         err_argc(cerr);
         return 0;
     }
-    if ((argv[1][0] != 'h' && argv[1][0] != 'H' && argv[1][0] != 'c' && argv[1][0] != 'C') 
-        || (argv[2][0] != 'h' && argv[2][0] != 'H' && argv[2][0] != 'c' && argv[2][0] != 'C') ){
-        err_argvType(cerr);
-        return 0;
-    }
+    
     return 1;
+}
+
+bool checkArgvPT(char * argv) {
+    if (argv[0] == 'H') {
+        argv[0] = 'h';
+    }
+    else if (argv[0] == 'C') {
+        argv[0] = 'c';
+    }
+    else if (argv[0] != 'c' && argv[0] != 'h') {
+        return false;
+    }
+    return true;
+}
+
+bool checkArgvC(char * argv){
+    if (argv[0] == 'W') {
+        argv[0] = 'w';
+    }
+    else if (argv[0] == 'B') {
+        argv[0] = 'b';
+    }
+    else if (argv[0] != 'w' && argv[0] != 'b') {
+        return false;
+    }
+    return true;
 }
 
 void beginRoundNote(ostream & out, const Board & board, int round) {
@@ -105,11 +139,11 @@ void beginRoundNote(ostream & out, const Board & board, int round) {
 
 /* error / warning messages */
 void err_argc(ostream & out){
-    out << "error: incorrect number of arguments;" << endl;
+    out << "error: incorrect number of arguments" << endl;
     argvInstruction(cerr);
 }
 void err_argvType(ostream & out){
-    out << "error: invalid type of arguments;" << endl;
+    out << "error: invalid type of arguments" << endl;
     argvInstruction(cerr);
 }
 
@@ -124,7 +158,7 @@ void warning_invalidMove(ostream & out){
 /* instructions / messages */
 
 void argvInstruction(ostream & out){
-    out << "please make sure there are exactly 2 arguments that each either starts with 'h' (human) or 'c' computer." << endl;
+    out << "please make sure there are 1 arguments starts with 'w'(white) or 'b'(black) or 2 arguments that each either starts with 'h' (human) or 'c' computer" << endl;
 }
 
 void requireDecision(ostream & out) {

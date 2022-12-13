@@ -24,7 +24,7 @@ class Game
 
     /* functions */
 private:
-    void addPlayer(int i, char * type);         // set player[i]
+    void addPlayer(int i, char type);         // set player[i]
     int processRound();                        // handles a round, update the state
     void undoRound(Player & other);                           // undo a round
 

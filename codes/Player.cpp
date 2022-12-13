@@ -108,7 +108,10 @@ string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
 string  AlphaWind::decide(const vector<vector<unique_ptr<Move>>> & moves) {
     string res{};
     readDecision(cin ,res);
-    return res == "undo" ? res : "8";
+    if (res == "undo" || res == "end") {
+        return res;
+    }
+    return "8";
 }
 
 
