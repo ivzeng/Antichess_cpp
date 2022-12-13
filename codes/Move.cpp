@@ -9,6 +9,8 @@ Move::Move(Piece * piece, const pair<int,int> & from, const pair<int,int> & to) 
 
 Move::Move() {}
 
+Move::~Move() {}
+
 
 bool Move::operator==(const string & can){
     return getX(can[0]) == from.first && getY(can[1]) == from.second && getX(can[2]) == to.first && getY(can[3]) == to.second;
@@ -55,29 +57,47 @@ CapturePromotion::CapturePromotion(Piece * piece, Piece * captured, Piece * prom
 Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & fromK, const pair<int,int> & toK, const std::pair<int,int> & fromR, const std::pair<int,int> & toR) : Move{piece, fromK, toK},rookMove{new Basic{rook, fromR, toR}} {}
 
 void Basic::act(int round, Player & player) {
+    #ifdef DEBUG
+    cout << "Basic::act() is called" << endl;
+    #endif
     piece->move(to, round);
 }
 
 void Basic::reverse(Player & player) {
+    #ifdef DEBUG
+    cout << "Basic::reverse() is called" << endl;
+    #endif
     piece->back(from);
 }
 
 void Capture::act(int round, Player & player) {
+    #ifdef DEBUG
+    cout << "Capture::act() is called" << endl;
+    #endif
     piece->move(to, round);
     capturedPiece->setStatus(0);
 }
 
 void Capture::reverse(Player & player) {
+    #ifdef DEBUG
+    cout << "Capture::reverse() is called" << endl;
+    #endif
     piece->back(from);
     capturedPiece->setStatus(1);
 }
 
 void Promotion::act(int round, Player & player) {
+    #ifdef DEBUG
+    cout << "Promotion::act() is called" << endl;
+    #endif
     piece->setStatus(0);
     player.addPiece(promotion);
 }
 
 void Promotion::reverse(Player & player) {
+    #ifdef DEBUG
+    cout << "Promotion::reverse() is called" << endl;
+    #endif
     piece->setStatus(1);
     player.popPiece();
 }

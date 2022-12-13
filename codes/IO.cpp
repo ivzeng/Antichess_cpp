@@ -150,3 +150,7 @@ void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
     }
     cout << endl;
 }
+
+void endNote(ostream & out) {
+    out << "game ended" << endl;
+}

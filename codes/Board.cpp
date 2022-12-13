@@ -41,11 +41,11 @@ bool Board::insertMove(const std::pair<int,int> & from, const std::pair<int,int>
         return !get(to);
     }
     if (get(to) == nullptr) {
-        moves[1].emplace_back(unique_ptr<Move>{new Basic{get(from), from, to}});
+        moves[1].emplace_back(make_unique<Basic>(get(from), from, to));
         return true;
     }
     else if (get(from)->getColour() != get(to)->getColour()) {
-        moves[0].emplace_back(unique_ptr<Move>{new Capture{get(from), get(to), from, to}});
+        moves[0].emplace_back(make_unique<Capture>(get(from), get(to), from, to));
         return false;
     }
     return false;
@@ -56,10 +56,10 @@ void Board::kInsertMove(const pair<int,int> & to, vector<vector<unique_ptr<Move>
         return;
     }
     if (get(to) == nullptr) {
-        moves[1].emplace_back(unique_ptr<Move>{new Basic{get(kingPos), kingPos, to}});
+        moves[1].emplace_back(make_unique<Basic>(get(kingPos), kingPos, to));
     }
     else if (get(to)->getColour() != get(kingPos)->getColour()) {
-        moves[0].emplace_back(unique_ptr<Move>{new Capture{get(kingPos), get(to), kingPos, to}});
+        moves[0].emplace_back(make_unique<Capture>(get(kingPos), get(to), kingPos, to));
     }
 }
 
@@ -71,13 +71,13 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
     if (!board[from.second+dir][from.first]) {
         pair<int,int> to{from.first, from.second + dir}; 
         if (prom) {
-            moves[1].emplace_back(unique_ptr<Move> {new Promotion{get(from), new Queen{col, to}, from, to}});
-            moves[1].emplace_back(unique_ptr<Move> {new Promotion{get(from), new Rook{col, to}, from, to}});
-            moves[1].emplace_back(unique_ptr<Move> {new Promotion{get(from), new Bishop{col, to}, from, to}});
-            moves[1].emplace_back(unique_ptr<Move> {new Promotion{get(from), new Knight{col, to}, from, to}});
+            moves[1].emplace_back(make_unique<Promotion>(get(from), new Queen{col, to}, from, to));
+            moves[1].emplace_back(make_unique<Promotion>(get(from), new Rook{col, to}, from, to));
+            moves[1].emplace_back(make_unique<Promotion>(get(from), new Bishop{col, to}, from, to));
+            moves[1].emplace_back(make_unique<Promotion>(get(from), new Knight{col, to}, from, to));
         }
         else {
-            moves[1].emplace_back(unique_ptr<Move> {new Basic{get(from), from, to}});
+            moves[1].emplace_back(make_unique<Basic>(get(from), from, to));
         }
     }
     // capture move / promotion
@@ -85,27 +85,27 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
         Piece * target = board[from.second+dir][from.first+1]; 
             pair<int,int> to{from.first + 1, from.second + dir}; 
         if (prom) {
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target,new Queen{col, to}, from, to}});
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Rook{col, to}, from, to}});
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to}, from, to}});
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Knight{col, to}, from, to}});
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target,new Queen{col, to}, from, to));
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Rook{col, to}, from, to));
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Bishop{col, to}, from, to));
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Knight{col, to}, from, to));
         }
         else {
-            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first+1, from.second + dir}}});
+            moves[0].emplace_back(make_unique<Capture>(get(from), get(to), from, pair<int,int> {from.first+1, from.second + dir}));
         }
     }
 
-    if (from.first-1 < BOARD_SIZE && board[from.second+dir][from.first-1] && board[from.second+dir][from.first-1]->getColour() != col){
+    if (from.first-1 >= 0  && board[from.second+dir][from.first-1] && board[from.second+dir][from.first-1]->getColour() != col){
         Piece * target = board[from.second+dir][from.first-1]; 
         pair<int,int> to{from.first - 1, from.second + dir}; 
         if (prom) {
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Queen{col, to}, from, to}});
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Rook{col, to}, from, to}});
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target, new Bishop{col, to},  from, to}});
-            moves[0].emplace_back(unique_ptr<Move> {new CapturePromotion{get(from), target,new Knight{col, to}, from, to}});
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Queen{col, to}, from, to));
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Rook{col, to}, from, to));
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Bishop{col, to},  from, to));
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target,new Knight{col, to}, from, to));
         }
         else {
-            moves[0].emplace_back(unique_ptr<Move> {new Basic{get(from), from, pair<int,int> {from.first-1, from.second + dir}}});
+            moves[0].emplace_back(make_unique<Capture>(get(from), get(to), from, pair<int,int> {from.first-1, from.second + dir}));
         }
     }
 }
@@ -133,7 +133,7 @@ void Board::hvScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
     for (int i = pos.second + 1;  i < BOARD_SIZE && insertMove(pos, pair<int, int>{pos.first, i}, moves); ++i);
 
     //scan down
-    for (int i = pos.second - 1;  i >= 0 && insertMove(pos, pair<int, int>{pos.first, i}, moves); ++i);
+    for (int i = pos.second - 1;  i >= 0 && insertMove(pos, pair<int, int>{pos.first, i}, moves); --i);
 }
 
 void Board::dScan(pair<int,int> pos, vector<vector<unique_ptr<Move>>> & moves){
@@ -241,7 +241,7 @@ void Board::pScan(int col, int movesCount, int round, pair<int,int> pos, vector<
 
     // move (first time)
     if (movesCount == 0 && !board[pos.second+2*dir][pos.first]) {
-        moves[1].emplace_back(unique_ptr<Move>{new Basic{get(pos), pos, pair<int,int>{pos.first, pos.second + 2*dir}}});
+        moves[1].emplace_back(make_unique<Basic>(get(pos), pos, pair<int,int>{pos.first, pos.second + 2*dir}));
     }
 
     // other move / promotion
@@ -329,18 +329,18 @@ unique_ptr<Move> Board::makeMove(int colour,  std::string can) {
     pair<int,int>to{getX(can[2]), getY(can[3])};
     if (can.length() == 4) {
         if (get(to)) {
-            return unique_ptr<Move> {new Capture{get(from), get(to), from, to}};
+            return make_unique<Capture>(get(from), get(to), from, to);
         }
         else {
-            return unique_ptr<Move> {new Basic{get(from), from, to}};
+            return make_unique<Basic>(get(from), from, to);
         }
     }
     else {
         if (get(to)) {
-            return unique_ptr<Move> {new CapturePromotion{get(from), get(to), makePiece(colour, can[4], to) , from, to}};
+            return make_unique<CapturePromotion>(get(from), get(to), makePiece(colour, can[4], to) , from, to);
         }
         else {
-            return unique_ptr<Move> {new Promotion{get(from), makePiece(colour, can[4], to) , from, to}};
+            return make_unique<Promotion>(get(from), makePiece(colour, can[4], to) , from, to);
         }
     }
 }

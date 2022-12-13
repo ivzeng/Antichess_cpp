@@ -41,11 +41,20 @@ const std::vector<std::unique_ptr<Player>> & Game::getPlayer() const {
 }
 
 int Game::processRound(){
+    #ifdef DEBUG
+    cerr << "processRound()" << endl;
+    #endif
+
     Player * pMove = players[round%2].get();
     Player * pWait = players[(round+1)%2].get();
     unique_ptr<Board> board{getBoard()};
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
+    #ifdef DEBUG
+    beginRoundNote(cout, *board, round);
+    #else
     beginRoundNote(cerr, *board, round);
+    #endif
+
     round += 1;
 
     // search for move
@@ -62,23 +71,26 @@ int Game::processRound(){
     #ifdef DEBUG
     cerr << "get decision: " << decision << endl;
     #endif
-
-    if (decision == "undo") {
+    if (decision == "end") {
+        endNote(cerr);
+        return 0;
+    }
+    else if (decision == "undo") {
         undoRound(*pWait);
         return 1;
-    }
+    } // undo
     else if (decision.length() >= 4) {
         history.push_back((*board).makeMove(round%2, decision));
-    }
+    } // undefined move
     else {
         if (decision.length() == 3) {
             #ifdef DEBUG
             cerr << "finds decision" << endl;
             #endif
-        } // selected move case
+        } // defined move
         else if (decision[0] >= '1' && decision[0] <= '9'){
             decision = smartMove(possibleMoves, decision[0]-'0');
-        } // single digit case
+        } // bot request
         else {
             cout << "something is wrong at processRound" << endl;
             return 0;
@@ -87,6 +99,7 @@ int Game::processRound(){
         cerr << "pushing the move into history" << endl;
         #endif
         history.push_back(move(possibleMoves[decision[0]-'0'][decision[1]-'0']));
+        possibleMoves[decision[0]-'0'][decision[1]-'0'] = nullptr;
         #ifdef DEBUG
         cerr << "finished pushing the move into history" << endl;
         #endif

@@ -36,6 +36,8 @@ public:
     std::string representation() const;       // return the coordinate algebraic notation of the move (e2e4, e7e8q (promotion))
     void process(int round,Player & player);
     void undo(Player & player);
+    virtual ~Move() = 0;
+
 };
 
 class Basic : public Move{
