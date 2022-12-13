@@ -47,7 +47,7 @@ int Game::processRound(){
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
     beginRoundNote(cerr, *board, round);
     round += 1;
-    
+
     // search for move
     pMove->searchMoves(round, *board, possibleMoves);
 
@@ -59,6 +59,10 @@ int Game::processRound(){
     // select the move
     string decision{pMove->move(possibleMoves)};
     
+    #ifdef DEBUG
+    cerr << "get decision: " << decision << endl;
+    #endif
+
     if (decision == "undo") {
         undoRound(*pWait);
         return 1;
@@ -67,12 +71,14 @@ int Game::processRound(){
         history.push_back((*board).makeMove(round%2, decision));
     }
     else {
-        if (decision[0] >= '1' && decision[0] <= '9'){
+        if (decision.length() == 3) {
+            #ifdef DEBUG
+            cerr << "finds decision" << endl;
+            #endif
+        } // selected move case
+        else if (decision[0] >= '1' && decision[0] <= '9'){
             decision = smartMove(possibleMoves, decision[0]-'0');
         } // single digit case
-        else if (decision.length() == 3) {
-            
-        } // selected move case
         else {
             cout << "something is wrong at processRound" << endl;
             return 0;
@@ -116,7 +122,7 @@ void Game::init(){
 }
 
 void Game::undoRound(Player & other){
-    round -= 1;
+    round -= 2;
     history.back().get()->undo(other);
 }
 

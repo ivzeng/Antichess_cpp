@@ -125,6 +125,9 @@ void search(string & move, const vector<vector<unique_ptr<Move>>> & moves){
     for (size_t i = 0; i < moves.size(); i += 1){
         for (size_t j = 0; j < moves[i].size(); j += 1){
             if ((*moves[i][j]) == move){
+                #ifdef DEBUG
+                cerr << "searchMove()" << endl;
+                #endif
                 move = "  1";
                 move[0] = i + '0';
                 move[1] = j + '0';

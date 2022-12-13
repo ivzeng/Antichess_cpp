@@ -27,7 +27,9 @@ void Piece::back(const pair<int,int> & from) {
 }
 
 void Piece::searchMoves(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) {
-    scan(round, board, moves);
+    if (status) {
+        scan(round, board, moves);
+    }
 }
 
 bool Piece::threats(const pair<int,int> & at) {
