@@ -151,6 +151,10 @@ void err_decision(ostream & out){
     out << "error: invalid move" << endl;
 }
 
+void err_emptyHist(std::ostream & out){
+    out << "error: no more step to undo" << endl;
+}
+
 void warning_invalidMove(ostream & out){
     out << "warning: your move is not valid!" << endl;
 }

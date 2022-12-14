@@ -128,7 +128,7 @@ public:
 
 class Pawn : public Piece{
     /* fields */
-    std::vector<int> recentMove;          // all rounds which move this piece
+    std::vector<int> recentMoves;          // all rounds which move this piece
     /* functions */
     int value() const override;
     void movePiece(const std::pair<int,int> & to, int round) override;
@@ -139,6 +139,7 @@ class Pawn : public Piece{
     std::unique_ptr<Piece> clone() override;
 public:
     Pawn(int colour, const std::pair<int, int> & pos);
+    int getRecentMove() const;
 };
 
 Piece * makePiece(int colour, const char & p, const std::pair<int,int> & pos);

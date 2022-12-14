@@ -16,8 +16,6 @@ class Board{
 
     /* function */
     
-    //checks if peice at pos is in typelist
-    // bool checkIfThreat(std::pair<int, int> pos, int col, std::vector<PeiceTypes> typeList);
 
     //checks if the piece at pos can be attacked
     bool unsafe(std::pair<int, int> pos, int col);

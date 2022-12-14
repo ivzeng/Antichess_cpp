@@ -1,6 +1,7 @@
 #include "Board.h"
 #include "Piece.h"
 #include "Move.h"
+#include "IO.h"
 
 using namespace std;
 
@@ -68,7 +69,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
     int dir = (col == 0) ? 1 : -1;
     bool prom = from.second+dir == BOARD_SIZE-1 || from.second + dir == 0;
     // normal move / promotion
-    if (!board[from.second+dir][from.first]) {
+    if (!board[from.second+dir][from.first]&& safeMove(from, pair<int,int>{from.first, from.second+dir})) {
         pair<int,int> to{from.first, from.second + dir}; 
         if (prom) {
             moves[1].emplace_back(make_unique<Promotion>(get(from), new Queen{col, to}, from, to));
@@ -81,7 +82,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
         }
     }
     // capture move / promotion
-    if (from.first+1 < BOARD_SIZE && board[from.second+dir][from.first+1] && board[from.second+dir][from.first+1]->getColour() != col){
+    if (from.first+1 < BOARD_SIZE && board[from.second+dir][from.first+1] && board[from.second+dir][from.first+1]->getColour() != col && safeMove(from, pair<int,int>{from.first+1, from.second+dir})){
         Piece * target = board[from.second+dir][from.first+1]; 
             pair<int,int> to{from.first + 1, from.second + dir}; 
         if (prom) {
@@ -95,7 +96,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
         }
     }
 
-    if (from.first-1 >= 0  && board[from.second+dir][from.first-1] && board[from.second+dir][from.first-1]->getColour() != col){
+    if (from.first-1 >= 0  && board[from.second+dir][from.first-1] && board[from.second+dir][from.first-1]->getColour() != col && safeMove(from, pair<int,int>{from.first-1, from.second+dir})){
         Piece * target = board[from.second+dir][from.first-1]; 
         pair<int,int> to{from.first - 1, from.second + dir}; 
         if (prom) {
@@ -204,7 +205,7 @@ void Board::kScan(vector<vector<unique_ptr<Move>>> & moves){
         kInsertMove(pair<int, int>{kingPos.first-1, kingPos.second-1}, moves);
     }
 
-    // Todo: check castling
+    castleScan(moves);
 }
 
 void Board::nScan(const pair<int,int> & pos,vector<vector<unique_ptr<Move>>> & moves){
@@ -253,14 +254,35 @@ void Board::pScan(int col, int movesCount, int round, const pair<int,int> & pos,
     int dir = (col == 0) ? 1 : -1;
 
     // move (first time)
-    if (movesCount == 0 && !board[pos.second+2*dir][pos.first]) {
+    pair to{pos.first, pos.second+2*dir};
+    if (movesCount == 0 && !board[pos.second+dir][pos.first] && !get(to) && safeMove(pos, to)) {
         moves[1].emplace_back(make_unique<Basic>(get(pos), pos, pair<int,int>{pos.first, pos.second + 2*dir}));
     }
 
     // other move / promotion
     pInsertMove(col, pos, moves);
 
-    // en passant
+    if (pos.second == 4-col /*white: 4, black: 3*/) {
+        if (pos.first-1 >= 0) {
+            pair to{pos.first-1, pos.second};
+            Pawn * target = dynamic_cast<Pawn *>(get(to));
+
+            set(to, nullptr);    // ready for safeMove
+            if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
+                moves[0].emplace_back(make_unique<Capture>(get(pos), target, pos, to));
+            }
+            set(to, target);
+        }
+        if (pos.first+1 < BOARD_SIZE){
+            pair to{pos.first+1, pos.second};
+            Pawn * target = dynamic_cast<Pawn *>(get(to));
+            set(to, nullptr);    // ready for safeMove
+            if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
+                moves[0].emplace_back(make_unique<Capture>(get(pos), target, pos, to));
+            }
+            set(to, target);
+        }
+    }
     
 }
 
@@ -323,7 +345,7 @@ bool Board::unsafe(pair<int, int> pos, int col) {
 
     // h, v, d scan
     for (const pair<int,int> & p : vector<pair<int,int>>{{1,0},{-1,0},{0,1},{0,-1},{1,1},{1,-1},{-1,1},{-1,-1}}) {
-        pair<int, int> itPos{pos.first+p.first, pos.second + p.second};
+        pair<int, int> itPos{pos.first+p.first, pos.second+p.second};
         while (validPos(itPos)){
             if (get(itPos)){
                 if (get(itPos)->getColour() != col && get(itPos)->threats(pos)) {
@@ -338,122 +360,13 @@ bool Board::unsafe(pair<int, int> pos, int col) {
     
     // n scan
     for (const pair<int,int> & p : vector<pair<int,int>>{{1,2},{1,-2},{-1,2},{-1,-2},{2,1},{2,-1},{-2,1},{-2,-1}}) {
-        pair<int, int> itPos{pos.first+p.first, pos.second + p.second};
+        pair<int, int> itPos{pos.first+p.first, pos.second+p.second};
         if (validPos(itPos) && get(itPos) && get(itPos)->getColour() != col && get(itPos)->threats(pos)) {
             return true;
         }
     }
     
     return false;
-
-    /*
-    std::vector<PeiceTypes> vertThreats = std::vector<PeiceTypes>(Queen, Rook, King);
-
-    //check up
-    for (int r = pos.second + 1; r < BOARD_SIZE; ++r){
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first, r);
-        if (checkIfThreat(tempPos, col, vertThreats)) return true;
-    }
-    
-    //down
-    for (int r = pos.second - 1; r < BOARD_SIZE; ++r){
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first, r);
-        if (checkIfThreat(tempPos, col, vertThreats)) return true;
-    }
-
-    //right
-    for (int c = pos.first + 1; r < BOARD_SIZE; ++r){
-        std::pair<int, int> tempPos = std::pair<int, int>(c, pos.second);
-        if (checkIfThreat(tempPos, col, vertThreats)) return true;
-    }
-
-    //left
-    for (int c = pos.first - 1; r < BOARD_SIZE; ++r){
-        std::pair<int, int> tempPos = std::pair<int, int>(c, pos.second);
-        if (checkIfThreat(tempPos, col, vertThreats)) return true;
-    }
-
-    std::vector<PeiceTypes> diagThreats1 = std::vector<PeiceTypes>(Bishop);
-    std::vector<PeiceTypes> diagThreats2 = std::vector<PeiceTypes>(Pawn);
-
-    //up and right
-    for (int i = 1; pos.first + i < BOARD_SIZE && pos.second + i < BOARD_SIZE; ++i) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first + i, pos.second + i);
-        if (checkIfThreat(tempPos, col, diagThreats1)) return true;
-        if (col == 1 && i == 1 && checkIfThreat(tempPos, col, diagThreats2)) return true;
-    }
-
-    //up and left
-    for (int i = 1; pos.first - i >= 0 && pos.second + i < BOARD_SIZE; ++i) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first - i, pos.second + i);
-        if (checkIfThreat(tempPos, col, diagThreats1)) return true;
-        if (col == 1 && i == 1 && checkIfThreat(tempPos, col, diagThreats2)) return true;
-    }
-
-    //down and right
-    for (int i = 1;  pos.first + i < BOARD_SIZE && pos.second - i >= 0; ++i) {
-        std::pair<int, int> tempPos = std::pair<int, int>(i, i);
-        if (checkIfThreat(tempPos, col, diagThreats1)) return true;
-        if (col == 0 && i == 1 && checkIfThreat(tempPos, col, diagThreats2)) return true;
-    }
-
-    //down and left
-    for (int i = 1;  pos.first - i >= 0 && pos.second - i >= 0; ++i) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first - i, pos.second - i);
-        if (checkIfThreat(tempPos, col, diagThreats1)) return true;
-        if (col == 0 && i == 1 && checkIfThreat(tempPos, col, diagThreats2)) return true;
-    }
-
-    std::vector<PeiceTypes> LThreats = std::vector<PeiceTypes>(Knight);
-
-    int coldiff = 2;
-    int rowdiff = 1;
-    
-    if (pos.first + coldiff < BOARD_SIZE && pos.second + rowdiff < BOARD_SIZE) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first + coldiff, pos.second + rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-
-    if (pos.first + coldiff < BOARD_SIZE && pos.second - rowdiff >= 0) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first + coldiff, pos.second - rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-
-    if (pos.first - coldiff >= 0 && pos.second + rowdiff < BOARD_SIZE) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first - coldiff, pos.second + rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-
-    if (pos.first - coldiff >= 0 && pos.second - rowdiff >= 0) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first - coldiff, pos.second - rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-    
-    coldiff = 1;
-    rowdiff = 2;
-
-    if (pos.first + coldiff < BOARD_SIZE && pos.second + rowdiff < BOARD_SIZE) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first + coldiff, pos.second + rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-
-    if (pos.first + coldiff < BOARD_SIZE && pos.second - rowdiff >= 0) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first + coldiff, pos.second - rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-
-    if (pos.first - coldiff >= 0 && pos.second + rowdiff < BOARD_SIZE) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first - coldiff, pos.second + rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-    
-    if (pos.first - coldiff >= 0 && pos.second - rowdiff >= 0) {
-        std::pair<int, int> tempPos = std::pair<int, int>(pos.first - coldiff, pos.second - rowdiff);
-        if (checkIfThreat(tempPos, col, LThreats)) return true;
-    }
-
-    return false;
-    */
 }
 
 

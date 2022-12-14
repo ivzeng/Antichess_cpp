@@ -76,8 +76,11 @@ string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
         
         if (decision == "") {
             if (prevDecision == "") {
+                #ifndef DEBUG
                 err_decision(cerr);
                 decisionInstruction(cerr);
+                continue;
+                #endif
                 return "end";
             }
             return prevDecision;

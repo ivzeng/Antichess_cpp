@@ -51,6 +51,8 @@ void err_argvType(std::ostream & out);                    // incorrect type of a
 
 void err_decision(std::ostream & out);                    // incorrect decision input
 
+void err_emptyHist(std::ostream & out); // attempt to undo while the history is empty
+
 void warning_invalidMove(std::ostream & out);
 
 /* Instructions / Messages */

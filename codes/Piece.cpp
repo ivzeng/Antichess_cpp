@@ -15,7 +15,7 @@ Rook::Rook(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
 Knight::Knight(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
-Pawn::Pawn(int colour, const pair<int,int> & pos) :  Piece{colour, pos}, recentMove{-1} {}
+Pawn::Pawn(int colour, const pair<int,int> & pos) :  Piece{colour, pos}, recentMoves{} {}
 
 
 void Piece::move(const pair<int,int> & to, int round){
@@ -50,6 +50,10 @@ char Piece::getRepresentation() const { return representation();    }
 
 const pair<int,int> & Piece::getPosition() const{   return position;    }
 
+
+int Pawn::getRecentMove() const{
+    return recentMoves.back();
+}
 
 void Piece::setStatus(int stat) {
     status = stat;
@@ -92,7 +96,7 @@ void Piece::movePiece(const pair<int,int> & to, int round){
 
 void Pawn::movePiece(const pair<int,int> & to, int round) {
     Piece::movePiece(to, round);
-    recentMove.emplace_back(round);
+    recentMoves.emplace_back(round);
 }
 
 void Piece::goBack(const pair<int,int> & from){
@@ -102,7 +106,7 @@ void Piece::goBack(const pair<int,int> & from){
 
 void Pawn::goBack(const pair<int,int> & from){
     Piece::goBack(from);
-    recentMove.pop_back();
+    recentMoves.pop_back();
 }
 
 void King::scan(int round, Board & board, vector<vector<unique_ptr<Move>>> & moves) const {
@@ -147,7 +151,10 @@ bool Rook::canAttack(const std::pair<int, int> & at) {
 }
 
 bool Knight::canAttack(const std::pair<int, int> & at) {
-    return (position.first-at.first == 2 && (position.second - at.second == 1 || position.second - at.second == -1)) || (position.first-at.first == -2 && (position.second - at.second == 1 || position.second - at.second == -1)) || (position.first-at.first == 1 && (position.second - at.second == 2 || position.second - at.second == -2)) || (position.first-at.first == -1 && (position.second - at.second == 1 || position.second - at.second == -2));
+    return (position.first-at.first == 2 && (position.second - at.second == 1 || position.second - at.second == -1)) || 
+    (position.first-at.first == -2 && (position.second - at.second == 1 || position.second - at.second == -1)) || 
+    (position.first-at.first == 1 && (position.second - at.second == 2 || position.second - at.second == -2)) || 
+    (position.first-at.first == -1 && (position.second - at.second == 2 || position.second - at.second == -2));
 }
 
 bool Pawn::canAttack(const std::pair<int, int> & at) {

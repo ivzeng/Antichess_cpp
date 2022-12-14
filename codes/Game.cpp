@@ -148,8 +148,14 @@ void Game::init(){
 }
 
 void Game::undoRound(Player & other){
+    if (history.size() == 0) {
+        err_emptyHist(cerr);
+        round -= 1;
+        return ;
+    }
     round -= 2;
     history.back().get()->undo(other);
+    history.pop_back();
 }
 
 std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
