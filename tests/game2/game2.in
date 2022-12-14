@@ -1,0 +1,78 @@
+b2b3
+g8f6
+c1b2
+h7h5
+b2f6
+e7f6
+b1a3
+f8a3
+d2d4
+e8g8
+d1d2
+b8c6
+e1c1 **** should not work (would place king in check)
+h2h3
+c6d4
+d2d4
+a3b4
+g2g4 **** should not work (king in check)
+e1d1 **** should not work (can take)
+d4b4
+g7g6
+b4b7
+c8b7
+e1c1
+b7g2
+f1g2
+d8e8
+g2a8
+e8e2
+d1d7
+e2f2
+d7f7
+f8f7
+h1h2
+f2g1
+h2g2 **** should not work (in check)
+c1d2
+g1h2
+d2c1
+h2h3
+a2a3
+f7e7 **** should not work (can take)
+h3b3
+c2b3
+h5h4
+c1b1
+h4h3
+b1a1
+f7e7
+a1b1
+e7e2
+b1a1
+h3h2
+a1b1
+h2h1
+a8h1
+g6g5
+b1a1
+g5g4
+a1b1
+g4g3
+b1a1
+g3g2
+a1b1
+h1g2
+e2g2
+a1b1
+f6f5
+b1a1
+f5f4
+a1b1
+f4f3
+b1a1
+f3f4 **** should not work (not valid move)
+f3e2 **** should not work (not valid move)
+f3f2
+a1b1
+f2f1
