@@ -17,9 +17,6 @@ bool readDecision(istream & in, string & decision) {
     if (decision == "undo") return true;    // undo
     if (decision.length() == 1 && decision[0] >= '1' && decision[0] <= '9') return true;    // require program's help (decision[0] is the number of iterations)
     if (decision.length() == 4){
-        #ifdef DEBUG
-        cerr << "normal move" << endl;
-        #endif
         return (validX(decision[0]) && validX(decision[2]) && validY(decision[1]) && validY(decision[3]));
     }   // move (not promotion)
     if (decision.length() == 5) {
@@ -65,7 +62,7 @@ ostream & operator<<(ostream & out, const Board & board){
 }
 
 ostream & operator<<(ostream & out, const Player & player){
-    out << "player" << player.getColour() << ":" << endl;
+    out << "player" << player.getColour()+1 << ":" << endl;
     out << "pieces:" << endl;
     for (const auto & p : player.getPieces()) {
         out << *p << endl;
@@ -134,7 +131,17 @@ bool checkArgvC(char * argv){
 void beginRoundNote(ostream & out, const Board & board, int round) {
     out << "round" << round/2 << ':' << endl;
     out << board << endl;
-    out << "player(" << round%2 +1 << ") move:" << endl; 
+    out << "player(" << round%2 +1 << ")'s turn:" << endl; 
+}
+
+void endNote(ostream & out, int winner) {
+    if (winner == -1) {
+        out << "dawn" << endl;
+    }
+    else {
+        out << "player(" << winner + 1 << ") win!" << endl;
+    }
+    out << "game ended" << endl;
 }
 
 /* error / warning messages */
@@ -187,8 +194,4 @@ void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
         out << (*m).representation() << ' ';
     }
     cout << endl;
-}
-
-void endNote(ostream & out) {
-    out << "game ended" << endl;
 }

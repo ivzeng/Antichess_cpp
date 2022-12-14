@@ -20,8 +20,6 @@ class Board{
     //checks if the piece at pos can be attacked
     bool unsafe(std::pair<int, int> pos, int col);
 
-    // checks if the king is in checked
-    bool isCheck();
 
     // inserts the move (from, to) (either basic or capture) (true iff the move is not capture)
     bool insertMove(const std::pair<int,int> & from, const std::pair<int,int> & to, std::vector<std::vector<std::unique_ptr<Move>>> & moves);
@@ -86,6 +84,9 @@ public:
 
     // makes a move based on the coordinate representation
     std::unique_ptr<Move> makeMove(int colour, std::string can);
+
+    // checks if the king is in checked
+    bool isCheck();
 
 };
 

@@ -166,11 +166,11 @@ void search(string & move, const vector<vector<unique_ptr<Move>>> & moves){
 }
 
 int getValidMove(const vector<vector<unique_ptr<Move>>> & moves) {
-    int i = 0;
-    while (i < 2 && moves[i].size() == 0){
+    size_t i = 0;
+    while (i < moves.size() && moves[i].size() == 0){
         i += 1;
     }
-    return i;
+    return i == 2 ? -1 : i;
 }
 
 

@@ -75,6 +75,7 @@ int Game::processRound(){
 
     // check game status 
     if (getValidMove(possibleMoves) == -1) {
+        endNote(cerr, (board->isCheck() ? pWait->getColour() : -1));
         return 0;
     }
 

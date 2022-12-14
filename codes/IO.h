@@ -38,6 +38,12 @@ std::ostream & operator<<(std::ostream & out, const Move & move);
 // print the moves set
 void printMoves(std::ostream & out, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
 
+
+void beginRoundNote(std::ostream & out, const Board & board, int round);            // prints the board, player to move and round number
+
+void endNote(std::ostream & out, int winner = -1);
+
+
 /* check inputs */
 int checkArgv(int argc, char * argv[]);
 bool checkArgvPT(char * argv); // convert argv[0] to lower case and checks if argv start with 'p' or 'c'
@@ -61,10 +67,6 @@ void requireDecision(std::ostream & out);               // asks for a decision
 void decisionInstruction(std::ostream & out);           // describes the way to enter a decision
 
 void msgStartGame(std::ostream & out);  
-
-void beginRoundNote(std::ostream & out, const Board & board, int round);            // prints the board, player to move and round number
-
-void endNote(std::ostream & out);
 
 
 
