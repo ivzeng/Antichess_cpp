@@ -70,5 +70,22 @@ more scaning if required
 
 ```virtual std::unique<Move> Move::clone() const;```: see ```Piece::clone```
 
+---
+## smartMove
+
+```
+Game::findAGoodMove(int depth, ???) -> ???:
+    if (depth == ...) (stop)
+    define l = [] : list(???)
+    auto possible moves = searchMoves()
+    for move in moves[getValidMoves(moves)] do:
+        move.process(round)
+        [] += findAGoodMove(depth-1, ???)
+        move.undo()
+    done
+    return f([]) -> ???
+
+??? can be the expect outcome    
+```
 
 
