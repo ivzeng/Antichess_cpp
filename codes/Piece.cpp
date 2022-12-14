@@ -68,23 +68,23 @@ int King::value() const {
 }
 
 int Queen::value() const {
-    return 20;
+    return 9;
 }
 
 int Bishop::value() const {
-    return 10;
+    return 3;
 }
 
 int Rook::value() const {
-    return 11;  // I prefer Rook than Bishop
+    return 5;
 }
 
 int Knight::value() const {
-    return 8;
+    return 3;
 }
 
 int Pawn::value() const {
-    return 3;
+    return 1;
 }
 
 
