@@ -35,7 +35,7 @@ protected:
     virtual std::unique_ptr<Piece> clone() = 0;
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
-    // Piece(const Piece & piece);          // edit: we may not need that since there is no pointer field
+    virtual ~Piece() = 0;
     void move(const std::pair<int,int> & to, int round);    // move the piece (set position, update last move, increment movesCount)
     void back(const std::pair<int,int> & to);   // undo the move
     void searchMoves(int round, Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves);       // search for the moves and update moves

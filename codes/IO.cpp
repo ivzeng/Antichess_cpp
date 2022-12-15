@@ -13,6 +13,7 @@ using namespace std;
 bool readDecision(istream & in, string & decision) {
     decision = "";
     getline(in, decision);
+    toLower(decision);
     if (decision == "") return true;        // select the pervious decision
     if (decision == "undo") return true;    // undo
     if (decision.length() == 1 && decision[0] >= '1' && decision[0] <= '9') return true;    // require program's help (decision[0] is the number of iterations)
@@ -20,7 +21,7 @@ bool readDecision(istream & in, string & decision) {
         return (validX(decision[0]) && validX(decision[2]) && validY(decision[1]) && validY(decision[3]));
     }   // move (not promotion)
     if (decision.length() == 5) {
-        return validX(decision[0]) && validX(decision[1]) && validY(decision[1]) && validY(decision[3]) && (decision[4] == 'p'||decision[4] == 'P');
+        return validX(decision[0]) && validX(decision[2]) && validY(decision[1]) && validY(decision[3]) && (decision[4] == 'q' || decision[4] == 'r' || decision[4] == 'b' || decision[4] == 'n');
     }   // promotion
     return false;
 }
@@ -83,13 +84,16 @@ ostream & operator<<(std::ostream & out, const Move & move) {
 /* check inputs */
 int checkArgv(int argc, char * argv[]){
     if (argc == 3){
-        if (!checkArgvPT(argv[1]) || !checkArgvPT(argv[2])) {
+        toLower(argv[1][0]);
+        toLower(argv[2][0]);
+        if (!checkArgvPT(argv[1][0]) || !checkArgvPT(argv[2][0])) {
             err_argvType(cerr);
             return 0;
         }
     }
     else if (argc == 2) {
-        if (!checkArgvC(argv[1])) {
+        toLower(argv[1][0]);
+        if (!checkArgvC(argv[1][0])) {
             err_argvType(cerr);
             return 0;
         }
@@ -102,30 +106,12 @@ int checkArgv(int argc, char * argv[]){
     return 1;
 }
 
-bool checkArgvPT(char * argv) {
-    if (argv[0] == 'H') {
-        argv[0] = 'h';
-    }
-    else if (argv[0] == 'C') {
-        argv[0] = 'c';
-    }
-    else if (argv[0] != 'c' && argv[0] != 'h') {
-        return false;
-    }
-    return true;
+bool checkArgvPT(const char & arg) {
+    return arg == 'c' || arg == 'h';
 }
 
-bool checkArgvC(char * argv){
-    if (argv[0] == 'W') {
-        argv[0] = 'w';
-    }
-    else if (argv[0] == 'B') {
-        argv[0] = 'b';
-    }
-    else if (argv[0] != 'w' && argv[0] != 'b') {
-        return false;
-    }
-    return true;
+bool checkArgvC(const char & arg){
+    return arg == 'w' || arg == 'b';
 }
 
 void beginRoundNote(ostream & out, const Board & board, int round) {
@@ -194,4 +180,18 @@ void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
         out << (*m).representation() << ' ';
     }
     cout << endl;
+}
+
+/* helpers */
+
+void toLower(std::string & s){
+    for (char & c : s) {
+        toLower(c);
+    }
+}
+
+void toLower(char & c) {
+    if (c >= 'A' && c <= 'Z') {
+        c += 'a' - 'A';
+    }
 }

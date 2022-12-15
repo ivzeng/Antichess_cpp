@@ -19,6 +19,8 @@ Player::Player(const Player & player): colour{player.colour} {
     }
 }
 
+Player::~Player() {}
+
 Human::Human(const Human & human): Player{human} {}
 
 AlphaWind::AlphaWind(const AlphaWind & alphaWind): Player{alphaWind} {}

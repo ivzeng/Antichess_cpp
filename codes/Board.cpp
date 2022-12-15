@@ -84,9 +84,9 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
     // capture move / promotion
     if (from.first+1 < BOARD_SIZE && board[from.second+dir][from.first+1] && board[from.second+dir][from.first+1]->getColour() != col && safeMove(from, pair<int,int>{from.first+1, from.second+dir})){
         Piece * target = board[from.second+dir][from.first+1]; 
-            pair<int,int> to{from.first + 1, from.second + dir}; 
+            pair<int,int> to{from.first+1, from.second + dir}; 
         if (prom) {
-            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target,new Queen{col, to}, from, to));
+            moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Queen{col, to}, from, to));
             moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Rook{col, to}, from, to));
             moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Bishop{col, to}, from, to));
             moves[0].emplace_back(make_unique<CapturePromotion>(get(from), target, new Knight{col, to}, from, to));
@@ -262,24 +262,28 @@ void Board::pScan(int col, int movesCount, int round, const pair<int,int> & pos,
     // other move / promotion
     pInsertMove(col, pos, moves);
 
+    // en passant
     if (pos.second == 4-col /*white: 4, black: 3*/) {
         if (pos.first-1 >= 0) {
             pair<int,int> to{pos.first-1, pos.second};
             Pawn * target = dynamic_cast<Pawn *>(get(to));
-
             set(to, nullptr);    // ready for safeMove
+            to.second += dir;
             if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
                 moves[0].emplace_back(make_unique<Capture>(get(pos), target, pos, to));
             }
+            to.second += dir;
             set(to, target);
         }
         if (pos.first+1 < BOARD_SIZE){
             pair<int,int> to{pos.first+1, pos.second};
             Pawn * target = dynamic_cast<Pawn *>(get(to));
             set(to, nullptr);    // ready for safeMove
+            to.second += dir;
             if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
                 moves[0].emplace_back(make_unique<Capture>(get(pos), target, pos, to));
             }
+            to.second -= dir;
             set(to, target);
         }
     }

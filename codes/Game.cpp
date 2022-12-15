@@ -120,9 +120,9 @@ int Game::processRound(){
     }
 
     // do the move
-    history.back().get()->process(round, *pMove);
+    history.back()->process(round, *pMove);
     #ifdef DEBUG
-    cerr << "Capture::act() is called" << endl;
+    cerr << "done the move" << endl;
     #endif
     return 1;
 }

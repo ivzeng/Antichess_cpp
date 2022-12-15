@@ -46,9 +46,9 @@ void endNote(std::ostream & out, int winner = -1);
 
 /* check inputs */
 int checkArgv(int argc, char * argv[]);
-bool checkArgvPT(char * argv); // convert argv[0] to lower case and checks if argv start with 'p' or 'c'
+bool checkArgvPT(const char & arg); // convert argv[0] to lower case and checks if argv start with 'p' or 'c'
 
-bool checkArgvC(char * argv); // checks if the argv is a valid colour (starts with either 'w' or 'b' (to lower case))
+bool checkArgvC(const char & arg); // checks if the argv is a valid colour (starts with either 'w' or 'b' (to lower case))
 
 /*std err*/
 // prints error code about the argument
@@ -69,6 +69,10 @@ void decisionInstruction(std::ostream & out);           // describes the way to 
 void msgStartGame(std::ostream & out);  
 
 
+/* other helpers */
+void toLower(std::string & s);
+
+void toLower(char & c);
 
 
 #endif

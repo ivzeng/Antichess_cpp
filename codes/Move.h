@@ -26,18 +26,16 @@ protected:
     std::pair<int,int> to;          // positions
     virtual std::string getRepresentaion() const;
     /* function */
-    Move(); //  default constructor
     Move(Piece* piece, const std::pair<int,int> & from, const std::pair<int,int> & to);  // constructor, take Move on the piece
     virtual void act(int round, Player & player) = 0;
     virtual void reverse(Player & player) = 0;
-
+    
 public:
-    bool operator==(const std::string & can);
+    virtual ~Move() = 0;
+    bool operator==(const std::string & can) const;
     std::string representation() const;       // return the coordinate algebraic notation of the move (e2e4, e7e8q (promotion))
     void process(int round,Player & player);
     void undo(Player & player);
-    virtual ~Move() = 0;
-
 };
 
 class Basic : public Move{
@@ -75,6 +73,7 @@ protected:
 
 public:
     Promotion(Piece* piece,  Piece * promotion, const std::pair<int,int> & from, const std::pair<int,int> & to);
+
 };
 
 class CapturePromotion : public Promotion {
@@ -106,8 +105,9 @@ int getX(const char & x);
 int getY(const char & y);
 
 // checks the coordinate algebraic notation
-bool validX(const char & x);
+bool validX(const char & x);    // also to lower case
 bool validY(const char & y);
+
 
 // searches the move in coordinate algebraic notation from moves, puts the indices of the move in moves and the validity into move (for example, moves becomes "011": the move is at moves[0][1], and it is valid). If the move is not in moves, move will be unchanged 
 void search(std::string & move, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);

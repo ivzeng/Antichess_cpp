@@ -19,7 +19,6 @@ protected:
     int colour;                                         // 0 for white and 1 for black
     std::vector<std::unique_ptr<Piece>> pieces;         // pieces owned by the player
 
-
     /* functions */
 
     // decide a move 
@@ -27,11 +26,9 @@ protected:
 
     virtual std::unique_ptr<Player> clone() = 0; 
 public:
-    Player(int colour);                                             // constructor
-    Player(const Player & player);                                  // copy ctor
-    // ~Player();                                                   // destroctor 
-    //  edit: apparently there is nothing to delete
-
+    Player(int colour);   // constructor
+    virtual ~Player() = 0;
+    Player(const Player & player);   // copy ctor
     void init();                                                    // initialize pieces
     int updateStatus();                                             // check if the king is rip
     void updateBoard(Board & board);                // help put the pieces on the board

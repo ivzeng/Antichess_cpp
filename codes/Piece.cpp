@@ -5,6 +5,8 @@ using namespace std;
 
 Piece::Piece(int colour, const pair<int,int> & pos): colour{colour}, status{1}, movesCount{0}, position{pos} {}
 
+Piece::~Piece() {}
+
 King::King(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
 
 Queen::Queen(int colour, const pair<int,int> & pos) : Piece{colour, pos} {}
