@@ -29,6 +29,12 @@ private:
     void undoRound(Player & other);                           // undo a round
 
     std::string smartMove(std::vector<std::vector<std::unique_ptr<Move>>> & moves, int it);     // find an optimized move
+    
+    //finds best move (minmax)
+    std::string findBestMoveWrapper(Board & board, int depth, int it, int player);
+    int getPositionScoreAtDepth(Board & board, int depth, int it, int player);
+    int positionScore(int player);
+
 
 public:
     // constructor, take an array of two char* in {"c","d"}:
