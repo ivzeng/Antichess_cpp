@@ -180,7 +180,7 @@ int Game::positionScore(int player) {
 
 char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int it, int player) {
     int bestScore = 0;
-    int bestMove = 0;
+    char bestMove = ' ';
 
     for (auto & trymove : moves) {
         trymove->process(round, *(getPlayer().at(player).get()));
@@ -191,7 +191,7 @@ char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int d
             bestMove++;
         }
 
-        trymove->undo();
+        trymove->undo(*(getPlayer().at(player).get()));
     }
     return bestMove + '0';
 }
@@ -203,7 +203,7 @@ int Game::getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, in
             vector<vector<unique_ptr<Move>>> possibleMoves(2);
             getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
             getPositionScoreAtDepth(possibleMoves.at(getValidMove(possibleMoves)), depth - 1, it + 1, player);
-            trymove->undo();
+            trymove->undo(*(getPlayer().at(player).get()));
         }
     }
 
