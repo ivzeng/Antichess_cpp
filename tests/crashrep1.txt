@@ -1,0 +1,1017 @@
+7 - P P P - P P P
+6 - - - - - - - -
+5 - - - - - N - -
+4 - - - - - - - -
+3 - q p - - - - -
+2 - - - p p p p p
+1 - - - - k b n r
+  a b c d e f g h
+player(1)'s turn:
+capture moves: b3b7 b3f7
+placeful moves: e1d1 b3a3 b3b4 b3b5 b3b6 b3b2 b3b1 b3c4 b3d5 b3e6 b3a4 b3c2 b3d1 b3a2 g1h3 g1f3 c3c4 d2d4 d2d3 e2e4 e2e3 f2f4 f2f3 g2g4 g2g3 h2h4 h2h3
+please make a move
+b3f7
+searchMove()
+get decision: 011
+finds decision
+pushing the move into history
+finished pushing the move into history
+Capture::act() is called
+done the move
+processRound()
+round9:
+8 - - B Q K B - R
+7 - P P P - q P P
+6 - - - - - - - -
+5 - - - - - N - -
+4 - - - - - - - -
+3 - - p - - - - -
+2 - - - p p p p p
+1 - - - - k b n r
+  a b c d e f g h
+player(2)'s turn:
+
+get decision: 8
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7
+Round: 21
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 e1d1
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 g1h3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 g1f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 c3c4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 d2d4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 d2d3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 e2e4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 e2e3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 f2f4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 f2f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 g2g4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 g2g3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 h2h4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f8g7 h2h3
+Round: 23
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 e1d1
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 g1h3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 g1f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 c3c4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 d2d4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 d2d3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 e2e4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 e2e3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 f2f4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 f2f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 g2g4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 g2g3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 h2h4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7g7 f5g7 h2h3
+Round: 23
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7
+Round: 21
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 e1d1
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 g1h3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 g1f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 c3c4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 d2d4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 d2d3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 e2e4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 e2e3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 f2f4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 f2f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 g2g4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 g2g3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 h2h4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 e8d7 h2h3
+Round: 23
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 e1d1
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 g1h3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 g1f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 c3c4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 d2d4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 d2d3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 e2e4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 e2e3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 f2f4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 f2f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 g2g4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 g2g3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 h2h4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 d8d7 h2h3
+Round: 23
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 e1d1
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 g1h3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 g1f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 c3c4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 d2d4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 d2d3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 e2e4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 e2e3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 f2f4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 f2f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 g2g4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 g2g3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 h2h4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7d7 c8d7 h2h3 
+Round: 23
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8
+Round: 21
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 e1d1
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 g1h3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 g1f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 c3c4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 d2d4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 d2d3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 e2e4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 e2e3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 f2f4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 f2f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 g2g4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 g2g3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 h2h4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 e8f8 h2h3
+Round: 23
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 e1d1
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 g1h3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 g1f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 c3c4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 d2d4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 d2d3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 e2e4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 e2e3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 f2f4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 f2f3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 g2g4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 g2g3
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 h2h4
+Round: 23
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f8 h8f8 h2h3
+Round: 23
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5
+Round: 21
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 e8e7
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 e8e7 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 e8e7 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 e8e7 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8e7
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8e7 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8e7 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8e7 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8f6
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8f6 f5f6
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8f6 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8f6 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8g5
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8g5 f5g5
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8g5 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8g5 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8g5 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8h4
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8h4 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8h4 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d8h4 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8e7
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8e7 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8e7 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8d6
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8d6 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8d6 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8c5
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8c5 f5c5
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8c5 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8c5 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8b4
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8b4 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8b4 f5d7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8b4 c3b4
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8a3
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8a3 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 f8a3 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h8g8
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h8g8 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h8g8 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h8g8 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b5
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b5 f5b5
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b5 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b5 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b5 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b6
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b6 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b6 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 b7b6 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c5
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c5 f5c5
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c5 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c5 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c5 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c6
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c6 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c6 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 c7c6 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d5
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d5 f5d5
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d5 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d5 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d5 f5c8
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d6
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d6 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d6 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 d7d6 f5c8
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g5
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g5 f5g5
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g5 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g5 f5h7
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g5 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g6
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g6 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g6 f5g6
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 g7g6 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h7h5
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h7h5 f5h5
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h7h5 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h7h5 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h7h6
+Round: 22
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h7h6 f5f8
+Round: 23
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7f5 h7h6 f5d7
+Round: 23
+Capture::reverse() is called
+Basic::reverse() is called
+Capture::reverse() is called
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7e8
+Round: 21
+Capture::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7e8 d8e8
+Round: 22
+Basic::act() is called
+
+moves: b2b3 b8c6 b3b4 c6b4 c2c3 b4a2 a1a2 g8h6 a2a7 a8a7 b1a3 a7a3 c1a3 h6f5 a3e7 e8e7 d1b3 e7e8 b3f7 f7e8 d8e8 e1d1
+Round: 23
+Segmentation fault (core dumped)

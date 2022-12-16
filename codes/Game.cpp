@@ -161,10 +161,22 @@ void Game::undoRound(Player & other){
 
 std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     string res = "  ";
-    res[0] = getValidMove(moves) + '0';
-    res[1] = findBestMoveWrapper(moves.at(getValidMove(moves)), 1, round%2);
 
-    cout << *moves[res[0]-'0'][res[1]-'0'] << endl;
+    //cout << "Round: " << round << endl;
+
+    vector<vector<unique_ptr<Move>>> possibleMoves(2);
+    getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
+
+    res[0] = getValidMove(moves) + '0';
+    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), 3, round%2);
+
+    //cout << res[0]-'0' << endl;
+    //cout << res[1]-'0' << endl;
+    //cout << moves[res[0]-'0'].size() << endl;
+    //cout << moves[1].size() << endl;
+
+    //cout << *moves[res[0]-'0'][res[1]-'0'] << endl;
+    round --;
     return res;
 }
 
@@ -180,7 +192,7 @@ int Game::positionScore(int player) {
 
 char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player) {
     int bestScore = 0;
-    char bestMove = '0';
+    char bestMove = 0;
 
     for (auto & trymove : moves) {
         trymove->process(round, *(getPlayer().at(player).get()));
@@ -201,6 +213,9 @@ char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int d
         round++;
         //round--;
     }
+
+    round++;
+    cout << "BestMove: " << bestMove + '0' << endl;
     return bestMove + '0';
 }
 
