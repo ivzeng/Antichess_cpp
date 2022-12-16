@@ -37,7 +37,7 @@ std::ostream & operator<<(std::ostream & out, const Move & move);
 
 // print the moves set
 void printMoves(std::ostream & out, const std::vector<std::vector<std::unique_ptr<Move>>> & moves);
-
+void printMoves(std::ostream & out, std::vector<std::unique_ptr<Move>> & moves);
 
 void beginRoundNote(std::ostream & out, const Board & board, int round);            // prints the board, player to move and round number
 

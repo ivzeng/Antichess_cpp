@@ -162,7 +162,7 @@ void Game::undoRound(Player & other){
 std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     string res = "  ";
     res[0] = getValidMove(moves) + '0';
-    res[1] = findBestMoveWrapper(moves.at(getValidMove(moves)), 5, 0, round%2);
+    res[1] = findBestMoveWrapper(moves.at(getValidMove(moves)), 1, round%2);
 
     cout << *moves[res[0]-'0'][res[1]-'0'] << endl;
     return res;
@@ -178,32 +178,46 @@ int Game::positionScore(int player) {
     return score;
 }
 
-char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int it, int player) {
+char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player) {
     int bestScore = 0;
-    char bestMove = ' ';
+    char bestMove = '0';
 
     for (auto & trymove : moves) {
         trymove->process(round, *(getPlayer().at(player).get()));
-        int temp = getPositionScoreAtDepth(moves, depth - 1, it + 1, player);
+        history.push_back(move(trymove));
+        printMoves(cout, history);
+        round++;
+        std::cout << "Round: " << round << endl;
+        vector<vector<unique_ptr<Move>>> possibleMoves(2);
+        getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
+        int temp = getPositionScoreAtDepth(possibleMoves.at(getValidMove(possibleMoves)), depth - 1, player);
 
         if (temp > bestScore) {
             bestScore = temp;
             bestMove++;
         }
 
-        trymove->undo(*(getPlayer().at(player).get()));
+        undoRound(*(getPlayer().at(round%2).get()));
+        round++;
+        //round--;
     }
     return bestMove + '0';
 }
 
-int Game::getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int it, int player){
+int Game::getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player){
     if (depth != 0) {
         for (auto & trymove : moves) {
-            trymove->process(round, *(getPlayer().at(player).get()));
+            trymove->process(round, *(getPlayer().at(round%2).get()));
+            history.push_back(move(trymove));
+            printMoves(cout, history);
+            round++;
+            std::cout << "Round: " << round << endl;
             vector<vector<unique_ptr<Move>>> possibleMoves(2);
             getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
-            getPositionScoreAtDepth(possibleMoves.at(getValidMove(possibleMoves)), depth - 1, it + 1, player);
-            trymove->undo(*(getPlayer().at(player).get()));
+            getPositionScoreAtDepth(possibleMoves.at(getValidMove(possibleMoves)), depth - 1, player);
+            undoRound(*(getPlayer().at(round%2).get()));
+            round++;
+            //round--;
         }
     }
 

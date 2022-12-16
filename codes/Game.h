@@ -31,8 +31,8 @@ private:
     std::string smartMove(std::vector<std::vector<std::unique_ptr<Move>>> & moves, int it);     // find an optimized move
     
     //finds best move (minmax)
-    char findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int it, int player);
-    int getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int it, int player);
+    char findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
+    int getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
     int positionScore(int player);
 
 

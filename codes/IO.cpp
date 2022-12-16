@@ -182,6 +182,14 @@ void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
     cout << endl;
 }
 
+void printMoves(ostream & out, vector<unique_ptr<Move>> & moves) {
+    cout << endl << "moves: ";
+    for (const auto & m : moves) {
+        out << (*m).representation() << ' ';
+    }
+    cout << endl;
+}
+
 /* helpers */
 
 void toLower(std::string & s){
