@@ -162,11 +162,12 @@ void Game::undoRound(Player & other){
 std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     string res = "  ";
     res[0] = getValidMove(moves) + '0';
-    res[1] = '0';
+    res[1] = findBestMoveWrapper(moves.at(getValidMove(moves)), 5, 0, round%2);
 
     cout << *moves[res[0]-'0'][res[1]-'0'] << endl;
     return res;
 }
+
 
 int Game::positionScore(int player) {
     int score = 0;
@@ -177,85 +178,34 @@ int Game::positionScore(int player) {
     return score;
 }
 
-/*
-std::unique_ptr<Move> & Game::findBestMove(std::unique_ptr<Board> board, int depth, int it, int player) {
-    if (depth != 0) {
-        vector<vector<unique_ptr<Move>>> possibleMoves(2);
-        getPlayer().at(player)->searchMoves(round, *board, possibleMoves);
-        for (auto trymove : possibleMoves) {
-            if (it == 0) {
-                string decision{trymove};
-                (*board).makeMove(player, decision)
-                if (player == 0){
-                    return findBestMove(board, depth--, it++, 1);
-                } else {
-                    return findBestMove(board, depth--, it++, 0);
-                }
-            } else {
-
-            }
-        }
-    } else {
-        vector<vector<unique_ptr<Move>>> possibleMoves(2);
-        getPlayer().at(player)->searchMoves(round, *board, possibleMoves);
-        int bestScore = 0;
-        std::unique_ptr<Move> bestMove = nullptr;
-        for (auto trymove : possibleMoves) {
-            int tempScore = positionScore(player);
-            if (tempScore > bestScore) {
-                bestScore = tempScore;
-                bestMove = trymove;
-            }
-        }
-    }
-}
-*/
-
-std::string Game::findBestMoveWrapper(Board & board, int depth, int it, int player) {
+char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int it, int player) {
     int bestScore = 0;
-    std::string bestMove = "";
+    int bestMove = 0;
 
-    std::vector<std::vector<std::unique_ptr<Move>>> possibleMoves(2);
-    getPlayer().at(player)->searchMoves(round, board, possibleMoves);
+    for (auto & trymove : moves) {
+        trymove->process(round, *(getPlayer().at(player).get()));
+        int temp = getPositionScoreAtDepth(moves, depth - 1, it + 1, player);
 
-    for (auto & trymove : possibleMoves.at(0)) {
-        //string decision{trymove};
-        //board.makeMove(player, decision);
-        int temp = getPositionScoreAtDepth(board, depth - 1, it + 1, player);
         if (temp > bestScore) {
             bestScore = temp;
-            bestMove = trymove->representation();
+            bestMove++;
         }
-    }
 
-    for (auto & trymove : possibleMoves.at(1)) {
-        //string decision{trymove};
-        //board.makeMove(player, decision);
-        int temp = getPositionScoreAtDepth(board, depth - 1, it + 1, player);
-        if (temp > bestScore) {
-            bestScore = temp;
-            bestMove = trymove->representation();
-        }
+        trymove->undo();
     }
-
-    return bestMove;
+    return bestMove + '0';
 }
 
-int Game::getPositionScoreAtDepth(Board & board, int depth, int it, int player){
+int Game::getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int it, int player){
     if (depth != 0) {
-        std::vector<std::vector<std::unique_ptr<Move>>> possibleMoves(2);
-        getPlayer().at(round%2)->searchMoves(round, board, possibleMoves);
-        for (auto & trymove : possibleMoves.at(0)) {
-            //string decision{trymove};
-            //board.makeMove(round%2, decision);
-            return getPositionScoreAtDepth(board, depth - 1, it + 1, player);
+        for (auto & trymove : moves) {
+            trymove->process(round, *(getPlayer().at(player).get()));
+            vector<vector<unique_ptr<Move>>> possibleMoves(2);
+            getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
+            getPositionScoreAtDepth(possibleMoves.at(getValidMove(possibleMoves)), depth - 1, it + 1, player);
+            trymove->undo();
         }
-        for (auto & trymove : possibleMoves.at(1)) {
-            //string decision{trymove};
-            //board.makeMove(round%2, decision);
-            return getPositionScoreAtDepth(board, depth - 1, it + 1, player);
-        }
-    } else {
-        return positionScore(player);
     }
+
+    return positionScore(player) - positionScore(1 - player);
 }
