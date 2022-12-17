@@ -1,3 +1,5 @@
+#include <cmath>
+
 #include "Game.h"
 #include "Player.h"
 #include "Board.h"
@@ -37,7 +39,7 @@ void Game::addPlayer(int i, char type){
         players.push_back(make_unique<Human>(i));
     }
     else {
-        cerr << "game::addPlayer(): some thing is wrong" << endl;
+        // cerr << "game::addPlayer(): some thing is wrong" << endl;
     }
 }
 
@@ -45,30 +47,41 @@ unique_ptr<Board> Game::getBoard() const{
     unique_ptr<Board> board = make_unique<Board>();
     players[0].get()->updateBoard(*board);
     players[1].get()->updateBoard(*board);
-    board->setKP(players[round%2]->getPieces()[0]->getPosition());
+    board->setKP(getPlayerM().getPieces()[0]->getPosition());
     return board;
 }
 
-const std::vector<std::unique_ptr<Player>> & Game::getPlayer() const {
+const vector<unique_ptr<Player>> & Game::getPlayer() const {
     return players;
+}
+
+const Player & Game::getPlayerM() const {
+    return *(players[round%2]);
+}
+
+Player * Game::playerM() {
+    return players[round%2].get();
+}
+
+Player * Game::playerW() {
+    return players[(round+1)%2].get();
 }
 
 int Game::processRound(){
     #ifdef DEBUG
-    cerr << "processRound()" << endl;
+    // cerr << "processRound()" << endl;
     #endif
 
-    Player * pMove = players[round%2].get();
-    Player * pWait = players[(round+1)%2].get();
+    Player * pMove = playerM();
+    Player * pWait = playerW();
     unique_ptr<Board> board{getBoard()};
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
     #ifdef DEBUG
     beginRoundNote(cout, *board, round);
     #else
-    beginRoundNote(cerr, *board, round);
+    beginRoundNote(// cerr, *board, round);
     #endif
 
-    round += 1;
 
     // search for move
     pMove->searchMoves(round, *board, possibleMoves);
@@ -83,7 +96,7 @@ int Game::processRound(){
     string decision{pMove->move(possibleMoves)};
     
     #ifdef DEBUG
-    cerr << "get decision: " << decision << endl;
+    // cerr << "get decision: " << decision << endl;
     #endif
     if (decision == "end") {
         endNote(cerr);
@@ -94,36 +107,39 @@ int Game::processRound(){
         return 1;
     } // undo
     else if (decision.length() >= 4) {
-        history.push_back((*board).makeMove(round%2, decision));
+        history.push_back((*board).makeMove((round+1)%2, decision));
     } // undefined move
     else {
         if (decision.length() == 3) {
             #ifdef DEBUG
-            cerr << "finds decision" << endl;
+            // cerr << "finds decision" << endl;
             #endif
         } // defined move
         else if (decision[0] >= '1' && decision[0] <= '9'){
             decision = smartMove(possibleMoves, decision[0]-'0');
+            cout << *(possibleMoves[decision[0]-'0'][decision[1]-'0']) << endl;
+    
         } // bot request
         else {
-            cout << "something is wrong at processRound" << endl;
+            // cerr << "something is wrong at processRound" << endl;
             return 0;
         }
         #ifdef DEBUG
-        cerr << "pushing the move into history" << endl;
+        // cerr << "pushing the move into history" << endl;
         #endif
         history.push_back(move(possibleMoves[decision[0]-'0'][decision[1]-'0']));
         possibleMoves[decision[0]-'0'][decision[1]-'0'] = nullptr;
         #ifdef DEBUG
-        cerr << "finished pushing the move into history" << endl;
+        // cerr << "finished pushing the move into history" << endl;
         #endif
     }
 
     // do the move
     history.back()->process(round, *pMove);
     #ifdef DEBUG
-    cerr << "done the move" << endl;
+    // cerr << "done the move" << endl;
     #endif
+    round += 1;
     return 1;
 }
 
@@ -131,7 +147,7 @@ void Game::processGame(){
     init();
 
     #ifdef DEBUG
-    cerr << "initialized game" << endl;
+    // cerr << "initialized game" << endl;
     #endif
 
     printGame(*this);
@@ -143,7 +159,7 @@ void Game::processGame(){
 }
 
 void Game::init(){
-    // cerr << players.size() << endl;
+    // // cerr << players.size() << endl;
     players[0].get()->init();
     players[1].get()->init();
 }
@@ -151,24 +167,23 @@ void Game::init(){
 void Game::undoRound(Player & other){
     if (history.size() == 0) {
         err_emptyHist(cerr);
-        round -= 1;
         return ;
     }
-    round -= 2;
+    round -= 1;
     history.back().get()->undo(other);
     history.pop_back();
 }
 
-std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
+string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     string res = "  ";
 
     //cout << "Round: " << round << endl;
 
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
-    getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
+    playerM()->searchMoves(round, *(getBoard()), possibleMoves);
 
     res[0] = getValidMove(moves) + '0';
-    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), 3, round%2);
+    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), it, round%2);
 
     //cout << res[0]-'0' << endl;
     //cout << res[1]-'0' << endl;
@@ -176,65 +191,86 @@ std::string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     //cout << moves[1].size() << endl;
 
     //cout << *moves[res[0]-'0'][res[1]-'0'] << endl;
-    round --;
     return res;
 }
 
 
-int Game::positionScore(int player) {
+int Game::positionScore(int cur) {
     int score = 0;
-    for (auto & piece : getPlayer().at(player)->getPieces()) {
+    for (auto & piece : players[cur]->getPieces()) {
         score += piece->getValue();
     }
-
     return score;
 }
 
-char Game::findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player) {
-    int bestScore = 0;
+char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int cur) {
+    double bestScore = -100;
+    int bestMoveIdx = 0;
     char bestMove = 0;
 
     for (auto & trymove : moves) {
-        trymove->process(round, *(getPlayer().at(player).get()));
+        trymove->process(round, *players[cur]);
         history.push_back(move(trymove));
-        printMoves(cout, history);
-        round++;
-        std::cout << "Round: " << round << endl;
+        // printMoves(cerr, history);
+        // cerr << "Round: " << round << endl;
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
-        getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
-        int temp = getPositionScoreAtDepth(possibleMoves.at(getValidMove(possibleMoves)), depth - 1, player);
+        playerW()->searchMoves(round, *(getBoard()), possibleMoves); // other player search move
+        int validMoveRow = getValidMove(possibleMoves);
+        if (validMoveRow == -1) {
+            validMoveRow = 0;
+        }
+
+        int temp = getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth-1, cur);
 
         if (temp > bestScore) {
             bestScore = temp;
-            bestMove++;
+            bestMoveIdx = bestMove;
         }
+        bestMove++;
 
-        undoRound(*(getPlayer().at(round%2).get()));
-        round++;
-        //round--;
+        undoRound(*(getPlayer().at(round%2)));
     }
-
-    round++;
-    cout << "BestMove: " << bestMove + '0' << endl;
-    return bestMove + '0';
+    // cerr << "BestMove: " << bestMove + '0' << endl;
+    return bestMoveIdx + '0';
 }
 
-int Game::getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player){
-    if (depth != 0) {
-        for (auto & trymove : moves) {
-            trymove->process(round, *(getPlayer().at(round%2).get()));
-            history.push_back(move(trymove));
-            printMoves(cout, history);
-            round++;
-            std::cout << "Round: " << round << endl;
-            vector<vector<unique_ptr<Move>>> possibleMoves(2);
-            getPlayer().at(round%2)->searchMoves(round, *(getBoard()), possibleMoves);
-            getPositionScoreAtDepth(possibleMoves.at(getValidMove(possibleMoves)), depth - 1, player);
-            undoRound(*(getPlayer().at(round%2).get()));
-            round++;
-            //round--;
-        }
+double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth, int cur){
+    round +=1;
+    if (moves.size() == 0) {
+        return (cur == round%2) ? -100 : 100;
+    }
+    if (depth == 0) {
+        return positionScore(cur) - positionScore(1 - cur);
     }
 
-    return positionScore(player) - positionScore(1 - player);
+    priority_queue<double> outcomes;
+
+    for (auto & trymove : moves) {
+        trymove->process(round, *playerM());
+        history.push_back(move(trymove));
+        // printMoves(cerr, history);
+        // cerr << "Round: " << round << endl;
+        vector<vector<unique_ptr<Move>>> possibleMoves(2);
+        playerW()->searchMoves(round, *(getBoard()), possibleMoves);
+        int validMoveRow = getValidMove(possibleMoves);
+        if (validMoveRow == -1) {
+            validMoveRow = 0;
+        }
+        outcomes.push(getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
+        undoRound(*(getPlayer().at(round%2)));
+    }
+    return expectedOutcome(outcomes, 10);
+}
+
+double expectedOutcome(priority_queue<double> & outcomes, int upperBound) {
+    int i = 0;
+    double res = 0;
+    while (i < upperBound-1 && outcomes.size()>1){
+        res += outcomes.top()/pow(2,i);
+        outcomes.pop();
+        i += 1;
+    }
+    if (i != 0) i -= 1;
+    res += outcomes.top()/pow(2,i);
+    return res;
 }

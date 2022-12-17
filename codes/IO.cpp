@@ -175,19 +175,19 @@ void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
     for (const auto & m : moves[0]) {
         out << (*m).representation() << ' ';
     }
-    cout << endl << "placeful moves: ";
+    out << endl << "placeful moves: ";
     for (const auto & m : moves[1]) {
         out << (*m).representation() << ' ';
     }
-    cout << endl;
+    out << endl;
 }
 
 void printMoves(ostream & out, vector<unique_ptr<Move>> & moves) {
-    cout << endl << "moves: ";
+    out << endl << "moves: ";
     for (const auto & m : moves) {
         out << (*m).representation() << ' ';
     }
-    cout << endl;
+    out << endl;
 }
 
 /* helpers */

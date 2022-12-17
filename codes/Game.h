@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <queue>
 
 class Board;
 class Player;
@@ -32,10 +33,9 @@ private:
     
     //finds best move (minmax)
     char findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
-    int getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
+    double getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
     int positionScore(int player);
-
-
+    
 public:
     // constructor, take an array of two char* in {"c","d"}:
     //  "d": human player, "c": computer player
@@ -51,10 +51,15 @@ public:
     std::unique_ptr<Board> getBoard() const;  // let players update the board
     const std::vector<std::unique_ptr<Player>> & getPlayer() const;
 
+    const Player & getPlayerM() const;
+
+    Player * playerM();             // returns the player that is going to make a move in the current round
+    Player * playerW();             // returns the player that is going to make a move in the next round
+
     /* friend functions */
     friend std::ostream & operator<<(std::ostream & out, const Game & game);
 };
 
-
+double expectedOutcome(std::priority_queue<double> & outcomes, int upperBound);
 
 #endif

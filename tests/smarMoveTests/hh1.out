@@ -1,0 +1,395 @@
+round0:
+8 R N B Q K B N R 
+7 P P P P P P P P 
+6 - - - - - - - - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r n b q k b n r 
+  a b c d e f g h 
+player(1)'s turn:
+b1c3
+round0:
+8 R N B Q K B N R 
+7 P P P P P P P P 
+6 - - - - - - - - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - n - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(2)'s turn:
+b8c6
+round1:
+8 R - B Q K B N R 
+7 P P P P P P P P 
+6 - - N - - - - - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - n - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(1)'s turn:
+c3e4
+round1:
+8 R - B Q K B N R 
+7 P P P P P P P P 
+6 - - N - - - - - 
+5 - - - - - - - - 
+4 - - - - n - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(2)'s turn:
+c6e5
+round2:
+8 R - B Q K B N R 
+7 P P P P P P P P 
+6 - - - - - - - - 
+5 - - - - N - - - 
+4 - - - - n - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(1)'s turn:
+e4g5
+round2:
+8 R - B Q K B N R 
+7 P P P P P P P P 
+6 - - - - - - - - 
+5 - - - - N - n - 
+4 - - - - - - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(2)'s turn:
+e5g6
+round3:
+8 R - B Q K B N R 
+7 P P P P P P P P 
+6 - - - - - - N - 
+5 - - - - - - n - 
+4 - - - - - - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(1)'s turn:
+g5h7
+round3:
+8 R - B Q K B N R 
+7 P P P P P P P n 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(2)'s turn:
+h8h7
+round4:
+8 R - B Q K B N - 
+7 P P P P P P P R 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r - b q k b n r 
+  a b c d e f g h 
+player(1)'s turn:
+g1h3
+round4:
+8 R - B Q K B N - 
+7 P P P P P P P R 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - n 
+2 p p p p p p p p 
+1 r - b q k b - r 
+  a b c d e f g h 
+player(2)'s turn:
+h7h3
+round5:
+8 R - B Q K B N - 
+7 P P P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - R 
+2 p p p p p p p p 
+1 r - b q k b - r 
+  a b c d e f g h 
+player(1)'s turn:
+g2h3
+round5:
+8 R - B Q K B N - 
+7 P P P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q k b - r 
+  a b c d e f g h 
+player(2)'s turn:
+g6e5
+round6:
+8 R - B Q K B N - 
+7 P P P P P P P - 
+6 - - - - - - - - 
+5 - - - - N - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q k b - r 
+  a b c d e f g h 
+player(1)'s turn:
+f1g2
+round6:
+8 R - B Q K B N - 
+7 P P P P P P P - 
+6 - - - - - - - - 
+5 - - - - N - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p b p 
+1 r - b q k - - r 
+  a b c d e f g h 
+player(2)'s turn:
+e5g6
+round7:
+8 R - B Q K B N - 
+7 P P P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p b p 
+1 r - b q k - - r 
+  a b c d e f g h 
+player(1)'s turn:
+g2b7
+round7:
+8 R - B Q K B N - 
+7 P b P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q k - - r 
+  a b c d e f g h 
+player(2)'s turn:
+c8b7
+round8:
+8 R - - Q K B N - 
+7 P B P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q k - - r 
+  a b c d e f g h 
+player(1)'s turn:
+e1f1
+round8:
+8 R - - Q K B N - 
+7 P B P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - k - r 
+  a b c d e f g h 
+player(2)'s turn:
+b7h1
+round9:
+8 R - - Q K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - k - B 
+  a b c d e f g h 
+player(1)'s turn:
+f1g1
+round9:
+8 R - - Q K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k B 
+  a b c d e f g h 
+player(2)'s turn:
+d8c8
+round10:
+8 R - Q - K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k B 
+  a b c d e f g h 
+player(1)'s turn:
+g1h1
+round10:
+8 R - Q - K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - - k 
+  a b c d e f g h 
+player(2)'s turn:
+e8d8
+round11:
+8 R - Q K - B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - - k 
+  a b c d e f g h 
+player(1)'s turn:
+h1g1
+round11:
+8 R - Q K - B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k - 
+  a b c d e f g h 
+player(2)'s turn:
+d8e8
+round12:
+8 R - Q - K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k - 
+  a b c d e f g h 
+player(1)'s turn:
+g1h1
+round12:
+8 R - Q - K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - - k 
+  a b c d e f g h 
+player(2)'s turn:
+e8d8
+round13:
+8 R - Q K - B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - - k 
+  a b c d e f g h 
+player(1)'s turn:
+h1g1
+round13:
+8 R - Q K - B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k - 
+  a b c d e f g h 
+player(2)'s turn:
+d8e8
+round14:
+8 R - Q - K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k - 
+  a b c d e f g h 
+player(1)'s turn:
+g1h1
+round14:
+8 R - Q - K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - - k 
+  a b c d e f g h 
+player(2)'s turn:
+e8d8
+round15:
+8 R - Q K - B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - - k 
+  a b c d e f g h 
+player(1)'s turn:
+h1g1
+round15:
+8 R - Q K - B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k - 
+  a b c d e f g h 
+player(2)'s turn:
+d8e8
+round16:
+8 R - Q - K B N - 
+7 P - P P P P P - 
+6 - - - - - - N - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - p 
+2 p p p p p p - p 
+1 r - b q - - k - 
+  a b c d e f g h 
+player(1)'s turn:

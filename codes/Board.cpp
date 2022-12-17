@@ -165,12 +165,12 @@ void Board::dScan(const pair<int,int> & pos, vector<vector<unique_ptr<Move>>> & 
 }
 
 void Board::kScan(vector<vector<unique_ptr<Move>>> & moves){
-    // left
+    // right
     if (kingPos.first + 1 < BOARD_SIZE) {
         kInsertMove(pair<int, int>{kingPos.first+1, kingPos.second}, moves);
     }
 
-    // right
+    // left
     if (kingPos.first - 1 >= 0) {
         kInsertMove(pair<int, int>{kingPos.first-1, kingPos.second}, moves);
     }
@@ -302,12 +302,11 @@ void Board::castleScan(std::vector<std::vector<std::unique_ptr<Move>>> & moves) 
         //Right side
         // goes to the first piece encouted by scaning right, or stop if passes a position that is unsafe.
         pair<int,int> otherPos{kingPos.first + 1, kingPos.second};
-        while (otherPos.first < BOARD_SIZE && !get(otherPos) && !unsafe(otherPos, get(kingPos)->getColour())) {
+        while (otherPos.first < BOARD_SIZE-1 && !get(otherPos) && !unsafe(otherPos, get(kingPos)->getColour())) {
             ++otherPos.first;
         }
         // check if the peice at the right edge has zero moveCount (i.e. can castle)
-        if (otherPos.first == BOARD_SIZE-1 && get(otherPos)->getMovesCount() == 0){
-            
+        if (otherPos.first == BOARD_SIZE-1 && get(otherPos) && get(otherPos)->getMovesCount() == 0){
             moves[1].emplace_back(make_unique<Castling>(get(kingPos), get(otherPos), kingPos, pair<int,int>{kingPos.first+2, otherPos.second}, otherPos, pair<int,int>{otherPos.first-2, otherPos.second}));
         }
 
@@ -315,11 +314,14 @@ void Board::castleScan(std::vector<std::vector<std::unique_ptr<Move>>> & moves) 
         //Right side
         // goes to the first piece encouted by scaning right, or stop if passes a position that is unsafe.
         otherPos.first = kingPos.first-1;
-        while (otherPos.first >= 0  && !get(otherPos) && (otherPos.first == 1 || !unsafe(otherPos, get(kingPos)->getColour()))) {
+        while (otherPos.first >= 2  && !get(otherPos)  && !unsafe(otherPos, get(kingPos)->getColour())) {
             --otherPos.first;
         }
         // check if the peice at the left edge has zero moveCount (i.e. can castle)
-        if (otherPos.first == 0 && get(otherPos)->getMovesCount() == 0){
+        if (otherPos.first == 1 && !get(otherPos)) {
+            otherPos.first -= 1;
+        }
+        if (otherPos.first == 0 && get(otherPos) && get(otherPos)->getMovesCount() == 0){
             moves[1].emplace_back(make_unique<Castling>(get(kingPos), get(otherPos), kingPos, pair<int,int>{kingPos.first-2, otherPos.second}, otherPos, pair<int,int>{otherPos.first+3, otherPos.second}));
         }
     }
