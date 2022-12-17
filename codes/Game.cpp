@@ -197,10 +197,10 @@ string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
 
 
 double Game::positionScore(int cur) {
-    int score = 0;
+    double score = 0;
     for (auto & piece : players[cur]->getPieces()) {
         if (piece->getStatus() == 1) {
-            score += piece->getValue();
+            score = (double)score + (double)piece->getValue();
         }
     }
     return score;
@@ -223,7 +223,7 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
             validMoveRow = 0;
         }
 
-        int temp = getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth-1, cur);
+        double temp = getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth-1, cur);
 
         if (temp > bestScore) {
             bestScore = temp;
@@ -243,7 +243,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         return (cur == round%2) ? -100 : 100;
     }
     if (depth == 0) {
-        return positionScore(cur) - positionScore(1 - cur);
+        return (double)positionScore(cur) - (double)positionScore(1 - cur);
     }
 
     vector<double> outcomes{};
@@ -259,7 +259,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         if (validMoveRow == -1) {
             validMoveRow = 0;
         }
-        outcomes.push_back(getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
+        outcomes.push_back((double)getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
         undoRound(*(getPlayer().at(round%2)));
     }
 
@@ -270,25 +270,18 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     else {
         sort(outcomes.begin(), outcomes.end(), greater<double>());
     }
-    #ifdef DEBUG
-    cerr << "outcomes:";
-    for (double o : outcomes) {
-        cerr << o << ' ';
-    }
-    cerr << endl;
-    #endif
+    
 
-    return expectedOutcome(outcomes, 10);
+    return expectedOutcome(outcomes, 15);
 }
 
 double expectedOutcome(vector<double> & outcomes, int upperBound) {
     int i = 0;
-    double res = 0;
+    double res = 0.0;
     while (i < upperBound-1 && (size_t)i < outcomes.size()-1){
-        res += (double)outcomes[i]/pow(2,i+1);
+        res =  (double)res + (double)outcomes[i]/(double)pow(2,i+1);
         i += 1;
     }
-    res += outcomes[i]/pow(2,i);
-    cerr << res << endl;
+    res = (double)res + (double)outcomes[i]/(double)pow(2,i);
     return res;
 }

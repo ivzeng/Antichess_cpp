@@ -39,7 +39,9 @@ bool Piece::threats(const pair<int,int> & at) {
     return canAttack(at);
 }
 
-int Piece::getValue() const {   return value();   }
+double Piece::getValue() const {
+    return (double) value();
+}
 
 int Piece::getColour() const {   return colour;   }
 
@@ -66,27 +68,27 @@ unique_ptr<Piece> Piece::copy(){
     return clone();
 }
 
-int King::value() const {
+double King::value() const {
     return 100;
 }
 
-int Queen::value() const {
+double Queen::value() const {
     return 9;
 }
 
-int Bishop::value() const {
+double Bishop::value() const {
     return 3;
 }
 
-int Rook::value() const {
+double Rook::value() const {
     return 5;
 }
 
-int Knight::value() const {
+double Knight::value() const {
     return 3;
 }
 
-int Pawn::value() const {
+double Pawn::value() const {
     return 1;
 }
 
