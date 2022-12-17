@@ -1,4 +1,5 @@
 #include <cmath>
+#include <algorithm>
 
 #include "Game.h"
 #include "Player.h"
@@ -195,10 +196,12 @@ string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
 }
 
 
-int Game::positionScore(int cur) {
+double Game::positionScore(int cur) {
     int score = 0;
     for (auto & piece : players[cur]->getPieces()) {
-        score += piece->getValue();
+        if (piece->getStatus() == 1) {
+            score += piece->getValue();
+        }
     }
     return score;
 }
@@ -243,7 +246,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         return positionScore(cur) - positionScore(1 - cur);
     }
 
-    priority_queue<double> outcomes;
+    vector<double> outcomes{};
 
     for (auto & trymove : moves) {
         trymove->process(round, *playerM());
@@ -256,21 +259,36 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         if (validMoveRow == -1) {
             validMoveRow = 0;
         }
-        outcomes.push(getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
+        outcomes.push_back(getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
         undoRound(*(getPlayer().at(round%2)));
     }
+
+    // sort
+    if (round%2 != cur) {
+        sort(outcomes.begin(), outcomes.end());
+    }
+    else {
+        sort(outcomes.begin(), outcomes.end(), greater<double>());
+    }
+    #ifdef DEBUG
+    cerr << "outcomes:";
+    for (double o : outcomes) {
+        cerr << o << ' ';
+    }
+    cerr << endl;
+    #endif
+
     return expectedOutcome(outcomes, 10);
 }
 
-double expectedOutcome(priority_queue<double> & outcomes, int upperBound) {
+double expectedOutcome(vector<double> & outcomes, int upperBound) {
     int i = 0;
     double res = 0;
-    while (i < upperBound-1 && outcomes.size()>1){
-        res += outcomes.top()/pow(2,i);
-        outcomes.pop();
+    while (i < upperBound-1 && (size_t)i < outcomes.size()-1){
+        res += (double)outcomes[i]/pow(2,i+1);
         i += 1;
     }
-    if (i != 0) i -= 1;
-    res += outcomes.top()/pow(2,i);
+    res += outcomes[i]/pow(2,i);
+    cerr << res << endl;
     return res;
 }

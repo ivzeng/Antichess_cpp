@@ -34,7 +34,7 @@ private:
     //finds best move (minmax)
     char findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
     double getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
-    int positionScore(int player);
+    double positionScore(int player);
     
 public:
     // constructor, take an array of two char* in {"c","d"}:
@@ -60,6 +60,6 @@ public:
     friend std::ostream & operator<<(std::ostream & out, const Game & game);
 };
 
-double expectedOutcome(std::priority_queue<double> & outcomes, int upperBound);
+double expectedOutcome(std::vector<double> & outcomes, int upperBound);
 
 #endif
