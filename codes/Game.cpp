@@ -80,7 +80,7 @@ int Game::processRound(){
     #ifdef DEBUG
     beginRoundNote(cout, *board, round);
     #else
-    beginRoundNote(// cerr, *board, round);
+    beginRoundNote(cerr, *board, round);
     #endif
 
 
@@ -216,10 +216,11 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
     for (auto & trymove : moves) {
         trymove->process(round, *players[cur]);
         history.push_back(move(trymove));
-        // printMoves(cerr, history);
-        // cerr << "Round: " << round << endl;
+        round +=1;
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
-        playerW()->searchMoves(round, *(getBoard()), possibleMoves); // other player search move
+        playerM()->searchMoves(round, *(getBoard()), possibleMoves); // other player search move
+        // cerr << "Round: " << round << endl;
+        // printMoves(cerr, possibleMoves);
         int validMoveRow = getValidMove(possibleMoves);
         if (validMoveRow == -1) {
             validMoveRow = 0;
@@ -239,7 +240,6 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
 }
 
 double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth, int cur){
-    round +=1;
     if (moves.size() == 0) {
         return (cur == round%2) ? -100 : 100;
     }
@@ -252,16 +252,17 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     for (auto & trymove : moves) {
         trymove->process(round, *playerM());
         history.push_back(move(trymove));
-        printMoves(cerr, history);
-        cerr << "Round: " << round << endl;
+        round += 1;
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
-        playerW()->searchMoves(round, *(getBoard()), possibleMoves);
+        playerM()->searchMoves(round, *(getBoard()), possibleMoves);
+        // cerr << "Round: " << round << endl;
+        // printMoves(cerr, possibleMoves);
         int validMoveRow = getValidMove(possibleMoves);
         if (validMoveRow == -1) {
             validMoveRow = 0;
         }
         outcomes.push_back((double)getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
-        undoRound(*(playerM()));
+        undoRound(*(playerW()));
     }
 
     // sort

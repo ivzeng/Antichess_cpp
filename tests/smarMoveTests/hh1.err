@@ -1,0 +1,5380 @@
+player1:
+pieces:
+k: position at (4, 0), with status 1
+q: position at (3, 0), with status 1
+b: position at (2, 0), with status 1
+b: position at (5, 0), with status 1
+n: position at (1, 0), with status 1
+n: position at (6, 0), with status 1
+r: position at (0, 0), with status 1
+r: position at (7, 0), with status 1
+p: position at (0, 1), with status 1
+p: position at (1, 1), with status 1
+p: position at (2, 1), with status 1
+p: position at (3, 1), with status 1
+p: position at (4, 1), with status 1
+p: position at (5, 1), with status 1
+p: position at (6, 1), with status 1
+p: position at (7, 1), with status 1
+
+player2:
+pieces:
+K: position at (4, 7), with status 1
+Q: position at (3, 7), with status 1
+B: position at (2, 7), with status 1
+B: position at (5, 7), with status 1
+N: position at (1, 7), with status 1
+N: position at (6, 7), with status 1
+R: position at (0, 7), with status 1
+R: position at (7, 7), with status 1
+P: position at (0, 6), with status 1
+P: position at (1, 6), with status 1
+P: position at (2, 6), with status 1
+P: position at (3, 6), with status 1
+P: position at (4, 6), with status 1
+P: position at (5, 6), with status 1
+P: position at (6, 6), with status 1
+P: position at (7, 6), with status 1
+
+8 R N B Q K B N R 
+7 P P P P P P P P 
+6 - - - - - - - - 
+5 - - - - - - - - 
+4 - - - - - - - - 
+3 - - - - - - - - 
+2 p p p p p p p p 
+1 r n b q k b n r 
+  a b c d e f g h 
+
+please make a move
+searchMove()
+b1c3: Basic::act() is called
+history
+moves: b1c3 
+please make a move
+searchMove()
+d7d5: Basic::act() is called
+history
+moves: b1c3 d7d5 
+please make a move
+searchMove()
+c3d5: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 
+please make a move
+searchMove()
+d8d5: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 
+please make a move
+searchMove()
+a2a4: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 
+please make a move
+searchMove()
+d5d2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 
+please make a move
+searchMove()
+e1d2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 
+please make a move
+searchMove()
+c8g4: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 
+please make a move
+searchMove()
+d2d3: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 
+please make a move
+searchMove()
+g4e2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 
+please make a move
+searchMove()
+d3e2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 
+please make a move
+searchMove()
+h7h6: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 
+please make a move
+searchMove()
+c1h6: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 
+please make a move
+searchMove()
+h8h6: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 
+please make a move
+searchMove()
+d1d8: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 
+please make a move
+searchMove()
+e8d8: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 
+please make a move
+searchMove()
+a1d1: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 
+please make a move
+searchMove()
+d8e8: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 
+please make a move
+searchMove()
+d1d8: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 
+please make a move
+searchMove()
+e8d8: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 
+please make a move
+searchMove()
+e2d2: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 
+please make a move
+searchMove()
+h6h2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 
+please make a move
+searchMove()
+h1h2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 
+please make a move
+searchMove()
+g8h6: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 
+please make a move
+searchMove()
+h2h6: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 
+please make a move
+searchMove()
+g7h6: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 
+please make a move
+searchMove()
+f1c4: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 
+please make a move
+searchMove()
+e7e6: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 
+please make a move
+searchMove()
+c4e6: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 
+please make a move
+searchMove()
+f7e6: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 
+please make a move
+searchMove()
+d2e2: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 
+please make a move
+searchMove()
+f8c5: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 
+please make a move
+searchMove()
+g1h3: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 g1h3 
+please make a move
+searchMove()
+c5f2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 g1h3 c5f2 
+please make a move
+searchMove()
+e2f2: Capture::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 g1h3 c5f2 e2f2 
+please make a move
+searchMove()
+d8c8: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 g1h3 c5f2 e2f2 d8c8 
+please make a move
+searchMove()
+h3f4: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 g1h3 c5f2 e2f2 d8c8 h3f4 
+please make a move
+searchMove()
+e6e5: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 g1h3 c5f2 e2f2 d8c8 h3f4 e6e5 
+please make a move
+f2e2: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: e2f2 e2d2 e2e1 e2f3 e2f1 e2d3 e2d1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e2f2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e2f2: Basic::reverse() is called
+e2d2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e2d2: Basic::reverse() is called
+e2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e2e1: Basic::reverse() is called
+e2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+e2f3: Basic::reverse() is called
+e2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e2f1: Basic::reverse() is called
+e2d3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e2d3: Basic::reverse() is called
+e2d1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e2d1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: f3f4 
+placeful moves: f3f2 f3g4 f3e4 f3e2 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f3f4: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f3f4: Capture::reverse() is called
+e5f4: Capture::reverse() is called
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: f1g1 f1e1 f1f2 f1e2 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f1g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f1g1: Basic::reverse() is called
+f1e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f1e1: Basic::reverse() is called
+f1f2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f1f2: Basic::reverse() is called
+f1e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f1e2: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: g3f4 
+placeful moves: g3h3 g3f3 g3g4 g3h4 g3h2 g3f2 
+g3f4: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+g3f4: Capture::reverse() is called
+e5f4: Capture::reverse() is called
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: g1h1 g1f1 g1h2 g1f2 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g1h1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g1h1: Basic::reverse() is called
+g1f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g1f1: Basic::reverse() is called
+g1h2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g1h2: Basic::reverse() is called
+g1f2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g1f2: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: e3f4 
+placeful moves: e3f3 e3d3 e3e4 e3e2 e3f2 e3d4 e3d2 
+e3f4: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+e3f4: Capture::reverse() is called
+e5f4: Capture::reverse() is called
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: e1f1 e1d1 e1e2 e1f2 e1d2 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e1f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e1f1: Basic::reverse() is called
+e1d1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e1d1: Basic::reverse() is called
+e1e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e1e2: Basic::reverse() is called
+e1f2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e1f2: Basic::reverse() is called
+e1d2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+e1d2: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+f2e1: Basic::reverse() is called
+f4h5: Basic::act() is called
+Round: 39
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c8d8: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8c8 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g3: Basic::reverse() is called
+c8d8: Basic::reverse() is called
+c8d7: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e6 d7c8 d7c6 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g3: Basic::reverse() is called
+c8d7: Basic::reverse() is called
+b8d7: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: d7f6 
+placeful moves: c8d8 c8b8 d7f8 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g3: Basic::reverse() is called
+b8d7: Basic::reverse() is called
+b8c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: c6a5 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6d8 c6d4 c6b8 c6b4 a8b8 a7a6 b7b5 b7b6 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c6b4 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 
+g2g3: Basic::reverse() is called
+b8c6: Basic::reverse() is called
+b8a6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: a6b4 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g3: Basic::reverse() is called
+b8a6: Basic::reverse() is called
+a7a5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: a5b4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g3: Basic::reverse() is called
+a7a5: Basic::reverse() is called
+a7a6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 b7b5 b7b6 c7c5 c7c6 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 
+g2g3: Basic::reverse() is called
+a7a6: Basic::reverse() is called
+b7b5: Basic::act() is called
+Round: 40
+capture moves: a4b5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+a4b5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 c7c5 c7c6 e5e4 
+a4b5: Capture::reverse() is called
+b7b5: Basic::reverse() is called
+b7b6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: b6a5 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a6 b6b5 c7c5 c7c6 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 
+g2g3: Basic::reverse() is called
+b7b6: Basic::reverse() is called
+c7c5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c5c4 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c5b4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 
+g2g3: Basic::reverse() is called
+c7c5: Basic::reverse() is called
+c7c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a6 b7b5 b7b6 c6c5 e5e4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 
+g2g3: Basic::reverse() is called
+c7c6: Basic::reverse() is called
+e5e4: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f1 f2g3 f2g1 f2e3 f2e1 h5f6 h5f4 h5g7 h5g3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+f2e2: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+f2e1: Basic::reverse() is called
+h5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+h5f6: Basic::reverse() is called
+h5f4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+h5f4: Basic::reverse() is called
+h5g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+h5g7: Basic::reverse() is called
+h5g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+h5g3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 
+g2g3: Basic::reverse() is called
+e5e4: Basic::reverse() is called
+f4h5: Basic::reverse() is called
+f4h3: Basic::act() is called
+Round: 39
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c8d8: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c8d8: Basic::reverse() is called
+c8d7: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c8d7: Basic::reverse() is called
+b8d7: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b8d7: Basic::reverse() is called
+b8c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: c6a5 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6d8 c6d4 c6b8 c6b4 a8b8 a7a6 b7b5 b7b6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c6b4 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b8c6: Basic::reverse() is called
+b8a6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: a6b4 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b8a6: Basic::reverse() is called
+a7a5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: a5b4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+a7a5: Basic::reverse() is called
+a7a6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+a7a6: Basic::reverse() is called
+b7b5: Basic::act() is called
+Round: 40
+capture moves: a4b5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+a4b5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 c7c5 c7c6 e5e4 h6h5 
+a4b5: Capture::reverse() is called
+b7b5: Basic::reverse() is called
+b7b6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: b6a5 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b7b6: Basic::reverse() is called
+c7c5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c5b4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c7c5: Basic::reverse() is called
+c7c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c7c6: Basic::reverse() is called
+e5e4: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2e2: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g3: Basic::reverse() is called
+e5e4: Basic::reverse() is called
+h6h5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 h3f4 h3g5 h3g1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2e1: Basic::reverse() is called
+h3f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+h3f4: Basic::reverse() is called
+h3g5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+h3g5: Basic::reverse() is called
+h3g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+h3g1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: h5g4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+g2g3: Basic::reverse() is called
+h6h5: Basic::reverse() is called
+f4h3: Basic::reverse() is called
+f4d5: Basic::act() is called
+Round: 39
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c8d8: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: d8c7 
+placeful moves: d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+c8d8: Basic::reverse() is called
+c8d7: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: d7c7 
+placeful moves: d7e7 d7d8 d7d6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+c8d7: Basic::reverse() is called
+b8d7: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+b8d7: Basic::reverse() is called
+b8c6: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+b8c6: Basic::reverse() is called
+b8a6: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 a6c7 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+b8a6: Basic::reverse() is called
+a7a5: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+a7a5: Basic::reverse() is called
+a7a6: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+a7a6: Basic::reverse() is called
+b7b5: Basic::act() is called
+Round: 40
+capture moves: d5c7 a4b5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 b5a4 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b5b4 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+a4b5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 c7c5 c7c6 e5e4 h6h5 
+a4b5: Capture::reverse() is called
+b7b5: Basic::reverse() is called
+b7b6: Basic::act() is called
+Round: 40
+capture moves: d5b6 d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5b6: Capture::act() is called
+Round: 41
+capture moves: a7b6 c7b6 
+placeful moves: c8d8 c8b7 
+d5b6: Capture::reverse() is called
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 e5e4 h6h5 
+d5c7: Capture::reverse() is called
+b7b6: Basic::reverse() is called
+c7c5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c7 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+d5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+d5f6: Basic::reverse() is called
+d5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+d5f4: Basic::reverse() is called
+d5b6: Basic::act() is called
+Round: 41
+capture moves: a7b6 
+placeful moves: c8d8 c8c7 
+d5b6: Basic::reverse() is called
+d5b4: Basic::act() is called
+Round: 41
+capture moves: c5b4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+d5b4: Basic::reverse() is called
+d5e7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 
+d5e7: Basic::reverse() is called
+d5e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+d5e3: Basic::reverse() is called
+d5c7: Basic::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+d5c7: Basic::reverse() is called
+d5c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+d5c3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c5b4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c7c5: Basic::reverse() is called
+c7c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c7 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+d5f6: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+d5f6: Basic::reverse() is called
+d5f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+d5f4: Basic::reverse() is called
+d5b6: Basic::act() is called
+Round: 41
+capture moves: a7b6 
+placeful moves: c8d8 c8c7 
+d5b6: Basic::reverse() is called
+d5b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+d5b4: Basic::reverse() is called
+d5e7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 
+d5e7: Basic::reverse() is called
+d5e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+d5e3: Basic::reverse() is called
+d5c7: Basic::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+d5c7: Basic::reverse() is called
+d5c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+d5c3: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: c6d5 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c7c6: Basic::reverse() is called
+e5e4: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e4e3 h6h5 
+d5c7: Capture::reverse() is called
+e5e4: Basic::reverse() is called
+h6h5: Basic::act() is called
+Round: 40
+capture moves: d5c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d5f6 d5f4 d5b6 d5b4 d5e7 d5e3 d5c3 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d5c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h5h4 
+d5c7: Capture::reverse() is called
+h6h5: Basic::reverse() is called
+f4d5: Basic::reverse() is called
+f4d3: Basic::act() is called
+Round: 39
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c8d8: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+d3e5: Capture::reverse() is called
+c8d8: Basic::reverse() is called
+c8d7: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 
+d3e5: Capture::reverse() is called
+c8d7: Basic::reverse() is called
+b8d7: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: d7e5 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+d3e5: Capture::reverse() is called
+b8d7: Basic::reverse() is called
+b8c6: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: c6e5 
+placeful moves: c8d8 c8b8 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 h6h5 
+d3e5: Capture::reverse() is called
+b8c6: Basic::reverse() is called
+b8a6: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 h6h5 
+d3e5: Capture::reverse() is called
+b8a6: Basic::reverse() is called
+a7a5: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+d3e5: Capture::reverse() is called
+a7a5: Basic::reverse() is called
+a7a6: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 h6h5 
+d3e5: Capture::reverse() is called
+a7a6: Basic::reverse() is called
+b7b5: Basic::act() is called
+Round: 40
+capture moves: d3e5 a4b5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: b5a4 
+placeful moves: c8d8 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b5b4 c7c5 c7c6 h6h5 
+d3e5: Capture::reverse() is called
+a4b5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 c7c5 c7c6 e5e4 h6h5 
+a4b5: Capture::reverse() is called
+b7b5: Basic::reverse() is called
+b7b6: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 h6h5 
+d3e5: Capture::reverse() is called
+b7b6: Basic::reverse() is called
+c7c5: Basic::act() is called
+Round: 40
+capture moves: d3e5 d3c5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 h6h5 
+d3e5: Capture::reverse() is called
+d3c5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+d3c5: Capture::reverse() is called
+c7c5: Basic::reverse() is called
+c7c6: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 h6h5 
+d3e5: Capture::reverse() is called
+c7c6: Basic::reverse() is called
+e5e4: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e5 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2e2: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2e1: Basic::reverse() is called
+d3f4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+d3f4: Basic::reverse() is called
+d3b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+d3b4: Basic::reverse() is called
+d3e5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+d3e5: Basic::reverse() is called
+d3e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+d3e1: Basic::reverse() is called
+d3c5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c6 e4e3 h6h5 
+d3c5: Basic::reverse() is called
+d3c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+d3c1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: e4d3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g3: Basic::reverse() is called
+e5e4: Basic::reverse() is called
+h6h5: Basic::act() is called
+Round: 40
+capture moves: d3e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 d3f4 d3b4 d3e1 d3c5 d3c1 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+d3e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h5h4 
+d3e5: Capture::reverse() is called
+h6h5: Basic::reverse() is called
+f4d3: Basic::reverse() is called
+f4g6: Basic::act() is called
+Round: 39
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c8d8: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+g6e5: Capture::reverse() is called
+c8d8: Basic::reverse() is called
+c8d7: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 
+g6e5: Capture::reverse() is called
+c8d7: Basic::reverse() is called
+b8d7: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: d7e5 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+g6e5: Capture::reverse() is called
+b8d7: Basic::reverse() is called
+b8c6: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: c6e5 
+placeful moves: c8d8 c8b8 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 h6h5 
+g6e5: Capture::reverse() is called
+b8c6: Basic::reverse() is called
+b8a6: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 h6h5 
+g6e5: Capture::reverse() is called
+b8a6: Basic::reverse() is called
+a7a5: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+g6e5: Capture::reverse() is called
+a7a5: Basic::reverse() is called
+a7a6: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 h6h5 
+g6e5: Capture::reverse() is called
+a7a6: Basic::reverse() is called
+b7b5: Basic::act() is called
+Round: 40
+capture moves: g6e5 a4b5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: b5a4 
+placeful moves: c8d8 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b5b4 c7c5 c7c6 h6h5 
+g6e5: Capture::reverse() is called
+a4b5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 c7c5 c7c6 e5e4 h6h5 
+a4b5: Capture::reverse() is called
+b7b5: Basic::reverse() is called
+b7b6: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 h6h5 
+g6e5: Capture::reverse() is called
+b7b6: Basic::reverse() is called
+c7c5: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 h6h5 
+g6e5: Capture::reverse() is called
+c7c5: Basic::reverse() is called
+c7c6: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 h6h5 
+g6e5: Capture::reverse() is called
+c7c6: Basic::reverse() is called
+e5e4: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6e5 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2e2: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2e1: Basic::reverse() is called
+g6e7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 
+g6e7: Basic::reverse() is called
+g6e5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g6e5: Basic::reverse() is called
+g6h8: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g6h8: Basic::reverse() is called
+g6h4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g6h4: Basic::reverse() is called
+g6f8: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g6f8: Basic::reverse() is called
+g6f4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g6f4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g3: Basic::reverse() is called
+e5e4: Basic::reverse() is called
+h6h5: Basic::act() is called
+Round: 40
+capture moves: g6e5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 g6e7 g6h8 g6h4 g6f8 g6f4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+g6e5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h5h4 
+g6e5: Capture::reverse() is called
+h6h5: Basic::reverse() is called
+f4g6: Basic::reverse() is called
+f4e6: Basic::act() is called
+Round: 39
+capture moves: 
+placeful moves: c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c8d7: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: d7c7 
+placeful moves: d7e7 d7d8 d7d6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+c8d7: Basic::reverse() is called
+b8d7: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+b8d7: Basic::reverse() is called
+b8c6: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+b8c6: Basic::reverse() is called
+b8a6: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 a6c7 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+b8a6: Basic::reverse() is called
+a7a5: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+a7a5: Basic::reverse() is called
+a7a6: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+a7a6: Basic::reverse() is called
+b7b5: Basic::act() is called
+Round: 40
+capture moves: e6c7 a4b5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 b5a4 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b5b4 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+a4b5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 c7c5 c7c6 e5e4 h6h5 
+a4b5: Capture::reverse() is called
+b7b5: Basic::reverse() is called
+b7b6: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 e5e4 h6h5 
+e6c7: Capture::reverse() is called
+b7b6: Basic::reverse() is called
+c7c5: Basic::act() is called
+Round: 40
+capture moves: e6c5 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c7 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e6c5: Capture::reverse() is called
+c7c5: Basic::reverse() is called
+c7c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c7 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e6g7: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e6g7: Basic::reverse() is called
+e6g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e6g5: Basic::reverse() is called
+e6c7: Basic::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e6c7: Basic::reverse() is called
+e6c5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e6c5: Basic::reverse() is called
+e6f8: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e6f8: Basic::reverse() is called
+e6f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e6f4: Basic::reverse() is called
+e6d8: Basic::act() is called
+Round: 41
+capture moves: c8d8 
+placeful moves: c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e6d8: Basic::reverse() is called
+e6d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e6d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c7c6: Basic::reverse() is called
+e5e4: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e4e3 h6h5 
+e6c7: Capture::reverse() is called
+e5e4: Basic::reverse() is called
+h6h5: Basic::act() is called
+Round: 40
+capture moves: e6c7 
+placeful moves: f2e2 f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e6g7 e6g5 e6c5 e6f8 e6f4 e6d8 e6d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+e6c7: Capture::act() is called
+Round: 41
+capture moves: c8c7 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h5h4 
+e6c7: Capture::reverse() is called
+h6h5: Basic::reverse() is called
+f4e6: Basic::reverse() is called
+f4e2: Basic::act() is called
+Round: 39
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c8d8: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d8e8 d8c8 d8d7 d8e7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c8d8: Basic::reverse() is called
+c8d7: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7c8 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: d7e7 d7d8 d7d6 d7e8 d7e6 d7c8 d7c6 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c8d7: Basic::reverse() is called
+b8d7: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 d7f8 d7f6 d7b8 d7b6 d7c5 a8b8 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b8d7: Basic::reverse() is called
+b8c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: c6d4 e5d4 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: c6a5 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6d8 c6d4 c6b8 c6b4 a8b8 a7a6 b7b5 b7b6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c6b4 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 c6e7 c6a5 c6d8 c6d4 c6b8 c6b4 a8b8 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b8c6: Basic::reverse() is called
+b8a6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: a6b4 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8b8 c8d7 a6c5 a6b8 a6b4 a8b8 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b8a6: Basic::reverse() is called
+a7a5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: a5b4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a8a7 a8a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+a7a5: Basic::reverse() is called
+a7a6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 a8a7 a6a5 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+a7a6: Basic::reverse() is called
+b7b5: Basic::act() is called
+Round: 40
+capture moves: a4b5 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+a4b5: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 c7c5 c7c6 e5e4 h6h5 
+a4b5: Capture::reverse() is called
+b7b5: Basic::reverse() is called
+b7b6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: b6a5 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 c8b7 b8d7 b8c6 b8a6 a7a5 a7a6 b6b5 c7c5 c7c6 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+b7b6: Basic::reverse() is called
+c7c5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: c5d4 e5d4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: c5b4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c5c4 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c7c5: Basic::reverse() is called
+c7c6: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8c7 c8d7 b8d7 b8a6 a7a5 a7a6 b7b5 b7b6 c6c5 e5e4 h6h5 
+g2g3: Basic::reverse() is called
+c7c6: Basic::reverse() is called
+e5e4: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e4e3 h6h5 
+g2g3: Basic::reverse() is called
+e5e4: Basic::reverse() is called
+h6h5: Basic::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2f3 f2f1 f2g3 f2g1 f2e3 f2e1 e2g3 e2g1 e2c3 e2c1 e2f4 e2d4 a4a5 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2f1: Basic::reverse() is called
+f2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2g3: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2g1: Basic::reverse() is called
+f2e3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2e3: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+f2e1: Basic::reverse() is called
+e2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+e2g3: Basic::reverse() is called
+e2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+e2g1: Basic::reverse() is called
+e2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+e2c3: Basic::reverse() is called
+e2c1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+e2c1: Basic::reverse() is called
+e2f4: Basic::act() is called
+Round: 41
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+e2f4: Basic::reverse() is called
+e2d4: Basic::act() is called
+Round: 41
+capture moves: e5d4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+e2d4: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: h5g4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h5h4 
+g2g3: Basic::reverse() is called
+h6h5: Basic::reverse() is called
+f4e2: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g1 f2e1 a5a6 b2b4 b2b3 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2f1: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2g1: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e1: Basic::reverse() is called
+a5a6: Basic::act() is called
+Round: 41
+capture moves: b8a6 b7a6 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a5a6: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g1 f2e1 a4a5 b4b5 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2f1: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2g1: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b4b5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b6 c7c5 c7c6 f4f3 h6h5 
+b4b5: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g1 f2e1 a4a5 b3b4 c2c4 c2c3 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2f1: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2g1: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b3b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b3b4: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g1 f2e1 a4a5 b2b4 b2b3 c4c5 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2f1: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2g1: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c4c5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c6 f4f3 h6h5 
+c4c5: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2e2 f2f3 f2f1 f2g1 f2e1 a4a5 b2b4 b2b3 c3c4 g2g4 g2g3 
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2f1: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2g1: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c3c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c3c4: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 41
+capture moves: f4g3 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g2g3: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+c2c3: Basic::reverse() is called
+g2g4: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: 
+placeful moves: f2g2 f2e2 f2f3 f2f1 f2g1 f2e1 a4a5 b2b4 b2b3 c2c4 c2c3 g4g5 
+f2g2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2g2: Basic::reverse() is called
+f2e2: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e2: Basic::reverse() is called
+f2f3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+f2f3: Basic::reverse() is called
+f2f1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2f1: Basic::reverse() is called
+f2g1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2g1: Basic::reverse() is called
+f2e1: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+f2e1: Basic::reverse() is called
+a4a5: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+a4a5: Basic::reverse() is called
+b2b4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b4: Basic::reverse() is called
+b2b3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+b2b3: Basic::reverse() is called
+c2c4: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c4: Basic::reverse() is called
+c2c3: Basic::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+c2c3: Basic::reverse() is called
+g4g5: Basic::act() is called
+Round: 41
+capture moves: h6g5 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 f4f3 h6h5 
+g4g5: Basic::reverse() is called
+e5f4: Capture::reverse() is called
+g2g4: Basic::reverse() is called
+g2g3: Basic::act() is called
+Round: 39
+capture moves: e5f4 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 e5e4 h6h5 
+e5f4: Capture::act() is called
+Round: 40
+capture moves: g3f4 
+placeful moves: f2g2 f2e2 f2f3 f2f1 f2g1 f2e1 a4a5 b2b4 b2b3 c2c4 c2c3 g3g4 
+g3f4: Capture::act() is called
+Round: 41
+capture moves: 
+placeful moves: c8d8 c8d7 b8d7 b8c6 b8a6 a7a5 a7a6 b7b5 b7b6 c7c5 c7c6 h6h5 
+g3f4: Capture::reverse() is called
+e5f4: Capture::reverse() is called
+g2g3: Basic::reverse() is called
+f4d3: Basic::act() is called
+history
+moves: b1c3 d7d5 c3d5 d8d5 a2a4 d5d2 e1d2 c8g4 d2d3 g4e2 d3e2 h7h6 c1h6 h8h6 d1d8 e8d8 a1d1 d8e8 d1d8 e8d8 e2d2 h6h2 h1h2 g8h6 h2h6 g7h6 f1c4 e7e6 c4e6 f7e6 d2e2 f8c5 g1h3 c5f2 e2f2 d8c8 h3f4 e6e5 f4d3 
+please make a move
+dawn
+game ended

@@ -56,21 +56,21 @@ Castling::Castling(Piece * piece, Piece * rook, const pair<int,int> & fromK, con
 
 void Basic::act(int round, Player & player) {
     #ifdef DEBUG
-    cerr << "Basic::act() is called" << endl;
+    cerr << *this << ": Basic::act() is called" << endl;
     #endif
     piece->move(to, round);
 }
 
 void Basic::reverse(Player & player) {
     #ifdef DEBUG
-    cerr << "Basic::reverse() is called" << endl;
+    cerr << *this << ": Basic::reverse() is called" << endl;
     #endif
     piece->back(from);
 }
 
 void Capture::act(int round, Player & player) {
     #ifdef DEBUG
-    cerr << "Capture::act() is called" << endl;
+    cerr << *this << ": Capture::act() is called" << endl;
     #endif
     piece->move(to, round);
     capturedPiece->setStatus(0);
@@ -78,7 +78,7 @@ void Capture::act(int round, Player & player) {
 
 void Capture::reverse(Player & player) {
     #ifdef DEBUG
-    cerr << "Capture::reverse() is called" << endl;
+    cerr <<  *this << ": Capture::reverse() is called" << endl;
     #endif
     piece->back(from);
     capturedPiece->setStatus(1);
@@ -86,7 +86,7 @@ void Capture::reverse(Player & player) {
 
 void Promotion::act(int round, Player & player) {
     #ifdef DEBUG
-    cerr << "Promotion::act() is called" << endl;
+    cerr <<  *this << ": Promotion::act() is called" << endl;
     #endif
     piece->setStatus(0);
     player.addPiece(promotion);
@@ -94,7 +94,7 @@ void Promotion::act(int round, Player & player) {
 
 void Promotion::reverse(Player & player) {
     #ifdef DEBUG
-    cerr << "Promotion::reverse() is called" << endl;
+    cerr <<  *this << ": Promotion::reverse() is called" << endl;
     #endif
     piece->setStatus(1);
     player.popPiece();
