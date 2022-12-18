@@ -272,12 +272,13 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     else {
         sort(outcomes.begin(), outcomes.end(), greater<double>());
     }
-
+    /*
     cerr << "outcomes: ";
     for (double o : outcomes) {
         cerr << o << ' ';
     }
     cerr << endl;
+    */
     return expectedOutcome(outcomes, 15);
 }
 
