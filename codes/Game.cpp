@@ -141,6 +141,8 @@ int Game::processRound(){
     // cerr << "done the move" << endl;
     #endif
     round += 1;
+    cerr << "history" << endl;
+    printMoves(cerr, history);
     return 1;
 }
 
