@@ -205,7 +205,7 @@ void Board::kScan(vector<vector<unique_ptr<Move>>> & moves){
         kInsertMove(pair<int, int>{kingPos.first-1, kingPos.second-1}, moves);
     }
 
-    //castleScan(moves);
+    castleScan(moves);
 }
 
 void Board::nScan(const pair<int,int> & pos,vector<vector<unique_ptr<Move>>> & moves){

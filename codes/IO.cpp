@@ -183,7 +183,7 @@ void printMoves(ostream & out, const vector<vector<unique_ptr<Move>>> & moves) {
 }
 
 void printMoves(ostream & out, vector<unique_ptr<Move>> & moves) {
-    out << endl << "moves: ";
+    out << "moves: ";
     for (const auto & m : moves) {
         out << (*m).representation() << ' ';
     }

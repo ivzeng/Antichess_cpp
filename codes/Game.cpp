@@ -214,7 +214,7 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
     char bestMove = 0;
 
     for (auto & trymove : moves) {
-        trymove->process(round, *players[1-cur]);
+        trymove->process(round, *players[cur]);
         history.push_back(move(trymove));
         // printMoves(cerr, history);
         // cerr << "Round: " << round << endl;
@@ -232,8 +232,7 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
             bestMoveIdx = bestMove;
         }
         bestMove++;
-
-        undoRound(*(getPlayer().at(round%2)));
+        undoRound(*(players[cur]));
     }
     // cerr << "BestMove: " << bestMove + '0' << endl;
     return bestMoveIdx + '0';
@@ -251,10 +250,10 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     vector<double> outcomes{};
 
     for (auto & trymove : moves) {
-        trymove->process(round, *playerW());
+        trymove->process(round, *playerM());
         history.push_back(move(trymove));
         printMoves(cerr, history);
-        //cerr << "Round: " << round << endl;
+        cerr << "Round: " << round << endl;
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
         playerW()->searchMoves(round, *(getBoard()), possibleMoves);
         int validMoveRow = getValidMove(possibleMoves);
@@ -262,7 +261,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
             validMoveRow = 0;
         }
         outcomes.push_back((double)getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
-        undoRound(*(getPlayer().at(round%2)));
+        undoRound(*(playerM()));
     }
 
     // sort
