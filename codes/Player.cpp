@@ -116,7 +116,7 @@ string  AlphaWind::decide(const vector<vector<unique_ptr<Move>>> & moves) {
     if (res == "undo" || res == "end") {
         return res;
     }
-    return "3";
+    return "4";
 }
 
 

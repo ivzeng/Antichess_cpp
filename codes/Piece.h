@@ -33,6 +33,9 @@ protected:
     virtual bool canAttack(const std::pair<int, int> & at) = 0;
     virtual char representation() const = 0;
     virtual std::unique_ptr<Piece> clone() = 0;
+    
+    // returns 0.5*
+    double verticalBonus() const;
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
     virtual ~Piece() = 0;
@@ -143,5 +146,7 @@ public:
 };
 
 Piece * makePiece(int colour, const char & p, const std::pair<int,int> & pos);
+
+
 
 #endif

@@ -1,7 +1,7 @@
 #ifndef MOVE_H
 #define MOVE_H
 
-#define DEBUG
+//#define DEBUG
 
 
 #include <utility>

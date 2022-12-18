@@ -272,8 +272,12 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     else {
         sort(outcomes.begin(), outcomes.end(), greater<double>());
     }
-    
 
+    cerr << "outcomes: ";
+    for (double o : outcomes) {
+        cerr << o << ' ';
+    }
+    cerr << endl;
     return expectedOutcome(outcomes, 15);
 }
 
@@ -281,9 +285,9 @@ double expectedOutcome(vector<double> & outcomes, int upperBound) {
     int i = 0;
     double res = 0.0;
     while (i < upperBound-1 && (size_t)i < outcomes.size()-1){
-        res =  (double)res + (double)outcomes[i]/(double)pow(2,i+1);
+        res += outcomes[i]/(double)pow(2,i+1);
         i += 1;
     }
-    res = (double)res + (double)outcomes[i]/(double)pow(2,i);
+    res += outcomes[i]/(double)pow(2,i);
     return res;
 }

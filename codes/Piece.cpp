@@ -1,3 +1,5 @@
+#include <cmath>
+
 #include "Piece.h"
 #include "Board.h"
 #include "IO.h"
@@ -69,29 +71,32 @@ unique_ptr<Piece> Piece::copy(){
 }
 
 double King::value() const {
-    return 100;
+    return 1000;
 }
 
 double Queen::value() const {
-    return 9;
+    return 90;
 }
 
 double Bishop::value() const {
-    return 3;
+    return 30;
 }
 
 double Rook::value() const {
-    return 5;
+    return 50;
 }
 
 double Knight::value() const {
-    return 3;
+    return 30;
 }
 
 double Pawn::value() const {
-    return 1;
+    return 10 + verticalBonus();
 }
 
+double Piece::verticalBonus() const{
+    return  pow((colour == 0 ? position.second : BOARD_SIZE-position.second),2)/ (double) 20;
+}
 
 // virtual functions
 void Piece::movePiece(const pair<int,int> & to, int round){
