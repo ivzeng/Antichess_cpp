@@ -186,14 +186,7 @@ string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     playerM()->searchMoves(round, *(getBoard()), possibleMoves);
 
     res[0] = getValidMove(moves) + '0';
-    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), it, round%2);
-
-    //cout << res[0]-'0' << endl;
-    //cout << res[1]-'0' << endl;
-    //cout << moves[res[0]-'0'].size() << endl;
-    //cout << moves[1].size() << endl;
-
-    //cout << *moves[res[0]-'0'][res[1]-'0'] << endl;
+    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), it+15, round%2);
     return res;
 }
 
@@ -213,14 +206,38 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
     int bestMoveIdx = 0;
     char bestMove = 0;
 
+    // decrease depth base on the size of moves
+    //  <= 2: -= 1
+    //  <= 4: -= 2
+    //  <= 8: -= 3
+    //  <= 16: -= 4
+    //  > 16 : -= 5
+    //  (if depth = 20 and the number of move of each round is always more than 16, then the program will simulate 4 rounds).
+    int l = moves.size();
+    depth -= 1;
+    if (l > 2) {
+        depth -= 1;
+        if (l > 4) {
+            depth -= 1;
+            if (l > 8) {
+                depth -= 1;
+                if (l > 16) {
+                    depth -= 1;
+                }
+            }
+        }
+    }
+
     for (auto & trymove : moves) {
         trymove->process(round, *players[cur]);
         history.push_back(move(trymove));
         round +=1;
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
         playerM()->searchMoves(round, *(getBoard()), possibleMoves); // other player search move
+
         // cerr << "Round: " << round << endl;
         // printMoves(cerr, possibleMoves);
+
         int validMoveRow = getValidMove(possibleMoves);
         if (validMoveRow == -1) {
             validMoveRow = 0;
@@ -241,13 +258,27 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
 
 double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth, int cur){
     if (moves.size() == 0) {
-        return (cur == round%2) ? -100 : 100;
+        return (cur == round%2) ? -300 : 300;
     }
-    if (depth == 0) {
+    if (depth <= 0) {
         return (double)positionScore(cur) - (double)positionScore(1 - cur);
     }
-
     vector<double> outcomes{};
+
+    int l = moves.size();
+    depth -= 1;
+    if (l > 2) {
+        depth -= 1;
+        if (l > 4) {
+            depth -= 1;
+            if (l > 8) {
+                depth -= 1;
+                if (l > 16) {
+                    depth -= 1;
+                }
+            }
+        }
+    }
 
     for (auto & trymove : moves) {
         trymove->process(round, *playerM());
@@ -255,8 +286,12 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         round += 1;
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
         playerM()->searchMoves(round, *(getBoard()), possibleMoves);
-        // cerr << "Round: " << round << endl;
-        // printMoves(cerr, possibleMoves);
+        
+        //cerr << "Round: " << round << endl;
+        //printMoves(cerr, possibleMoves);
+        //cerr << "history: ";
+        //printMoves(cerr, history);
+        
         int validMoveRow = getValidMove(possibleMoves);
         if (validMoveRow == -1) {
             validMoveRow = 0;

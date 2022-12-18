@@ -69,7 +69,7 @@ void Board::pInsertMove(int col, const pair<int,int> & from, vector<vector<uniqu
     int dir = (col == 0) ? 1 : -1;
     bool prom = from.second+dir == BOARD_SIZE-1 || from.second + dir == 0;
     // normal move / promotion
-    if (!board[from.second+dir][from.first]&& safeMove(from, pair<int,int>{from.first, from.second+dir})) {
+    if (!board[from.second+dir][from.first] && safeMove(from, pair<int,int>{from.first, from.second+dir})) {
         pair<int,int> to{from.first, from.second + dir}; 
         if (prom) {
             moves[1].emplace_back(make_unique<Promotion>(get(from), new Queen{col, to}, from, to));
@@ -252,7 +252,6 @@ void Board::nScan(const pair<int,int> & pos,vector<vector<unique_ptr<Move>>> & m
 
 void Board::pScan(int col, int movesCount, int round, const pair<int,int> & pos, vector<vector<unique_ptr<Move>>> & moves){
     int dir = (col == 0) ? 1 : -1;
-
     // move (first time)
     pair<int,int> to{pos.first, pos.second+2*dir};
     if (movesCount == 0 && !board[pos.second+dir][pos.first] && !get(to) && safeMove(pos, to)) {
@@ -267,24 +266,26 @@ void Board::pScan(int col, int movesCount, int round, const pair<int,int> & pos,
         if (pos.first-1 >= 0) {
             pair<int,int> to{pos.first-1, pos.second};
             Pawn * target = dynamic_cast<Pawn *>(get(to));
+            Piece * tmp = get(to);
             set(to, nullptr);    // ready for safeMove
             to.second += dir;
             if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
                 moves[0].emplace_back(make_unique<Capture>(get(pos), target, pos, to));
             }
             to.second += dir;
-            set(to, target);
+            set(to, tmp);
         }
         if (pos.first+1 < BOARD_SIZE){
             pair<int,int> to{pos.first+1, pos.second};
             Pawn * target = dynamic_cast<Pawn *>(get(to));
+            Piece * tmp = get(to);
             set(to, nullptr);    // ready for safeMove
             to.second += dir;
             if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
                 moves[0].emplace_back(make_unique<Capture>(get(pos), target, pos, to));
             }
             to.second -= dir;
-            set(to, target);
+            set(to, tmp);
         }
     }
     

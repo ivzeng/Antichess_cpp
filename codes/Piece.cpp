@@ -79,7 +79,7 @@ double Queen::value() const {
 }
 
 double Bishop::value() const {
-    return 30;
+    return 40;
 }
 
 double Rook::value() const {

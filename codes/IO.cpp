@@ -15,6 +15,7 @@ bool readDecision(istream & in, string & decision) {
     getline(in, decision);
     toLower(decision);
     if (decision == "") return true;        // select the pervious decision
+    if (decision[0] == EOF) return true;
     if (decision == "undo") return true;    // undo
     if (decision.length() == 1 && decision[0] >= '1' && decision[0] <= '9') return true;    // require program's help (decision[0] is the number of iterations)
     if (decision.length() == 4){

@@ -89,7 +89,8 @@ void Promotion::act(int round, Player & player) {
     cerr <<  *this << ": Promotion::act() is called" << endl;
     #endif
     piece->setStatus(0);
-    player.addPiece(promotion);
+    unique_ptr<Piece> tmp{promotion->copy()};
+    player.addPiece(tmp);
 }
 
 void Promotion::reverse(Player & player) {
@@ -103,7 +104,8 @@ void Promotion::reverse(Player & player) {
 void CapturePromotion::act(int round, Player & player) {
     piece->setStatus(0);
     capturedPiece->setStatus(0);
-    player.addPiece(promotion);
+    unique_ptr<Piece> tmp{promotion->copy()};
+    player.addPiece(tmp);
 }
 
 void CapturePromotion::reverse(Player & player) {

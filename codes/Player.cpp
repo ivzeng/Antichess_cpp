@@ -87,6 +87,9 @@ string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
             }
             return prevDecision;
         }
+        if (decision[0] == EOF) {
+            return "end";
+        }
         if (decision.length() == 1 && decision[0] >= '1' && decision[0] <= '9') {
             return decision;
         }   // require hint
@@ -116,7 +119,7 @@ string  AlphaWind::decide(const vector<vector<unique_ptr<Move>>> & moves) {
     if (res == "undo" || res == "end") {
         return res;
     }
-    return "4";
+    return "5";
 }
 
 
