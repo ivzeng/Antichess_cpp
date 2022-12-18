@@ -177,6 +177,31 @@ void Game::undoRound(Player & other){
     history.pop_back();
 }
 
+int Game::determineDepth(int it) {
+    int pieceCount = 0;
+    for (auto & piece : players[0]->getPieces()) {
+        if (piece->getStatus() == 1) {
+            pieceCount++;
+        }
+    }
+
+    for (auto & piece : players[1]->getPieces()) {
+        if (piece->getStatus() == 1) {
+            pieceCount++;
+        }
+    }
+
+    if (pieceCount >= 20) {
+        return it;
+    } else if ( pieceCount >= 10) {
+        return it + 1;
+    } else {
+        return it + 2;
+    }
+
+    //return (int) (it + 2 * (20 / pieceCount));
+}
+
 string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     string res = "  ";
 
@@ -185,8 +210,10 @@ string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
     playerM()->searchMoves(round, *(getBoard()), possibleMoves);
 
+    std::cout << "depth: " << determineDepth(it+ 15 - 5) << endl;
+
     res[0] = getValidMove(moves) + '0';
-    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), it+15, round%2);
+    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), determineDepth(it+ 15), round%2);
     return res;
 }
 
@@ -227,6 +254,7 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
             }
         }
     }
+    
 
     for (auto & trymove : moves) {
         trymove->process(round, *players[cur]);
@@ -266,6 +294,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     }
     vector<double> outcomes{};
 
+    
     int l = moves.size();
     depth -= 1;
     if (l > 2) {
@@ -280,6 +309,9 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
             }
         }
     }
+    
+
+    //std::cout << "depth: " << depth << endl;
 
     for (auto & trymove : moves) {
         trymove->process(round, *playerM());

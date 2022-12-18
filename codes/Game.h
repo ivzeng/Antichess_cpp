@@ -35,6 +35,7 @@ private:
     char findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
     double getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
     double positionScore(int player);
+    int determineDepth(int it);
     
 public:
     // constructor, take an array of two char* in {"c","d"}:
