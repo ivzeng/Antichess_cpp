@@ -265,20 +265,20 @@ void Board::pScan(int col, int movesCount, int round, const pair<int,int> & pos,
     if (pos.second == 4-col /*white: 4, black: 3*/) {
         if (pos.first-1 >= 0) {
             pair<int,int> to{pos.first-1, pos.second};
-            Pawn * target = dynamic_cast<Pawn *>(get(to));
             Piece * tmp = get(to);
+            Pawn * target = dynamic_cast<Pawn *>(tmp);
             set(to, nullptr);    // ready for safeMove
             to.second += dir;
             if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
                 moves[0].emplace_back(make_unique<Capture>(get(pos), target, pos, to));
             }
-            to.second += dir;
+            to.second -= dir;
             set(to, tmp);
         }
         if (pos.first+1 < BOARD_SIZE){
             pair<int,int> to{pos.first+1, pos.second};
-            Pawn * target = dynamic_cast<Pawn *>(get(to));
             Piece * tmp = get(to);
+            Pawn * target = dynamic_cast<Pawn *>(tmp);
             set(to, nullptr);    // ready for safeMove
             to.second += dir;
             if (target && target->getColour() != col && target->getRecentMove() == round-1 && target->getMovesCount() == 1 && safeMove(pos, to)) {
