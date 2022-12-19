@@ -271,7 +271,7 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
             validMoveRow = 0;
         }
 
-        double temp = getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth-1, cur);
+        double temp = getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth, cur);
 
         if (temp > bestScore) {
             bestScore = temp;
@@ -331,7 +331,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         if (validMoveRow == -1) {
             validMoveRow = 0;
         }
-        outcomes.push_back((double)getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth - 1, cur));
+        outcomes.push_back((double)getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth, cur));
         undoRound(*(playerW()));
     }
 
