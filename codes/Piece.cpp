@@ -91,7 +91,7 @@ double Knight::value() const {
 }
 
 double Pawn::value() const {
-    return 10 + verticalBonus();
+    return 10 + (double) verticalBonus();
 }
 
 double Piece::verticalBonus() const{

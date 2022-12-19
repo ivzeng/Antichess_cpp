@@ -191,13 +191,12 @@ int Game::determineDepth(int it) {
         }
     }
 
-    if (pieceCount >= 20) {
-        return it;
-    } else if ( pieceCount >= 10) {
-        return it + 1;
-    } else {
-        return it + 2;
+    /*
+    if (pieceCount <= 10) {
+        return it+1;
     }
+    */
+    return it;
 
     //return (int) (it + 2 * (20 / pieceCount));
 }
@@ -210,10 +209,10 @@ string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     vector<vector<unique_ptr<Move>>> possibleMoves(2);
     playerM()->searchMoves(round, *(getBoard()), possibleMoves);
 
-    std::cout << "depth: " << determineDepth(it+ 15 - 5) << endl;
+    //std::cout << "depth: " << determineDepth(it+ 15 - 5) << endl;
 
     res[0] = getValidMove(moves) + '0';
-    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), determineDepth(it+ 15), round%2);
+    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), determineDepth(it+15), round%2);
     return res;
 }
 
@@ -229,6 +228,11 @@ double Game::positionScore(int cur) {
 }
 
 char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int cur) {
+
+    if (moves.size() == 1) {
+        return '0';
+    }
+
     double bestScore = -100;
     int bestMoveIdx = 0;
     char bestMove = 0;
@@ -236,25 +240,27 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
     // decrease depth base on the size of moves
     //  <= 2: -= 1
     //  <= 4: -= 2
-    //  <= 8: -= 3
-    //  <= 16: -= 4
-    //  > 16 : -= 5
+    //  <= 7: -= 3
+    //  <= 13: -= 4
+    //  <= 25: -= 5
+    //  > 25: -= 6
     //  (if depth = 20 and the number of move of each round is always more than 16, then the program will simulate 4 rounds).
     int l = moves.size();
-    depth -= 1;
-    if (l > 2) {
-        depth -= 1;
-        if (l > 4) {
-            depth -= 1;
-            if (l > 8) {
-                depth -= 1;
-                if (l > 16) {
-                    depth -= 1;
-                }
-            }
-        }
+    if (l <= 5) {
+        depth -= 2;
     }
-    
+    if (l <= 10) {
+        depth -= 3;
+    }
+    else if (l <= 18) {
+        depth -= 4;
+    }
+    else if (l <= 32) {
+        depth -= 5;
+    }
+    else {
+        depth -= 6;
+    }
 
     for (auto & trymove : moves) {
         trymove->process(round, *players[cur]);
@@ -294,22 +300,22 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     }
     vector<double> outcomes{};
 
-    
     int l = moves.size();
-    depth -= 1;
-    if (l > 2) {
-        depth -= 1;
-        if (l > 4) {
-            depth -= 1;
-            if (l > 8) {
-                depth -= 1;
-                if (l > 16) {
-                    depth -= 1;
-                }
-            }
-        }
+    if (l <= 5) {
+        depth -= 2;
     }
-    
+    if (l <= 10) {
+        depth -= 3;
+    }
+    else if (l <= 18) {
+        depth -= 4;
+    }
+    else if (l <= 32) {
+        depth -= 5;
+    }
+    else {
+        depth -= 6;
+    }
 
     //std::cout << "depth: " << depth << endl;
 
@@ -349,7 +355,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     }
     cerr << endl;
     */
-    return expectedOutcome(outcomes, 15);
+    return expectedOutcome(outcomes, 10);
 }
 
 double expectedOutcome(vector<double> & outcomes, int upperBound) {
