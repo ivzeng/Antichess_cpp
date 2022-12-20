@@ -212,7 +212,7 @@ string Game::smartMove(vector<vector<unique_ptr<Move>>> & moves, int it){
     //std::cout << "depth: " << determineDepth(it+ 15 - 5) << endl;
 
     res[0] = getValidMove(moves) + '0';
-    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), determineDepth(it+15), round%2);
+    res[1] = findBestMoveWrapper(possibleMoves.at(getValidMove(moves)), it + 30, round%2);
     return res;
 }
 
@@ -221,7 +221,7 @@ double Game::positionScore(int cur) {
     double score = 0;
     for (auto & piece : players[cur]->getPieces()) {
         if (piece->getStatus() == 1) {
-            score = (double)score + (double)piece->getValue();
+            score = (double)score + (double)piece->getValue(round);
         }
     }
     return score;
@@ -237,38 +237,15 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
     int bestMoveIdx = 0;
     char bestMove = 0;
 
-    // decrease depth base on the size of moves
-    //  <= 2: -= 1
-    //  <= 4: -= 2
-    //  <= 7: -= 3
-    //  <= 13: -= 4
-    //  <= 25: -= 5
-    //  > 25: -= 6
-    //  (if depth = 20 and the number of move of each round is always more than 16, then the program will simulate 4 rounds).
-    int l = moves.size();
-    if (l <= 5) {
-        depth -= 2;
-    }
-    if (l <= 10) {
-        depth -= 3;
-    }
-    else if (l <= 18) {
-        depth -= 4;
-    }
-    else if (l <= 32) {
-        depth -= 5;
-    }
-    else {
-        depth -= 6;
-    }
+    depth -= depthDrop(moves.size());
 
     for (auto & trymove : moves) {
         trymove->process(round, *players[cur]);
         history.push_back(move(trymove));
         round +=1;
+        unique_ptr<Board> board = getBoard();
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
-        playerM()->searchMoves(round, *(getBoard()), possibleMoves); // other player search move
-
+        playerM()->searchMoves(round, *board, possibleMoves); // other player search move
         // cerr << "Round: " << round << endl;
         // printMoves(cerr, possibleMoves);
 
@@ -277,7 +254,7 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
             validMoveRow = 0;
         }
 
-        double temp = getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth, cur);
+        double temp = getPositionScoreAtDepth(possibleMoves.at(validMoveRow), *board, depth, cur);
 
         if (temp > bestScore) {
             bestScore = temp;
@@ -290,32 +267,19 @@ char Game::findBestMoveWrapper(vector<unique_ptr<Move>> & moves, int depth, int 
     return bestMoveIdx + '0';
 }
 
-double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth, int cur){
+double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves,  Board & board, int depth, int cur){
     if (moves.size() == 0) {
-        if (!getBoard()->isCheck()) return 0;
-        return (cur == round%2) ? -300 : 300;
+        if (!board.isCheck()) {
+            return - (double)positionScore(round%2) + (double)positionScore(1 - round%2);
+        }
+        return (cur == round%2) ? -2000 : 2000;
     }
     if (depth <= 0) {
         return (double)positionScore(cur) - (double)positionScore(1 - cur);
     }
     vector<double> outcomes{};
 
-    int l = moves.size();
-    if (l <= 5) {
-        depth -= 2;
-    }
-    if (l <= 10) {
-        depth -= 3;
-    }
-    else if (l <= 18) {
-        depth -= 4;
-    }
-    else if (l <= 32) {
-        depth -= 5;
-    }
-    else {
-        depth -= 6;
-    }
+    depth -= depthDrop(moves.size());
 
     //std::cout << "depth: " << depth << endl;
 
@@ -323,8 +287,9 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         trymove->process(round, *playerM());
         history.push_back(move(trymove));
         round += 1;
+        unique_ptr<Board> board = getBoard();
         vector<vector<unique_ptr<Move>>> possibleMoves(2);
-        playerM()->searchMoves(round, *(getBoard()), possibleMoves);
+        playerM()->searchMoves(round, *board, possibleMoves);
         
         /*
         cerr << "Round: " << round << endl;
@@ -337,7 +302,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
         if (validMoveRow == -1) {
             validMoveRow = 0;
         }
-        outcomes.push_back((double)getPositionScoreAtDepth(possibleMoves.at(validMoveRow), depth, cur));
+        outcomes.push_back((double)getPositionScoreAtDepth(possibleMoves.at(validMoveRow), *board, depth, cur));
         undoRound(*(playerW()));
     }
 
@@ -355,7 +320,7 @@ double Game::getPositionScoreAtDepth(vector<unique_ptr<Move>> & moves, int depth
     }
     cerr << endl;
     */
-    return expectedOutcome(outcomes, 10);
+    return expectedOutcome(outcomes, round%2 == cur ?  15:10) + (board.isCheck() && round > 50 ? (round%2 == cur? -5 : 10) :0);
 }
 
 double expectedOutcome(vector<double> & outcomes, int upperBound) {
@@ -367,4 +332,23 @@ double expectedOutcome(vector<double> & outcomes, int upperBound) {
     }
     res += outcomes[i]/(double)pow(2,i);
     return res;
+}
+
+int depthDrop(int size){
+    if (size <= 3) {
+        return 2;
+    }
+    if (size <= 6) {
+        return 4;
+    }
+    else if (size <= 8) {
+        return 5;
+    }
+    else if (size <= 12) {
+        return 7;
+    }
+    else if (size <= 24) {
+        return 9;
+    }
+    return 12;
 }

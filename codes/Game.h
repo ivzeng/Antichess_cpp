@@ -33,7 +33,7 @@ private:
     
     //finds best move (minmax)
     char findBestMoveWrapper(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
-    double getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, int depth, int player);
+    double getPositionScoreAtDepth(std::vector<std::unique_ptr<Move>> & moves, Board & board, int depth, int player);
     double positionScore(int player);
     int determineDepth(int it);
     
@@ -61,6 +61,10 @@ public:
     friend std::ostream & operator<<(std::ostream & out, const Game & game);
 };
 
+// given a sorted vector of outcomes, returns the expected outcome by the sum of products of the first 8 elements in outcomes and the geometric series 1/2, 1/4, 1/8, ..., the last scalar is designed so that the sum of all scalars is always 1.
 double expectedOutcome(std::vector<double> & outcomes, int upperBound);
+
+// determines the rate of drop based on the size
+int depthDrop(int size);
 
 #endif

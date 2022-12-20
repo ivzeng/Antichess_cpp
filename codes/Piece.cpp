@@ -41,8 +41,8 @@ bool Piece::threats(const pair<int,int> & at) {
     return canAttack(at);
 }
 
-double Piece::getValue() const {
-    return (double) value();
+double Piece::getValue(int round) const {
+    return (double) value(round);
 }
 
 int Piece::getColour() const {   return colour;   }
@@ -70,32 +70,32 @@ unique_ptr<Piece> Piece::copy(){
     return clone();
 }
 
-double King::value() const {
+double King::value(int round) const {
     return 1000;
 }
 
-double Queen::value() const {
-    return 90;
+double Queen::value(int round) const {
+    return 100 + (-1+round/(double)40) * (double) verticalAdj();
 }
 
-double Bishop::value() const {
+double Bishop::value(int round) const {
+    return 50 + (-1+round/(double)30) * (double) verticalAdj();
+}
+
+double Rook::value(int round) const {
+    return 60 + (-1+round/(double)30) * (double) verticalAdj();;
+}
+
+double Knight::value(int round) const {
     return 40;
 }
 
-double Rook::value() const {
-    return 50;
+double Pawn::value(int round) const {
+    return 10 + (double) pow(verticalAdj(),2) /(double)3;
 }
 
-double Knight::value() const {
-    return 30;
-}
-
-double Pawn::value() const {
-    return 10 + (double) verticalBonus();
-}
-
-double Piece::verticalBonus() const{
-    return  pow((colour == 0 ? position.second : BOARD_SIZE-position.second),2)/ (double) 20;
+double Piece::verticalAdj() const{
+    return (colour == 0 ? position.second : BOARD_SIZE-position.second-1);
 }
 
 // virtual functions

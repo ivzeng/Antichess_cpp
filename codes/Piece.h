@@ -25,7 +25,7 @@ protected:
     std::pair<int,int> position;            //  position of the piece on the board
 
     /* functions */
-    virtual double value() const = 0;                  // value of the piece         
+    virtual double value(int round) const = 0;                  // value of the piece         
     virtual void movePiece(const std::pair<int,int> & to, int round); // move a piece
     virtual void  goBack(const std::pair<int, int> & from);
 
@@ -34,8 +34,8 @@ protected:
     virtual char representation() const = 0;
     virtual std::unique_ptr<Piece> clone() = 0;
     
-    // returns 0.5*
-    double verticalBonus() const;
+    // adjust the value
+    double verticalAdj() const;
 public:
     Piece(int colour, const std::pair<int, int> & pos);     // construct the piece and move it to position pos
     virtual ~Piece() = 0;
@@ -45,7 +45,7 @@ public:
     bool threats(const std::pair<int,int> & at);
 
     // get fields
-    double getValue() const;
+    double getValue(int round) const;
     int getColour() const;
     int getStatus() const;
     int getMovesCount() const;
@@ -63,7 +63,7 @@ class King : public Piece{
     // ...
 
     /* functions */
-    double value() const override;
+    double value(int round) const override;
     void scan(int round, Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves) const override;
     bool canAttack(const std::pair<int, int> & at) override;
     char representation() const override;
@@ -77,7 +77,7 @@ class Queen : public Piece{
     // ...
 
     /* functions */
-    double value() const override;
+    double value(int round) const override;
     void scan(int round, Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves) const override;
     bool canAttack(const std::pair<int, int> & at) override;
     char representation() const override;
@@ -91,7 +91,7 @@ class Bishop : public Piece{
     // ...
 
     /* functions */
-    double value() const override;
+    double value(int round) const override;
     void scan(int round, Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves) const override;
     bool canAttack(const std::pair<int, int> & at) override;
     char representation() const override;
@@ -105,7 +105,7 @@ class Rook : public Piece{
     // ...
 
     /* functions */
-    double value() const override;
+    double value(int round) const override;
     void scan(int round,  Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves) const override;
     bool canAttack(const std::pair<int, int> & at) override;
     char representation() const override;
@@ -119,7 +119,7 @@ class Knight : public Piece{
     // ...
 
     /* functions */
-    double value() const override;
+    double value(int round) const override;
     void scan(int round, Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves) const override;
     bool canAttack(const std::pair<int, int> & at) override;
     char representation() const override;
@@ -133,7 +133,7 @@ class Pawn : public Piece{
     /* fields */
     std::vector<int> recentMoves;          // all rounds which move this piece
     /* functions */
-    double value() const override;
+    double value(int round) const override;
     void movePiece(const std::pair<int,int> & to, int round) override;
     void goBack(const std::pair<int,int> & from) override;
     void scan(int round, Board & board, std::vector<std::vector<std::unique_ptr<Move>>> & moves) const override;
