@@ -1,5 +1,4 @@
-## I have put my plan here:
----
+
 ## Start the program:
 
 Go to the root directory /Antichess_cpp,
