@@ -1,6 +1,10 @@
 #ifndef IO_H
 #define IO_H
 
+//#define DEBUG
+//#define PLAY
+
+
 #include <iostream>
 #include <vector>
 #include <memory>

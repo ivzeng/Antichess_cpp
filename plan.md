@@ -13,10 +13,25 @@ MakeFile
 excecute,
 ```
 ./Antichess/Antichess human computer
+or
 ./Antichess/Antichess h c
-./Antichess/Antichess black
+or
+./Antichess/Antichess compu co
+or
+./Antichess/Antichess cat cat
+or 
+./Antichess/Antichess black    
+(bot be the black player)
+or
 ./Antichess/Antichess white
+(bot be the white player)
 ```
+
+## Input/Output
+IO are handled by IO.h and IO.cpp. All instructions and messages except the comptured move are expected to be printed on stderr, and the move computed by the smartMove function will be output on stdin.
+
+(Define PLAY on IO.h to get a better command handle and enable functionalities such as undoing a round.)
+
 
 ---
 ## Basic process:

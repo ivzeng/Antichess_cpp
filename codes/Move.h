@@ -1,9 +1,6 @@
 #ifndef MOVE_H
 #define MOVE_H
 
-//#define DEBUG
-//#define PLAY
-
 #include <utility>
 #include <string>
 #include <vector>
