@@ -119,7 +119,6 @@ int Game::processRound(){
         else if (decision[0] >= '1' && decision[0] <= '9'){
             decision = smartMove(possibleMoves, decision[0]-'0');
             cout << *(possibleMoves[decision[0]-'0'][decision[1]-'0']) << endl;
-    
         } // bot request
         else {
             // cerr << "something is wrong at processRound" << endl;

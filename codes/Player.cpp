@@ -78,7 +78,7 @@ string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
         
         if (decision == "") {
             if (prevDecision == "") {
-                #ifndef DEBUG
+                #ifndef PLAY
                 err_decision(cerr);
                 decisionInstruction(cerr);
                 continue;
@@ -103,7 +103,7 @@ string Human::decide(const vector<vector<unique_ptr<Move>>> & moves) {
         if ((decision.length() == 3 && decision[2] == '0') || decision.length() != 3) {
             warning_invalidMove(cerr);
             prevDecision = decision;
-            #ifdef DEBUG
+            #ifdef PLAY
             continue;
             #endif
         } // invalid move
